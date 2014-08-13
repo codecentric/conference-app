@@ -1,0 +1,16 @@
+[
+    {
+        "shortName": "Room 1",
+        "description": "Room one is located in the basement"
+    },
+    
+    {
+        "shortName": "Room 2",
+        "description": "Room one is located in the first floor"
+    },
+    
+    {
+        "shortName": "Room 3",
+        "description": "Room one is located on the roof"
+    }
+]

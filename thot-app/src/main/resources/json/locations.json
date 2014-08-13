@@ -1,0 +1,20 @@
+[
+    {
+        "shortName": "304",
+        "description": "Grosser Saal"
+    },
+    
+    {
+        "shortName": "303",
+        "description": "Kleiner Saal"
+    },
+    
+    {
+        "shortName": "204",
+        "description": "Bauhüttensaal"
+    },
+    {
+        "shortName": "207",
+        "description": "Seminarraum"
+    }
+]

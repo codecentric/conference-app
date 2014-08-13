@@ -1,0 +1,51 @@
+[
+    {
+        "shortName": "Wed",
+        "timeslots": [
+            {
+                "start": "15:30",
+                "end": "16:15"
+            },
+            {
+                "start": "16:15",
+                "end": "17:00"
+            },
+            {
+                "start": "Evening"
+            }
+        ]
+    },
+    {
+        "shortName": "Thu",
+        "timeslots": [
+            {
+                "start": "15:30",
+                "end": "16:15"
+            },
+            {
+                "start": "16:15",
+                "end": "17:00"
+            },
+            {
+                "start": "17:00",
+                "end": "17:45"
+            },
+            {
+                "start": "Evening"
+            }
+        ]
+    },
+    {
+        "shortName": "Fri",
+        "timeslots": [
+            {
+                "start": "11:30",
+                "end": "12:15"
+            },
+            {
+                "start": "12:15",
+                "end": "13:00"
+            }
+        ]
+    }
+]

@@ -1,0 +1,68 @@
+[
+    {
+        "shortName": "Wednesday",
+        "timeslots": [
+            {
+                "start": "01:45 pm",
+                "end": "02:25 pm"
+            },
+            {
+                "start": "02:25 pm",
+                "end": "03:05 pm"
+            },
+            {
+                "start": "03:05 pm",
+                "end": "03:45 pm"
+            },
+             {
+                "start": "03:45 pm",
+                "end": "04:25 pm"
+            }
+            
+         ]
+    },    
+    {
+        "shortName": "Tuesday",
+        "timeslots": [
+            {
+                "start": "02:20 pm",
+                "end": "03:00 pm"
+            },
+            {
+                "start": "03:00 pm",
+                "end": "03:40 pm"
+            },
+            {
+                "start": "03:40 pm",
+                "end": "04:20 pm"
+            },
+             {
+                "start": "04:20 pm",
+                "end": "05:00 pm"
+            }
+            
+         ]
+    },    
+    {
+        "shortName": "Friday",
+        "timeslots": [
+            {
+                "start": "02:20 pm",
+                "end": "03:00 pm"
+            },
+            {
+                "start": "03:00 pm",
+                "end": "03:40 pm"
+            },
+            {
+                "start": "03:40 pm",
+                "end": "04:20 pm"
+            },
+             {
+                "start": "04:20 pm",
+                "end": "05:00 pm"
+            }
+            
+         ]
+    }
+]
