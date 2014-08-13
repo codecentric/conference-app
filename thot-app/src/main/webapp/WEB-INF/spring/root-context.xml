@@ -17,10 +17,10 @@
 	<context:component-scan base-package="org.ale-thot.domain" />
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="username" value="thot" />
-        <property name="password" value="thot" />
+        <property name="username" value="ale-admin" />
+        <property name="password" value="ale2014krakau" />
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost/thot?useUnicode=true&amp;characterEncoding=UTF-8" />
+        <property name="url" value="jdbc:mysql://localhost/ale?useUnicode=true&amp;characterEncoding=UTF-8" />
     </bean>
 
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
