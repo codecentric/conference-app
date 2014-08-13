@@ -1,0 +1,2 @@
+MODULE_PATH=../modules_ext
+MODULES='puppetlabs-mysql rtyler-jenkins maestrodev-sonarqube jfryman-nginx'
