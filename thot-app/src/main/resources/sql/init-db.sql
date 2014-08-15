@@ -1,9 +1,9 @@
-create database thot;
+create database ale;
 
-create user thot@'%' identified by 'thot';
-create user thot@'localhost' identified by 'thot';
+create user 'ale-admin'@'%' identified by 'ale2014krakau';
+create user 'ale-admin'@'localhost' identified by 'ale2014krakau';
 
-grant all on thot.* to thot@'%';
-grant all on thot.* to thot@'localhost';
+grant all on ale.* to 'ale-admin'@'%';
+grant all on ale.* to 'ale-admin'@'localhost';
 
 flush privileges;
