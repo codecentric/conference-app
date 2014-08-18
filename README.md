@@ -18,5 +18,3 @@ More information to follow soon.
 | Test | http://54.75.76.58:8080/thot-app |
 | Staging | http://54.75.178.148:8080/thot-app | 
 | Production | http://54.195.224.213:8080/thot-app |
-
-## Git Post-Commit Hook
