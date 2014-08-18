@@ -42,5 +42,27 @@
             }
             
          ]
+    },
+    {
+        "shortName": "Friday",
+        "timeslots": [
+            {
+                "start": "02:24 pm",
+                "end": "03:04 pm"
+            },
+            {
+                "start": "03:04 pm",
+                "end": "03:43 pm"
+            },
+            {
+                "start": "03:44 pm",
+                "end": "04:24 pm"
+            },
+             {
+                "start": "04:24 pm",
+                "end": "05:49 pm"
+            }
+            
+         ]
     }
 ]
