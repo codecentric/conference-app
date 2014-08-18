@@ -52,7 +52,7 @@
 								<c:set var="session" value="${entry.value.get(timeslot.getStart())}"></c:set>
 								<c:choose>
 								<c:when test="${session != null}">
-								<td><a href='comments?sessionId=${session.id}'>${session.title}</a></td>
+								<td><a href='timeslot?sessionId=${session.id}'>${session.title}</a></td>
 								</c:when>
 								<c:otherwise>
 									<td><i>Available slot</i></td>

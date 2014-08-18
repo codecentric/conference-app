@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.ale.thot.dao.CommentDao;
 import org.ale.thot.dao.LocationDao;
 import org.ale.thot.dao.SessionDao;
 import org.ale.thot.dao.TimeslotDao;
@@ -24,8 +23,6 @@ public class AllSessionsController {
 
 	@Autowired
 	private SessionDao sessionDao;
-	@Autowired
-	private CommentDao commentDao;
 	@Autowired
 	private TimeslotDao timeslotDao;
 	@Autowired
