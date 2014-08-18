@@ -12,16 +12,11 @@ public class XlsSessionsToDbScript {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		if(args.length != 2) {
-			System.out.println("please specify file name");
-		} else {
-			final String filename = args[1];
-			XlsSessionsToDbScript xlsSessionsToDbScript = new XlsSessionsToDbScript();
-			final List<Session> sessions = new XlsSessionReader().readAllSessions(filename);	
-			System.out.println("delete from session where id > " + XlsSessionReader.ID_OFFSET + ";");
-			xlsSessionsToDbScript.getScriptForSession(sessions);
-		}
-
+		final String filename = "src/main/resources/program.xls";
+		XlsSessionsToDbScript xlsSessionsToDbScript = new XlsSessionsToDbScript();
+		final List<Session> sessions = new XlsSessionReader().readAllSessions(filename);	
+		System.out.println("delete from session where id > " + XlsSessionReader.ID_OFFSET + ";");
+		xlsSessionsToDbScript.getScriptForSession(sessions);
 	}
 	
 	public void getScriptForSession(List<Session> sessions) {
