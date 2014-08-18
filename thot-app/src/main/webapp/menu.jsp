@@ -9,7 +9,6 @@
 				<div class="nav">
 					<ul class="nav">
 						<li><a href="staticSessions"><spring:message code="sessions" text="sessions"/></a></li>
-						<li><a href="speakers">Speakers</a></li>	
 						<li><a href="twitterWall.jsp"><spring:message code="twitter" text="twitter"/></a>	
 					<!-- 
 						<li><a href="<%= request.getContextPath() %>/allSessions">
