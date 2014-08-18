@@ -7,7 +7,7 @@ Open Space Software Development @ALE 2014
 
 --- 
 
-INFO: More information to follow soon ...
+More information to follow soon ...
 
 ---
 
