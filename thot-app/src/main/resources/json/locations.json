@@ -1,20 +1,16 @@
 [
     {
-        "shortName": "304",
-        "description": "Grosser Saal"
+        "shortName": "1",
+        "description": "comming soon"
     },
     
     {
-        "shortName": "303",
-        "description": "Kleiner Saal"
+        "shortName": "2",
+        "description": "comming soon"
     },
     
     {
-        "shortName": "204",
-        "description": "Bauhüttensaal"
-    },
-    {
-        "shortName": "207",
-        "description": "Seminarraum"
+        "shortName": "3",
+        "description": "comming soon"
     }
 ]

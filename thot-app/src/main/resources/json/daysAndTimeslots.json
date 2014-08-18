@@ -22,29 +22,7 @@
          ]
     },    
     {
-        "shortName": "Tuesday",
-        "timeslots": [
-            {
-                "start": "02:20 pm",
-                "end": "03:00 pm"
-            },
-            {
-                "start": "03:00 pm",
-                "end": "03:40 pm"
-            },
-            {
-                "start": "03:40 pm",
-                "end": "04:20 pm"
-            },
-             {
-                "start": "04:20 pm",
-                "end": "05:00 pm"
-            }
-            
-         ]
-    },    
-    {
-        "shortName": "Friday",
+        "shortName": "Thursday",
         "timeslots": [
             {
                 "start": "02:20 pm",
