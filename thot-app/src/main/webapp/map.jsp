@@ -19,10 +19,7 @@
 	<div class="row-fluid">
 		<div class="span10">
 	    	<div class="content-heading">
-	      		<img src="<%= request.getContextPath() %>/assets/img/floor2.jpg"/>
-	      	</div>
-	      	<div class="content-heading">
-		    	<img src="<%= request.getContextPath() %>/assets/img/floor3.jpg"/>
+	      		<img src="<%= request.getContextPath() %>/assets/img/parkinn-floorplan.jpeg"/>
 	      	</div>
 		</div>
 	</div>
