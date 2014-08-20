@@ -1,5 +1,9 @@
 ## Production Link http://bit.ly/thot-2014
 
+## Continuous Delivery Build Pipeline  http://54.247.3.187/jenkins/view/ALE-2014-Pipeline/
+
+## Amazon EC2 Dashboard http://54.247.3.187/jenkins/view/Dashboard/
+
 ## Twitter #ale14
 
 ## ALE 2014
