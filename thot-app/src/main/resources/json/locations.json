@@ -1,7 +1,12 @@
 [
     {
-        "shortName": "Alpha 1",
-        "description": "Alpha 1"
+        "shortName": "Alpha 1a",
+        "description": "Alpha 1a"
+    },
+    
+    {
+        "shortName": "Alpha 1b",
+        "description": "Alpha 1b"
     },
     
     {
@@ -12,5 +17,20 @@
     {
         "shortName": "Beta",
         "description": "Beta"
-    }
+    },
+    
+    {
+        "shortName": "Epsilon",
+        "description": "Epsilon"
+    },
+    
+    {
+        "shortName": "Window Lounge",
+        "description": "Window Lounge"
+    },
+    
+    {
+        "shortName": "Couch Lounge",
+        "description": "Couch Lounge"
+    },
 ]
