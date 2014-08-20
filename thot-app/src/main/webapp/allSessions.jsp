@@ -30,7 +30,6 @@
 				<c:forEach items="${days}" var="day">
 					<li><a href="#${day.getShortNameWithoutDots()}" data-toggle="tab">${day.getShortName()}</a></li>
 				</c:forEach>			
-				<!--  li class="active"></li -->
 			</ul>
 			
 			<div class="tab-content">	
@@ -71,11 +70,12 @@
 		</div>
 	</div>
 </div>
-
     <script type="text/JavaScript">
+		var today = '${today}';
 		<!--
+
 		function initTab() {
-			$('#daysTab a:last').tab('show');
+			$('#daysTab a[href="#'+ today +'"]').tab('show');
 		}
 		//   -->
 		</script>

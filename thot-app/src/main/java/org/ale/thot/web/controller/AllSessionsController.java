@@ -1,5 +1,7 @@
 package org.ale.thot.web.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,11 +56,9 @@ public class AllSessionsController {
 		}
 		
 		modelMap.put("allSessions", allSessions);
-		System.out.println("Sessions: "+allSessions.toString());
 		modelMap.put("allTimeslots", allTimeslots);
-		System.out.println("Timeslots: "+allTimeslots.toString());
 		modelMap.put("days", conferenceDays);
-		System.out.println("Day: "+conferenceDays.toString());
+		modelMap.put("today", getToday());
 	}
 	
 	private void createDefaultSessionsForDay(Day day, List<Location> locations) {
@@ -83,6 +83,14 @@ public class AllSessionsController {
 				transformedSessions.put(session.getLocation(), sessionOfLocation);
 		}
 		return transformedSessions;
+	}
+	
+	
+	private String getToday() {
+		Date today = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
+		String formatted = sdf.format(today);
+		return formatted;
 	}
 	
 }
