@@ -1,4 +1,0 @@
-delete from session where id > 1000000;
-insert into session (id,date,start,end,title,author,author2,description,location,type,authorinfo,author2info,authorimgurl,author2imgurl) values (1000001, 'Wednesday', '08:30', '09:00', 'Registration and coffee', '', '', '', '1', '', '', '', '', '');
-insert into session (id,date,start,end,title,author,author2,description,location,type,authorinfo,author2info,authorimgurl,author2imgurl) values (1000002, 'Thursday', '08:30', '09:00', 'Second day opening activities + talk market', '', '', '', '1', '', '', '', '', '');
-insert into session (id,date,start,end,title,author,author2,description,location,type,authorinfo,author2info,authorimgurl,author2imgurl) values (1000003, 'Friday', '08:30', '09:00', 'Third day opening activities + talk market', '', '', '', '1', '', '', '', '', '');
