@@ -54,11 +54,8 @@ public class AllSessionsController {
 		}
 		
 		modelMap.put("allSessions", allSessions);
-		System.out.println("Sessions: "+allSessions.toString());
 		modelMap.put("allTimeslots", allTimeslots);
-		System.out.println("Timeslots: "+allTimeslots.toString());
 		modelMap.put("days", conferenceDays);
-		System.out.println("Day: "+conferenceDays.toString());
 	}
 	
 	private void createDefaultSessionsForDay(Day day, List<Location> locations) {

@@ -14,20 +14,38 @@
 
 	<!--/span-->
 	<div class="well well-small">
-	<h1><spring:message code="timeline" text="Recent comments"/></h1>
+	<h1><spring:message code="feedback" text="Recent comments"/></h1>
 	</div>
 	
 	<br style="clear: both;"/>
 
 	<div class="row-fluid">
+		<form:form commandName="feedbackFormData" method="POST">
+
+        <div>Name:</div>
+        <form:input maxlength="255" id="name" path="name" />
+		<br />
+        <div>Feedback:</div>
+        <form:textarea  maxlength="4096" cols="30" rows="4" id="feedbackContent" path="feedbackContent" />
+		
+		<br />
+        
+		<br />
+		
+		<input type="submit" id="addFeedback" value="Send Feedback" class="btn btn-primary" />
+
+	</form:form>
+	</div>
+	
+	<div class="row-fluid">
 		<div class="tabbable">
 			<div class="tab-content">
 				<table>
-				<c:forEach items="${recentComments}" var="entry">
+				<c:forEach items="${feedbackList}" var="feedback">
 					<span style="font-style: bold; font-size: 1.2em;"><a href='timeslot?sessionId=${entry.sessionId}'>${entry.sessionTitle}</a></span>, <small>${entry.date}</small>
 				    <blockquote>
-					    <p>${entry.comment}</p>
-					    <small>${entry.processedUser}</small>
+					    <p>${feedback.feedbackComment}</p>
+					    <small>${feedback.userName} - ${feedback.timestamp}</small>
 				    </blockquote>
 				</c:forEach>
 				</table>

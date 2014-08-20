@@ -7,7 +7,11 @@
 </div>
 
 <div class="container">
-
+	<h3>Wednesday</h3>
+	<h4>Version 1</h4>
+      <ul>
+       <li>Feedback function for the app</li>
+      </ul>
 	<h3><spring:message code="features.startupfeatures" text="Startup features"/></h3>
       <ul>
        <li><spring:message code="features.plannedsessions" text="List of planned sessions"/></li>

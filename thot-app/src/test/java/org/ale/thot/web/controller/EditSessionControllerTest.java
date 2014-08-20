@@ -24,7 +24,7 @@ public class EditSessionControllerTest {
 	
 	@Test
 	public void shouldGetTimeslotListFromDay() {
-		Map<String, String> timeslots = controller.GetTimeslotForDay("Wed");
+		Map<String, String> timeslots = controller.getTimeslotForDay("Wed");
 		assertEquals(3, timeslots.size());		
 	}
 

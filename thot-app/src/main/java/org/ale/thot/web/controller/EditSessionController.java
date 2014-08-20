@@ -115,7 +115,7 @@ public class EditSessionController {
 
 	@RequestMapping(value = "/timeslotsPerDay", method = RequestMethod.GET)
 	public @ResponseBody
-	Map<String, String> GetTimeslotForDay(@RequestParam("day") String day) {
+	Map<String, String> getTimeslotForDay(@RequestParam("day") String day) {
 
 		List<Timeslot> timeslots = timeslotDao.getTimeslots(day);
 		Map<String, String> timeslotsProjected = new HashMap<String, String>();
