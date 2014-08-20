@@ -17,7 +17,7 @@ import javax.persistence.NamedQuery;
 @Entity(name = "session")
 @NamedQueries({
 		@NamedQuery(name = "findSessionsForDate", query = "from session where type is null and date=:date"),
-		@NamedQuery(name = "findListOfConferenceDays", query = "select distinct s.date from session s"),
+		@NamedQuery(name = "findListOfConferenceDays", query = "select distinct s.date from session s where s.type ='session'"),
 		@NamedQuery(name = "findAllSessions", query = "from session where type is null order by date"),
 		@NamedQuery(name = "findAllStaticSessions", query = "from session where type ='session' order by date"),
 		@NamedQuery(name = "findStaticSessionsForDate", query = "from session where type ='session' and date=:date") })
