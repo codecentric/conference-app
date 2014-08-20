@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <title>Open Space Software Development - ALE 2014</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
