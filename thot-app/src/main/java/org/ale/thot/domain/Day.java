@@ -24,5 +24,14 @@ public class Day {
 	public List<Timeslot> getTimeslots() {
 		return timeslots;
 	}
+	
+	public String getShortNameWithoutDots(){
+		return shortName.replace(".", "");
+	}
+
+	@Override
+	public String toString() {
+		return "Day [shortName=" + shortName + ", timeslots=" + timeslots + "]";
+	}
 
 }

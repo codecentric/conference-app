@@ -27,14 +27,14 @@
 		<div class="tabbable">
 			<ul class="nav nav-tabs" id="daysTab">
 				<c:forEach items="${days}" var="day">
-					<li><a href="#${day.getShortName()}" data-toggle="tab">${day.getShortName()}</a></li>
+					<li><a href="#${day.getShortNameWithoutDots()}" data-toggle="tab">${day.getShortName()}</a></li>
 				</c:forEach>			
 				<!--  li class="active"></li -->
 			</ul>
 			
 			<div class="tab-content">	
 			<c:forEach items="${days}" var="day">
-				<div class="tab-pane" id="${day.getShortName()}">
+				<div class="tab-pane" id="${day.getShortNameWithoutDots()}">
 					<table class="table table-striped">
 						<thead>
 							<tr>

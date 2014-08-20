@@ -1,6 +1,6 @@
 [
     {
-        "shortName": "Wed",
+        "shortName": "20.08.2014",
         "timeslots": [
             {
                 "start": "15:30",
@@ -16,7 +16,7 @@
         ]
     },
     {
-        "shortName": "Thu",
+        "shortName": "21.08.2014",
         "timeslots": [
             {
                 "start": "15:30",
@@ -36,7 +36,7 @@
         ]
     },
     {
-        "shortName": "Fri",
+        "shortName": "22.08.201",
         "timeslots": [
             {
                 "start": "11:30",

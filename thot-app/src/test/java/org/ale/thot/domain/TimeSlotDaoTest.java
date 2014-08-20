@@ -27,7 +27,7 @@ public class TimeSlotDaoTest {
 	public void shouldReturnWednesdayTimeSlot() {
 		final TimeslotDao dao = getDaoInstance();
 		
-		final List<Timeslot> timeslots = dao.getTimeslots("Wed");
+		final List<Timeslot> timeslots = dao.getTimeslots("20.08.2014");
 		
 		assertEquals(3, timeslots.size());
 		assertEquals("16:15", timeslots.get(1).getStart());

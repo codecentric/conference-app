@@ -13,6 +13,7 @@
        <li>List of planned sessions</li>
        <li>Add additional Open Spaces</li>
        <li>List of additional Open Spaces</li>
+       <li>Twitter integration</li>
       </ul>
 	  	 
     </div> <!-- /container -->

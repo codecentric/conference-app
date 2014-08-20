@@ -54,23 +54,11 @@ public class AllSessionsController {
 		}
 		
 		modelMap.put("allSessions", allSessions);
+		System.out.println("Sessions: "+allSessions.toString());
 		modelMap.put("allTimeslots", allTimeslots);
-//		
-//		List<Session> wed = sessionDao.getSessionsByDate("Wed");
-//		modelMap.put("sessionsDay1", groupSessionsByLocationsSlots(wed));
-//		List<Session> thu = sessionDao.getSessionsByDate("Thu");
-//		modelMap.put("sessionsDay2", groupSessionsByLocationsSlots(thu));
-//		List<Session> fri = sessionDao.getSessionsByDate("Fri");
-//		modelMap.put("sessionsDay3", groupSessionsByLocationsSlots(fri));
-//		
-//		modelMap.put("wedTimeslots", timeslotDao.getTimeslots("Wed"));
-//		modelMap.put("thuTimeslots", timeslotDao.getTimeslots("Thu"));
-//		modelMap.put("friTimeslots", timeslotDao.getTimeslots("Fri"));
-		
+		System.out.println("Timeslots: "+allTimeslots.toString());
 		modelMap.put("days", conferenceDays);
-		
-		// removing it for the moment
-		//modelMap.put("commentCount", commentDao.getCommentCountForSessions());
+		System.out.println("Day: "+conferenceDays.toString());
 	}
 	
 	private void createDefaultSessionsForDay(Day day, List<Location> locations) {
