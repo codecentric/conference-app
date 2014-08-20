@@ -11,27 +11,27 @@
 
 	<!--/span-->
 	<div class="well well-small">
-	<h1>Session Data</h1>
+	<h1><spring:message code="editsession.sessiondata" text="Topic"/></h1>
 	</div>
 	
 	<div class="row-fluid">
 	<form:form commandName="sessionDataFormData" method="POST">
 	
-    <div>Topic:(*)</div>
+    <div><spring:message code="editsession.topic" text="Topic"/>:(*)</div>
         <form:input maxlength="255" id="title" path="title" />
 		<form:errors class="form-error" path="title" />
-        <div>Proposed by:</div>
+        <div><spring:message code="editsession.proposedby" text="Proposed by"/>:</div>
         <form:input maxlength="255" id="speaker" path="speaker" />
 		<form:errors class="form-error" path="speaker" />
 		<br />
-        <div>Description:</div>
+        <div><spring:message code="editsession.description" text="Description"/>:</div>
         <form:textarea  maxlength="4096" cols="30" rows="4" id="description" path="description" />
 		<form:errors class="form-error" path="description" />
 		<br />
         
 		<br />
-		
-		<input type="submit" id="saveSession" value="Save Session" />
+		<spring:message code="editsessions.savesession" var="SaveSession"/>
+		<input type="submit" id="saveSession" value="${SaveSession}" />
 
 	</form:form>
 </div>

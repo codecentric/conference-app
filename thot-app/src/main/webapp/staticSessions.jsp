@@ -14,7 +14,9 @@
 				<spring:message code="sessions" text="sessions" />
 			</h1>
 			<br />
-			<p>Select the day of the conference that you are interested in.</p>
+			<p>
+				<spring:message code="session.day.selection" text="session.day.selection" />
+			</p>
 		</div>
 
 		<br style="clear: both;" />
@@ -52,7 +54,7 @@
 							</table>
 							</c:when>
 					<c:otherwise>
-						Keine laufenden Session, also abwarten und Tee trinken.
+						<spring:message code="no.sessions.available" text="no.sessions.available" />
 					</c:otherwise>
 					</c:choose>
 				</div>

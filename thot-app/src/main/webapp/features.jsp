@@ -7,13 +7,17 @@
 </div>
 
 <div class="container">
-
-	<h3>Startup features</h3>
+	<h3>Wednesday</h3>
+	<h4>Version 1</h4>
       <ul>
-       <li>List of planned sessions</li>
-       <li>Add additional Open Spaces</li>
-       <li>List of additional Open Spaces</li>
-       <li>Twitter integration</li>
+       <li>Feedback function for the app</li>
+      </ul>
+	<h3><spring:message code="features.startupfeatures" text="Startup features"/></h3>
+      <ul>
+       <li><spring:message code="features.plannedsessions" text="List of planned sessions"/></li>
+       <li><spring:message code="features.addopenspaces" text="Add additional Open Spaces"/></li>
+       <li><spring:message code="features.listadditionalopenspaces" text="List of additional Open Spaces"/></li>
+       <li><spring:message code="features.twitterintegration" text="Twitter integration"/></li>
       </ul>
 	  	 
     </div> <!-- /container -->

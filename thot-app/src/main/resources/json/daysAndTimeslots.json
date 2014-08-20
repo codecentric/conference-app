@@ -3,66 +3,51 @@
         "shortName": "20.08.2014",
         "timeslots": [
             {
-                "start": "01:45 pm",
-                "end": "02:25 pm"
+                "start": "14:10",
+                "end": "14:55"
             },
             {
-                "start": "02:25 pm",
-                "end": "03:05 pm"
+                "start": "14:55",
+                "end": "15:40"
             },
             {
-                "start": "03:05 pm",
-                "end": "03:45 pm"
-            },
-             {
-                "start": "03:45 pm",
-                "end": "04:25 pm"
+                "start": "15:40",
+                "end": "16:25"
             }
-            
          ]
     },    
     {
         "shortName": "21.08.2014",
         "timeslots": [
             {
-                "start": "02:20 pm",
-                "end": "03:00 pm"
+                "start": "14:25",
+                "end": "15:10"
             },
             {
-                "start": "03:00 pm",
-                "end": "03:40 pm"
+                "start": "15:10",
+                "end": "15:55"
             },
             {
-                "start": "03:40 pm",
-                "end": "04:20 pm"
-            },
-             {
-                "start": "04:20 pm",
-                "end": "05:00 pm"
+                "start": "15:55",
+                "end": "16:40"
             }
-            
          ]
     },
     {
         "shortName": "22.08.2014",
         "timeslots": [
             {
-                "start": "02:24 pm",
-                "end": "03:04 pm"
+                "start": "14:25",
+                "end": "15:10"
             },
             {
-                "start": "03:04 pm",
-                "end": "03:43 pm"
+                "start": "15:10",
+                "end": "15:55"
             },
             {
-                "start": "03:44 pm",
-                "end": "04:24 pm"
-            },
-             {
-                "start": "04:24 pm",
-                "end": "05:49 pm"
-            }
-            
+                "start": "15:55",
+                "end": "16:40"
+            }            
          ]
     }
 ]

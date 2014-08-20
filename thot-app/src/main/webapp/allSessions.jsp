@@ -17,7 +17,8 @@
 	</div>
 <!-- 	
 	<div style="float: right;">
-			<a class="btn btn-primary" href="<%= request.getContextPath() %>/editSession">Add OpenSpace</a>
+			<a class="btn btn-primary" href="<%= request.getContextPath() %>/editSession">
+			<spring:message code="allsessions.addopenspace" text="Add OpenSpace"/></a>
 	</div>
 -->
 	<br style="clear: both;"/>
@@ -37,7 +38,7 @@
 					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>Location</th>
+								<th><spring:message code="allsessions.location" text="Location"/></th>
 								<c:forEach items="${allTimeslots.get(day.getShortName())}" var="timeslot">
 									<th>${timeslot.toString()}</th>
 								</c:forEach>
@@ -54,7 +55,7 @@
 								<td><a href='timeslot?sessionId=${session.id}'>${session.title}</a></td>
 								</c:when>
 								<c:otherwise>
-									<td><i>Available slot</i></td>
+									<td><i><spring:message code="allsessions.avaliableslot" text="Available slot"/></i></td>
 								</c:otherwise>
 								</c:choose>
 								</c:forEach>
