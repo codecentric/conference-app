@@ -13,8 +13,7 @@
        <li>List of planned sessions</li>
        <li>Add additional Open Spaces</li>
        <li>List of additional Open Spaces</li>
-       <li>Twitterwall for #ale14 and #osswdev</li>
-       <li>Tweet via the app</li>
+       <li>Twitter integration</li>
       </ul>
 	  	 
     </div> <!-- /container -->
