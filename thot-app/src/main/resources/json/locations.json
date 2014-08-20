@@ -1,16 +1,16 @@
 [
     {
-        "shortName": "1",
-        "description": "comming soon"
+        "shortName": "Alpha 1",
+        "description": "Alpha 1"
     },
     
     {
-        "shortName": "2",
-        "description": "comming soon"
+        "shortName": "Alpha 2",
+        "description": "Alpha 2"
     },
     
     {
-        "shortName": "3",
-        "description": "comming soon"
+        "shortName": "Beta",
+        "description": "Beta"
     }
 ]
