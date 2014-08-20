@@ -8,6 +8,7 @@
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
 			<!--  for production environments this should be set to validate -->
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.connection.characterEncoding" value = "utf8"/>
 		</properties>
 		
 	</persistence-unit>
