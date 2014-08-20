@@ -1,4 +1,6 @@
-## Production Link http://bit.ly/thot-app
+## Production Link http://bit.ly/thot-app 
+
+## Twitter #ale14
 
 ## ALE 2014
 
