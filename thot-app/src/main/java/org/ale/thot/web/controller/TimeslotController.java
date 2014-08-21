@@ -40,7 +40,7 @@ public class TimeslotController {
 
 			modelMap.put("sessionTitle", utf8(session.getTitle()));
 			modelMap.put("sessionDescription", utf8(session.getDescription()));
-			modelMap.put("sessionEditable", getSessionIsEditable(session.getType()));
+			modelMap.put("sessionEditable", getSessionIsEditable(session.getType().toString()));
 
 			String location = session.getLocation() != null ? session.getLocation() : "Unknown";
 

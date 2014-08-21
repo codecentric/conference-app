@@ -1,17 +1,19 @@
 package org.ale.thot.dao.impl;
 
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import org.ale.thot.dao.SessionDao;
 import org.ale.thot.domain.Session;
+import org.ale.thot.domain.SessionType;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,15 +31,12 @@ public class JpaSessionDao implements SessionDao {
 		this.em = em;
 	}
 	
-	@SuppressWarnings("unchecked")
 	public List<Session> getSessionsByDate(String date) {
-		Query query = em.createNamedQuery("findSessionsForDate");
-		return query.setParameter("date", date).getResultList();
+		return em.createNamedQuery("findSessionsForDate", Session.class).setParameter("date", date).getResultList();
 	}
 
-	@SuppressWarnings("unchecked")
 	public List<Session> getAllSessions() {
-		return em.createNamedQuery("findAllSessions").getResultList();
+		return em.createNamedQuery("findAllSessions", Session.class).getResultList();
 	}
 	
 	public void saveSession(Session session) {
@@ -48,15 +47,19 @@ public class JpaSessionDao implements SessionDao {
 		return em.find(Session.class, Long.parseLong(id));
 	}
 
-	@SuppressWarnings("unchecked")
 	public List<Session> getAllStaticSessions() {
-		return em.createNamedQuery("findAllStaticSessions").getResultList();
+		return em.createNamedQuery("findAllStaticSessions", Session.class).getResultList();
+	}
+	
+	public List<Session> getAllSessionsByDateAndType(String date, SessionType... type) {
+		return em.createNamedQuery("findSessionsForDate", Session.class)
+				.setParameter("date", date)
+				.setParameter("type", Arrays.asList(type))
+				.getResultList();
 	}
 
-	@SuppressWarnings("unchecked")
 	public List<Session> getStaticSessionsByDate(String date) {
-		Query query = em.createNamedQuery("findStaticSessionsForDate");
-		return query.setParameter("date", date).getResultList();
+		return em.createNamedQuery("findStaticSessionsForDate", Session.class).setParameter("date", date).getResultList();
 	}
 
 	public List<Session> getCurrentSessions() {
@@ -77,10 +80,13 @@ public class JpaSessionDao implements SessionDao {
 	}
 
 	@Override
-	@SuppressWarnings("unchecked")
 	public List<String> getListOfConferenceDays() {
-		Query query = em.createNamedQuery("findListOfConferenceDays");
-		return query.getResultList();
+		return em.createNamedQuery("findListOfConferenceDays",String.class).getResultList();
+	}
+
+	@Override
+	public List<Session> getAllSessionsByDate(String now) {
+		return em.createNamedQuery("findAllSessionsForDate", Session.class).setParameter("date", now).getResultList();
 	}
 	
 }

@@ -32,7 +32,7 @@ public class XlsSessionsToDbScript {
 				r(session.getAuthor2())  + "', '" +
 				r(session.getDescription()) + "', '" +
 				r(session.getLocation()) + "', '" +
-				r(session.getType()) + "', '" +
+				r(session.getType().toString()) + "', '" +
 				r(session.getAuthorInfo()) + "', '" +
 				r(session.getAuthor2Info()) + "', '" +
 				r(session.getAuthorImgUrl()) + "', '" +

@@ -32,6 +32,7 @@
 				<input class="btn btn-primary" type="submit" id="saveSession" value="${SaveSession}" />
 				<form:hidden path="date"/>
 				<form:hidden path="start"/>
+				<form:hidden path="end"/>
 				<form:hidden path="location"/>
 			</form:form>
 		</div>

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.ale.thot.dao.SessionDao;
 import org.ale.thot.dao.TimeslotDao;
 import org.ale.thot.domain.Session;
+import org.ale.thot.domain.SessionType;
 import org.ale.thot.domain.Timeslot;
 import org.ale.thot.model.Html;
 import org.ale.thot.model.OpenSpaceFormData;
@@ -56,6 +57,7 @@ public class EditSessionController {
 
 		OpenSpaceFormData data = new OpenSpaceFormData();
 		data.setStart(request.getParameter("start"));
+		data.setEnd(request.getParameter("end"));
 		data.setLocation(request.getParameter("location"));
 		data.setDate(request.getParameter("day"));
 		modelMap.put("sessionDataFormData", data);
@@ -125,6 +127,8 @@ public class EditSessionController {
 			Session session = new Session(cmd.getDate(), cmd.getStart(),
 					cmd.getLocation(), cmd.getTitle(), cmd.getSpeaker(),
 					cmd.getDescription());
+			session.setEnd(cmd.getEnd());
+			session.setType(SessionType.openspace);
 			sessionDao.saveSession(session);
 		}
 

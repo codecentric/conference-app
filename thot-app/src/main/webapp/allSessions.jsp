@@ -46,7 +46,7 @@
 								<td><a href='comments?sessionId=${session.id}'>${session.title}</a></td>
 								</c:when>
 								<c:otherwise>
-									<td><a class="btn btn-primary" href="createSession?start=${timeslot.getStart()}&amp;location=${entry.key}&amp;day=${day.getShortName()}">Propose a session</a></td>
+									<td><a class="btn btn-primary" href="createSession?start=${timeslot.getStart()}&amp;end=${timeslot.getEnd()}&amp;location=${entry.key}&amp;day=${day.getShortName()}">Propose a session</a></td>
 								</c:otherwise>
 								</c:choose>
 								</c:forEach>

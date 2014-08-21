@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.ale.thot.domain.Session;
+import org.ale.thot.domain.SessionType;
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
@@ -87,7 +88,7 @@ public class XlsSessionReader {
 		final String author2 = getCellValue(row.getCell(COL_AUTHOR2, Row.RETURN_BLANK_AS_NULL));
 		final String description = getCellValue(row.getCell(COL_DESCRIPTION, Row.RETURN_BLANK_AS_NULL));
 		final String location  = getCellValue(row.getCell(COL_LOCATION, Row.RETURN_BLANK_AS_NULL));
-		final String type = getCellValue(row.getCell(COL_TYPE, Row.RETURN_BLANK_AS_NULL));
+		final SessionType type = SessionType.getTypeForString(getCellValue(row.getCell(COL_TYPE, Row.RETURN_BLANK_AS_NULL)));
 		final String authorInfo  = getCellValue(row.getCell(COL_AUTHORINFO, Row.RETURN_BLANK_AS_NULL));
 		final String author2Info = getCellValue(row.getCell(COL_AUTHOR2INFO, Row.RETURN_BLANK_AS_NULL));
 		final String authorImgUrl = getCellValue(row.getCell(COL_AUTHORIMAGEURL, Row.RETURN_BLANK_AS_NULL));

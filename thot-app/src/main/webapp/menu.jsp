@@ -9,7 +9,8 @@
 				<div class="nav">
 					<ul class="nav">
 						<li><a href="<%= request.getContextPath() %>/allSessions">	
-						<spring:message code="marketplace" text="marketplace"/></a></li>		 
+						<spring:message code="marketplace" text="marketplace"/></a></li>
+						<li><a href="currentSessions">Current Sessions</a></li>		 
 						<li><a href="staticSessions"><spring:message code="sessions" text="sessions"/></a></li>
 						<li><a href="twitterWall.jsp"><spring:message code="twitter" text="twitter"/></a>	
 					</ul>

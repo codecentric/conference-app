@@ -11,6 +11,7 @@ public class OpenSpaceFormData {
 	private String speaker;
 	private String description;
 	private String start;
+	private String end;
 	private String location;
 
 	public OpenSpaceFormData() {
@@ -23,6 +24,7 @@ public class OpenSpaceFormData {
 		this.speaker = Html.unEscapeHtml(session.getAuthor());
 		this.description = Html.unEscapeHtml(session.getDescription());
 		this.start = session.getStart();
+		this.setEnd(session.getEnd());
 		this.location = session.getLocation();
 	}
 
@@ -67,5 +69,13 @@ public class OpenSpaceFormData {
 	}
 	public void setSessionId(Long sessionId) {
 		this.sessionId = sessionId;
+	}
+
+	public String getEnd() {
+		return end;
+	}
+
+	public void setEnd(String end) {
+		this.end = end;
 	}
 }

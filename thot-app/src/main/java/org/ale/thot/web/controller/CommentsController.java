@@ -52,12 +52,13 @@ public class CommentsController {
 			modelMap.put("links", linkDao.getLinksBySessionId(lSessionId));
 			modelMap.put("sessionTitle", utf8(session.getTitle()));
 			modelMap.put("sessionDescription", utf8(session.getDescription()));
-			modelMap.put("sessionEditable", getSessionIsEditable(session.getType()));
+			modelMap.put("sessionEditable", getSessionIsEditable(session.getType().getLabel()));
 
 			String location = session.getLocation() != null ? session.getLocation() : "Unknown";
 
 			modelMap.put("location", location);
 			modelMap.put("timeslot", session.getStart());
+			modelMap.put("timeslotEnd", session.getEnd());
 
 			String author = session.getAuthor() != null ? session.getAuthor() : "Unknown";
 			modelMap.put("sessionSpeaker", TwitterLinkCreator.process(author));

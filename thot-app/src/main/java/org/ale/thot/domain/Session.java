@@ -4,6 +4,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,12 +18,14 @@ import javax.persistence.NamedQuery;
  */
 @Entity(name = "session")
 @NamedQueries({
-		@NamedQuery(name = "findSessionsForDate", query = "from session where type is null and date=:date"),
+		@NamedQuery(name = "findSessionsForDate", query = "from session where type in (:type) and date=:date"),
 		@NamedQuery(name = "findListOfConferenceDays", query = "select distinct s.date from session s where s.type ='session'"),
 		@NamedQuery(name = "findAllSessions", query = "from session where type is null order by date"),
 		@NamedQuery(name = "findAllStaticSessions", query = "from session where type ='session' order by date"),
-		@NamedQuery(name = "findStaticSessionsForDate", query = "from session where type ='session' and date=:date") })
+		@NamedQuery(name = "findStaticSessionsForDate", query = "from session where type ='session' and date=:date"),
+		@NamedQuery(name = "findAllSessionsForDate", query = "from session where date=:date and type is not null") })
 public class Session implements Comparable<Session> {
+	
 	public static String EMPTY_TITLE = "Available Session";
 	public static String EMPTY_DESCRIPTION = "This session is still available.";
 
@@ -40,7 +44,8 @@ public class Session implements Comparable<Session> {
 	@Lob
 	private String description;
 	private String location;
-	private String type;
+	@Enumerated(EnumType.STRING)
+	private SessionType type;
 	private String authorInfo;
 	private String author2Info;
 	private String authorImgUrl;
@@ -62,7 +67,7 @@ public class Session implements Comparable<Session> {
 
 	public Session(String date, String start, String end, String title,
 			String author, String author2, String description, String location,
-			String type, String authorInfo, String author2Info,
+			SessionType type, String authorInfo, String author2Info,
 			String authorImgUrl, String author2ImgUrl, int id) {
 		this.date = date;
 		this.start = start;
@@ -116,10 +121,12 @@ public class Session implements Comparable<Session> {
 		return location;
 	}
 
-	public String getType() {
+	public SessionType getType() {
 		return type;
 	}
-
+	public void setType(SessionType type) {
+		this.type = type;
+	}
 	public String getAuthorInfo() {
 		return authorInfo;
 	}
