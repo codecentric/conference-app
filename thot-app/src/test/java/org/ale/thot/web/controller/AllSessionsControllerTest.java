@@ -7,11 +7,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.ale.thot.domain.Session;
+import org.ale.thot.domain.Location;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.util.Assert;
+import java.util.Arrays;
 
 public class AllSessionsControllerTest {
+	public static String NODESC = "";
 
 	@Before
 	public void setUp() throws Exception {
@@ -23,7 +26,8 @@ public class AllSessionsControllerTest {
 		List<Session> sessions = new ArrayList<Session>();
 		sessions.add(new Session("Wed", "15:30", "orange", "title1", "toto", "description" ));
 		
-		Map<String, Map<String, Session>> transformedSessions = AllSessionsController.groupSessionsByLocationsSlots(sessions);
+		Map<String, Map<String, Session>> transformedSessions = AllSessionsController.groupSessionsByLocationsSlots(
+			Arrays.asList(new Location("orange", NODESC)), sessions);
 		
 		Assert.notEmpty(transformedSessions);
 		Assert.notEmpty(transformedSessions.get("orange"));
@@ -35,7 +39,8 @@ public class AllSessionsControllerTest {
 		sessions.add(new Session("Wed", "15:30", "orange", "title1", "toto", "description" ));
 		sessions.add(new Session("Wed", "15:30", "red", "title2", "toto", "description" ));
 		
-		Map<String, Map<String, Session>> transformedSessions = AllSessionsController.groupSessionsByLocationsSlots(sessions);
+		Map<String, Map<String, Session>> transformedSessions = AllSessionsController.groupSessionsByLocationsSlots(
+			Arrays.asList(new Location("orange", NODESC), new Location("red", NODESC)),sessions);
 		
 		Assert.isTrue(transformedSessions.size() == 2);
 		Assert.notEmpty(transformedSessions.get("red"));
@@ -48,7 +53,8 @@ public class AllSessionsControllerTest {
 		sessions.add(new Session("Wed", "15:30", "red", "title1", "toto", "description" ));
 		sessions.add(new Session("Wed", "16:15", "red", "title2", "toto", "description" ));
 		
-		Map<String, Map<String, Session>> transformedSessions = AllSessionsController.groupSessionsByLocationsSlots(sessions);
+		Map<String, Map<String, Session>> transformedSessions = AllSessionsController.groupSessionsByLocationsSlots(
+			Arrays.asList(new Location("red", NODESC)),sessions);
 		
 		Assert.isTrue(transformedSessions.size() == 1);
 		Assert.isTrue(transformedSessions.get("red").size() == 2);

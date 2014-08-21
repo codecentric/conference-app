@@ -8,7 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.cache.scope = :box
   end  
   
-  #config.vm.network "forwarded_port", guest: 8080, host: 9191
+  config.vm.network "forwarded_port", guest: 3306, host: 3307
   config.vm.network "private_network", ip: "192.168.33.100"
 
   config.vm.provider "virtualbox" do |vb|

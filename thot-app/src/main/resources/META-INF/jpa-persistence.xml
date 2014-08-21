@@ -4,12 +4,18 @@
 		
 		<class>org.ale.thot.domain.Session</class>
 		
-		<properties>
+		<!-- <properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
-			<!--  for production environments this should be set to validate -->
+			 for production environments this should be set to validate
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
 			<property name="hibernate.connection.characterEncoding" value = "utf8"/>
-		</properties>
+		</properties> -->
 		
+	    <properties>
+	        <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+	        <property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.connection.characterEncoding" value = "utf8"/>
+	    </properties>
+
 	</persistence-unit>
 </persistence>

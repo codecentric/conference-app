@@ -25,7 +25,7 @@
 			
 			<div class="tab-content">	
 			<c:forEach items="${days}" var="day">
-				<div class="table-responsive" id="${day.getShortNameWithoutDots()}">
+				<div class="tab-pane table-responsive" id="${day.getShortNameWithoutDots()}">
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -46,7 +46,7 @@
 								<td><a href='comments?sessionId=${session.id}'>${session.title}</a></td>
 								</c:when>
 								<c:otherwise>
-									<td><i><spring:message code="allsessions.avaliableslot" text="Available slot"/></i></td>
+									<td><a class="btn btn-primary" href="createSession?start=${timeslot.getStart()}&amp;location=${entry.key}&amp;day=${day.getShortName()}">Propose a session</a></td>
 								</c:otherwise>
 								</c:choose>
 								</c:forEach>
