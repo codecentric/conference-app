@@ -46,7 +46,7 @@
 						<th>Name</th>
 						<th>Comment</th>
 						<th>Date</th>
-						<th colspan="2">Rating</th>
+						<th>Twitter</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -55,16 +55,12 @@
 							<td>${comment.processedAuthor}</td>
 							<td>${comment.text}</td>
 							<td><fmt:formatDate value="${comment.date}" type="both" dateStyle="short" timeStyle="short" /></td>
-							<td class="rating" data-rating="${comment.rating}">
-								<img src='assets/img/${comment.rating}-star.png' title='Rating: ${comment.rating}' alt='${comment.rating}'>
-							</td>
 							<td><a href="http://twitter.com/?status=Neuer Kommentar: ${comment.text} - http://bit.ly/thot-2014 - %23osswdev %23ale14 via @OSSWDEV">Tweet comment</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
-
 		
 		<div class="row-fluid">
 		

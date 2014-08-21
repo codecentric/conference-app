@@ -47,7 +47,7 @@
 											<td>${session.title}</td>
 											<td>${session.author}</td>
 											<td>${session.location}</td>
-											<td></td>
+											<td><a class="btn btn-primary" href='comments?sessionId=${session.id}'>Comment</a></td>
 										</tr>
 									</c:forEach>
 								</tbody>

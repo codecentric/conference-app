@@ -5,9 +5,8 @@
 <%@ page session="false"%>
 
 <%@ include file="header.jsp"%>
-<body  onload="JavaScript:timedRefresh(30000);">
+<body>
 <%@ include file="menu.jsp"%>
-
 
 <div class="container-fluid">
 

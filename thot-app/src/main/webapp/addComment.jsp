@@ -29,16 +29,9 @@
 	        <form:textarea maxlength="255" id="text" path="text" />
 			<form:errors class="form-error" path="text" />
 	
-	        <div>Rating: (1: waste of time ... 5: awesome)</div>
-			<form:select path="rating">
-			   <form:option value="null" label="--- Select ---"/>
-			   <form:options items="${ratingList}" />
-			</form:select>
-			<form:errors class="form-error" path="rating" />
-	        
 			<br />
 			
-			<input type="submit" id="addComment" value="Add comment" />
+			<input class="btn btn-primary" type="submit" id="addComment" value="Add comment" />
 	
 		</form:form>
 	</div>
