@@ -10,5 +10,10 @@ public class OpenSpaceValidator {
 		if ( formData.getTitle() == null || formData.getTitle().isEmpty() ) {
 			ValidationUtils.rejectIfEmpty (errors, "title", null, "Title cannot be empty!");
 		}
+
+        if(formData.getSpeaker().contains("|")){
+            ValidationUtils.rejectIfEmpty(errors, "speaker", null, "Speaker twitter name is incorrect");
+        }
+
 	}
 }
