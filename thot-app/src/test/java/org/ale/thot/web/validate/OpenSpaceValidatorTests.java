@@ -35,6 +35,18 @@ public class OpenSpaceValidatorTests {
     }
 
     @Test
+    public void returnErrorWhenSpeakerNameIsNull(){
+        OpenSpaceFormData openSpaceFormData = new OpenSpaceFormData();
+        openSpaceFormData.setTitle("non empty title");
+        openSpaceFormData.setSpeaker(null);
+        Errors errors = mock(Errors.class);
+
+        OpenSpaceValidator.validate(openSpaceFormData, errors);
+
+        verify(errors).rejectValue("speaker", null, "Speaker twitter name is incorrect");
+    }
+
+    @Test
     public void returnErrorWhenSpeakerNameIsEmpty(){
         OpenSpaceFormData openSpaceFormData = new OpenSpaceFormData();
         openSpaceFormData.setTitle("non empty title");
@@ -46,5 +58,27 @@ public class OpenSpaceValidatorTests {
         verify(errors).rejectValue("speaker", null, "Speaker twitter name is incorrect");
     }
 
+    @Test
+    public void returnErrorWhenSpeakerNameContainsPipe(){
+        OpenSpaceFormData openSpaceFormData = new OpenSpaceFormData();
+        openSpaceFormData.setTitle("non empty title");
+        openSpaceFormData.setSpeaker("@adi|adi");
+        Errors errors = mock(Errors.class);
 
+        OpenSpaceValidator.validate(openSpaceFormData, errors);
+
+        verify(errors).rejectValue("speaker", null, "Speaker twitter name is incorrect");
+    }
+
+    @Test
+    public void returnErrorWhenSpeakerNameDoesNotStartWithAt(){
+        OpenSpaceFormData openSpaceFormData = new OpenSpaceFormData();
+        openSpaceFormData.setTitle("non empty title");
+        openSpaceFormData.setSpeaker("doesNotStartWith@");
+        Errors errors = mock(Errors.class);
+
+        OpenSpaceValidator.validate(openSpaceFormData, errors);
+
+        verify(errors).rejectValue("speaker", null, "Speaker twitter name is incorrect");
+    }
 }
