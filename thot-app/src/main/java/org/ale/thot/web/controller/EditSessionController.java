@@ -29,7 +29,6 @@ import org.springframework.web.servlet.ModelAndView;
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping("/editSession")
 public class EditSessionController {
 
 	private static final Logger LOGGER = Logger.getLogger(EditSessionController.class);
@@ -50,7 +49,22 @@ public class EditSessionController {
 		this.timeslotDao = timeslotDao;
 	}
 
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/createSession", method = RequestMethod.GET)
+	public ModelAndView createSession(ModelMap modelMap, HttpServletRequest request) {
+		modelMap.put("timeslots", timeslotDao.getTimeslots("Fri"));
+		modelMap.put("days", timeslotDao.getConferenceDays());
+
+		OpenSpaceFormData data = new OpenSpaceFormData();
+		data.setStart(request.getParameter("start"));
+		data.setLocation(request.getParameter("location"));
+		data.setDate(request.getParameter("day"));
+		modelMap.put("sessionDataFormData", data);
+		
+		return new ModelAndView("editSession", modelMap);
+	}
+
+
+	@RequestMapping(value="/editSession", method = RequestMethod.GET)
 	public void setupForm(ModelMap modelMap, HttpServletRequest request) {
 
 		modelMap.put("sessionDataFormData", new OpenSpaceFormData());
@@ -75,7 +89,7 @@ public class EditSessionController {
 
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value="/editSession", method = RequestMethod.POST)
 	public ModelAndView processSubmit(HttpServletRequest request,
 			ModelMap modelMap,
 			@ModelAttribute("sessionDataFormData") OpenSpaceFormData cmd,
@@ -105,13 +119,14 @@ public class EditSessionController {
 			} catch (Exception e) {
 				// do nothing!
 			}
-		}
+		} else {
 
-		// save the data
-		Session session = new Session(cmd.getDate(), cmd.getStart(),
-				cmd.getLocation(), cmd.getTitle(), cmd.getSpeaker(),
-				cmd.getDescription());
-		sessionDao.saveSession(session);
+			// save the data
+			Session session = new Session(cmd.getDate(), cmd.getStart(),
+					cmd.getLocation(), cmd.getTitle(), cmd.getSpeaker(),
+					cmd.getDescription());
+			sessionDao.saveSession(session);
+		}
 
 		return new ModelAndView("redirect:allSessions");
 	}
