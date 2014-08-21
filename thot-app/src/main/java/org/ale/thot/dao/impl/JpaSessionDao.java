@@ -1,6 +1,5 @@
 package org.ale.thot.dao.impl;
 
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -87,6 +86,12 @@ public class JpaSessionDao implements SessionDao {
 	@Override
 	public List<Session> getAllSessionsByDate(String now) {
 		return em.createNamedQuery("findAllSessionsForDate", Session.class).setParameter("date", now).getResultList();
+	}
+
+	@Override
+	public List<Session> getAllSessionsByAuthor(String author) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

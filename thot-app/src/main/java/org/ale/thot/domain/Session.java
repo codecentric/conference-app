@@ -23,7 +23,7 @@ import javax.persistence.NamedQuery;
 		@NamedQuery(name = "findAllSessions", query = "from session where type is null order by date"),
 		@NamedQuery(name = "findAllStaticSessions", query = "from session where type ='session' order by date"),
 		@NamedQuery(name = "findStaticSessionsForDate", query = "from session where type ='session' and date=:date"),
-		@NamedQuery(name = "findAllSessionsForDate", query = "from session where date=:date and type is not null") })
+		@NamedQuery(name = "findAllSessionsForAuthor", query = "from session where author like :author order by date") })
 public class Session implements Comparable<Session> {
 	
 	public static String EMPTY_TITLE = "Available Session";
@@ -266,5 +266,9 @@ public class Session implements Comparable<Session> {
 
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
+	}
+	
+	public void setSessionType(SessionType sessionType){
+		this.type = sessionType;
 	}
 }

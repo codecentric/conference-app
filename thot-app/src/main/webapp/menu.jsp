@@ -17,6 +17,7 @@
 				</div>
 				<div class="nav-collapse">
 					<ul class="nav">
+					    <li><a href="searchSessions"><spring:message code="search" text="search"/></a></li>
 						<li><a href="map.jsp"><spring:message code="map" text="map"/></a>
 						<li><a href="<%= request.getContextPath() %>/feedback"><spring:message code="feedback" text="feedback"/></a>
 						<li><a href="features.jsp"><spring:message code="versionhistory" text="versionhistory"/></a></li>
