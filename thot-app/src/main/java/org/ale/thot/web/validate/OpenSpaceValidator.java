@@ -4,7 +4,6 @@ import static org.ale.app.TwitterLinkCreator.TWITTER_NAME_PATTERN;
 
 import org.ale.thot.model.OpenSpaceFormData;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 
 public class OpenSpaceValidator {
 

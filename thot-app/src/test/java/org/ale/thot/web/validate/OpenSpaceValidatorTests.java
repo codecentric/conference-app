@@ -2,6 +2,7 @@ package org.ale.thot.web.validate;
 
 import org.ale.thot.model.OpenSpaceFormData;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.validation.BindingResult;
@@ -21,13 +22,18 @@ import static org.mockito.Mockito.verify;
  * Created by adi on 8/21/14.
  */
 public class OpenSpaceValidatorTests {
+
+    OpenSpaceFormDataBuilder openSpaceFormDataBuilder;
+
+    @Before
+    public void setup(){
+        openSpaceFormDataBuilder = new OpenSpaceFormDataBuilder();
+    }
+
     @Test
     public void returnErrorWhenTitleIsNull(){
-        OpenSpaceFormData formData = new OpenSpaceFormData();
         String nullTitle = null;
-        formData.setTitle(nullTitle);
-        String validTwitterName = "@someValidName";
-        formData.setSpeaker(validTwitterName);
+        OpenSpaceFormData formData = openSpaceFormDataBuilder.withTitle(nullTitle).build();
         Errors errors = mock(Errors.class);
 
         OpenSpaceValidator.validate(formData, errors);
@@ -37,11 +43,8 @@ public class OpenSpaceValidatorTests {
 
     @Test
     public void returnErrorWhenTitleIsEmpty(){
-        OpenSpaceFormData formData = new OpenSpaceFormData();
         String emptyTitle = "";
-        formData.setTitle(emptyTitle);
-        String validTwitterName = "@someValidName";
-        formData.setSpeaker(validTwitterName);
+        OpenSpaceFormData formData = openSpaceFormDataBuilder.withTitle(emptyTitle).build();
         Errors errors = mock(Errors.class);
 
         OpenSpaceValidator.validate(formData, errors);
@@ -52,48 +55,42 @@ public class OpenSpaceValidatorTests {
 
     @Test
     public void returnErrorWhenSpeakerNameIsNull(){
-        OpenSpaceFormData openSpaceFormData = new OpenSpaceFormData();
-        openSpaceFormData.setTitle("non empty title");
-        openSpaceFormData.setSpeaker(null);
+        String speaker = null;
+        OpenSpaceFormData formData = openSpaceFormDataBuilder.withSpeaker(speaker).build();
         Errors errors = mock(Errors.class);
 
-        OpenSpaceValidator.validate(openSpaceFormData, errors);
+        OpenSpaceValidator.validate(formData, errors);
 
         verify(errors).rejectValue("speaker", null, "Speaker twitter name is incorrect");
     }
 
     @Test
     public void returnErrorWhenSpeakerNameIsEmpty(){
-        OpenSpaceFormData openSpaceFormData = new OpenSpaceFormData();
-        openSpaceFormData.setTitle("non empty title");
-        openSpaceFormData.setSpeaker("@");
+        String emptySpeakerName = "@";
+        OpenSpaceFormData formData = openSpaceFormDataBuilder.withSpeaker(emptySpeakerName).build();
         Errors errors = mock(Errors.class);
 
-        OpenSpaceValidator.validate(openSpaceFormData, errors);
+        OpenSpaceValidator.validate(formData, errors);
 
         verify(errors).rejectValue("speaker", null, "Speaker twitter name is incorrect");
     }
 
     @Test
     public void returnErrorWhenSpeakerNameContainsPipe(){
-        OpenSpaceFormData openSpaceFormData = new OpenSpaceFormData();
-        openSpaceFormData.setTitle("non empty title");
-        openSpaceFormData.setSpeaker("@adi|adi");
+        OpenSpaceFormData formData = openSpaceFormDataBuilder.withSpeaker("@adi|adi").build();
         Errors errors = mock(Errors.class);
 
-        OpenSpaceValidator.validate(openSpaceFormData, errors);
+        OpenSpaceValidator.validate(formData, errors);
 
         verify(errors).rejectValue("speaker", null, "Speaker twitter name is incorrect");
     }
 
     @Test
     public void returnErrorWhenSpeakerNameDoesNotStartWithAt(){
-        OpenSpaceFormData openSpaceFormData = new OpenSpaceFormData();
-        openSpaceFormData.setTitle("non empty title");
-        openSpaceFormData.setSpeaker("doesNotStartWith@");
+        OpenSpaceFormData formData = openSpaceFormDataBuilder.withSpeaker("notStartingWith@").build();
         Errors errors = mock(Errors.class);
 
-        OpenSpaceValidator.validate(openSpaceFormData, errors);
+        OpenSpaceValidator.validate(formData, errors);
 
         verify(errors).rejectValue("speaker", null, "Speaker twitter name is incorrect");
     }
