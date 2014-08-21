@@ -14,8 +14,7 @@
 	</div>
 	
 	<div class="row-fluid">
-		<form:form commandName="sessionDataFormData" method="POST">
-		
+		<form:form commandName="sessionDataFormData" method="POST" action="editSession">
 	    <div>
 	    	<spring:message code="editsession.topic" text="Topic"/>:(*)</div>
 		        <form:input maxlength="255" id="title" path="title" />
@@ -31,6 +30,9 @@
 				<br />
 				<spring:message code="editsessions.savesession" var="SaveSession"/>
 				<input class="btn btn-primary" type="submit" id="saveSession" value="${SaveSession}" />
+				<form:hidden path="date"/>
+				<form:hidden path="start"/>
+				<form:hidden path="location"/>
 			</form:form>
 		</div>
 
