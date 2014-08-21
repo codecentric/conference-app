@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.ale.app.TwitterLinkCreator;
 import org.ale.thot.dao.SessionDao;
 import org.ale.thot.domain.Session;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/timeslot")
 public class TimeslotController {
 
+	private static final Logger LOGGER = Logger.getLogger(TimeslotController.class);
+	
 	private static final String SESSION_TYPE_SESSION = "session";
 	
 	@Autowired
@@ -31,7 +34,6 @@ public class TimeslotController {
 	public void setupForm(ModelMap modelMap, HttpServletRequest request) {
 		String sessionId = request.getParameter("sessionId");
 		try {
-			long lSessionId = Long.valueOf(sessionId);
 			Session session = null;
 			session = sessionDao.getSessionById(sessionId);
 			modelMap.put("sessionId", sessionId);
@@ -67,7 +69,7 @@ public class TimeslotController {
 		try {
 			out = URLDecoder.decode(out, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			LOGGER.error("UnsupportedEncodingException", e);
 		}
 		return out;
 	}

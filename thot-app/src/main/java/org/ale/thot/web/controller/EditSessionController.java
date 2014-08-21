@@ -13,6 +13,7 @@ import org.ale.thot.domain.Timeslot;
 import org.ale.thot.model.Html;
 import org.ale.thot.model.OpenSpaceFormData;
 import org.ale.thot.web.validate.OpenSpaceValidator;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -31,6 +32,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/editSession")
 public class EditSessionController {
 
+	private static final Logger LOGGER = Logger.getLogger(EditSessionController.class);
+	
 	@Autowired
 	private SessionDao sessionDao;
 	
@@ -66,7 +69,7 @@ public class EditSessionController {
 				modelMap.put("sessionDataFormData", new OpenSpaceFormData(session));
 				modelMap.put("sessionId", sessionId);
 			} catch (Exception e) {
-				e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+				LOGGER.error("To change body of catch statement use File | Settings | File Templates.", e);
 			}
 		}
 

@@ -5,36 +5,28 @@
 <%@ page session="false"%>
 
 <%@ include file="header.jsp"%>
-<body  onload="JavaScript:timedRefresh(30000);">
+<body>
 <%@ include file="menu.jsp"%>
-
 
 <div class="container-fluid">
 
-
-	<!--/span-->
 	<div class="well well-small">
-	<h1><spring:message code="feedback" text="Recent comments"/></h1>
+		<h1><spring:message code="feedback" text="Recent comments"/></h1>
 	</div>
 	
 	<br style="clear: both;"/>
 
 	<div class="row-fluid">
 		<form:form commandName="feedbackFormData" method="POST">
-
-        <div>Name:</div>
-        <form:input maxlength="255" id="name" path="name" />
-		<br />
-        <div>Feedback:</div>
-        <form:textarea  maxlength="4096" cols="30" rows="4" id="feedbackContent" path="feedbackContent" />
-		
-		<br />
-        
-		<br />
-		
-		<input type="submit" id="addFeedback" value="Send Feedback" class="btn btn-primary" />
-
-	</form:form>
+			<div>Name:</div>
+			<form:input maxlength="255" id="name" path="name" />
+			<br />
+			<div>Feedback:</div>
+			<form:textarea  maxlength="4096" cols="30" rows="4" id="feedbackContent" path="feedbackContent" />
+			<br />
+			<br />
+			<input type="submit" id="addFeedback" value="Send Feedback" class="btn btn-primary" />
+		</form:form>
 	</div>
 	
 	<div class="row-fluid">
@@ -52,5 +44,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+
 <%@ include file="footer.html"%>
+
+</div>

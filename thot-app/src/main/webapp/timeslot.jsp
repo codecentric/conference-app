@@ -10,42 +10,34 @@
 
 	<div class="container-fluid">
 
-		<div style="float: right;">
-			<c:if test="${sessionEditable}">
-				<a class="btn btn-primary"
-					href="<%= request.getContextPath() %>/editSession?sessionId=${sessionId}">Edit
-					session data</a>
-			</c:if>
-		</div>
-
-		<!--/span-->
 		<div class="well well-small">
 
-			<!-- 
-	<h4>For session at location: ${sessionLocationAndTimeSlot}</h4>
--->
 			<h2>${sessionTitle}</h2>
-			<h4>Description</h4>
+			<h4><spring:message code="editsession.description" text="Description"/></h4>
 			<p>${sessionDescription}</p>
-			<h4>Proposed by</h4>
+			<h4><spring:message code="editsession.proposedby" text="Proposed by"/></h4>
 			<p>${sessionSpeaker}</p>
-			<h4>Location</h4>
+			<h4><spring:message code="editsession.location" text="Location"/></h4>
 			<p>${location}</p>
-			<h4>Start time</h4>
+			<h4><spring:message code="tableheader.starttime" text="Start time"/></h4>
 			<p>${timeslot }</p>
+
+			<c:if test="${sessionEditable}">
+				<a class="btn btn-primary"
+					href="<%= request.getContextPath() %>/editSession?sessionId=${sessionId}">
+					<spring:message code="timeslot.editsessiondata" text="Edit session data"/></a>
+			</c:if>
+
 		</div>
 
 		<br style="clear: both;" />
 
-	<script type="text/JavaScript">
-	<!--
-		function timedRefresh(timeoutPeriod) {
-			setTimeout("location.reload(true);", timeoutPeriod);
-		}
+		<script type="text/JavaScript">
+			function timedRefresh(timeoutPeriod) {
+				setTimeout("location.reload(true);", timeoutPeriod);
+			}
+		</script>
 	
+		<%@ include file="footer.html"%>
 
-		
-	//   -->
-	</script>
-
-	<%@ include file="footer.html"%>
+	</div>

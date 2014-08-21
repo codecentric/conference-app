@@ -7,22 +7,13 @@
 <body onload="JavaScript:initTab();">
 <%@ include file="menu.jsp"%>
 
-
 <div class="container-fluid">
 
-
-	<!--/span-->
 	<div class="well well-small">
-	<h1><spring:message code="marketplace" text="marketplace"/></h1>
+		<h1><spring:message code="marketplace" text="marketplace"/></h1>
 	</div>
-<!-- 	
-	<div style="float: right;">
-			<a class="btn btn-primary" href="<%= request.getContextPath() %>/editSession">
-			<spring:message code="allsessions.addopenspace" text="Add OpenSpace"/></a>
-	</div>
--->
-	<br style="clear: both;"/>
 
+	<br style="clear: both;"/>
 
 	<div class="row-fluid">
 		<div class="tabbable">
@@ -30,7 +21,6 @@
 				<c:forEach items="${days}" var="day">
 					<li><a href="#${day.getShortNameWithoutDots()}" data-toggle="tab">${day.getShortName()}</a></li>
 				</c:forEach>			
-				<!--  li class="active"></li -->
 			</ul>
 			
 			<div class="tab-content">	
@@ -53,7 +43,7 @@
 								<c:set var="session" value="${entry.value.get(timeslot.getStart())}"></c:set>
 								<c:choose>
 								<c:when test="${session != null}">
-								<td><a href='timeslot?sessionId=${session.id}'>${session.title}</a></td>
+								<td><a href='comments?sessionId=${session.id}'>${session.title}</a></td>
 								</c:when>
 								<c:otherwise>
 									<td><i><spring:message code="allsessions.avaliableslot" text="Available slot"/></i></td>
@@ -70,14 +60,17 @@
 			</div>
 		</div>
 	</div>
-</div>
 
     <script type="text/JavaScript">
+		var today = '${today}';
 		<!--
+
 		function initTab() {
-			$('#daysTab a:last').tab('show');
+			$('#daysTab a[href="#'+ today +'"]').tab('show');
 		}
 		//   -->
 		</script>
 
 	<%@ include file="footer.html"%>
+
+</div>

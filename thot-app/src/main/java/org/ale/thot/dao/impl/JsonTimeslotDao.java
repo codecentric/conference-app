@@ -8,12 +8,15 @@ import java.util.List;
 import org.ale.thot.dao.TimeslotDao;
 import org.ale.thot.domain.Day;
 import org.ale.thot.domain.Timeslot;
+import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class JsonTimeslotDao implements TimeslotDao {
+	
+	private static final Logger LOGGER = Logger.getLogger(JsonTimeslotDao.class);
 	
 	@Autowired
 	private ObjectMapper jsonMapper;
@@ -54,10 +57,9 @@ public class JsonTimeslotDao implements TimeslotDao {
 					days = jsonMapper.readValue(jsonStream, new TypeReference<List<Day>>() {});
 				}
 		} catch (JsonParseException e) {
-			e.printStackTrace();
+			LOGGER.error("JsonParseException", e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			LOGGER.error("IOException", e);
 		}
 	}
-
 }

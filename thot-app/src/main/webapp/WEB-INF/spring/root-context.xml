@@ -35,6 +35,8 @@
 		p:entityManagerFactory-ref="entityManagerFactory" />
 
 	<bean id="sessionDao" class="org.ale.thot.dao.impl.JpaSessionDao" />
+	<bean id="commentDao" class="org.ale.thot.dao.impl.JpaCommentDao" />
+	<bean id="linkDao" class="org.ale.thot.dao.impl.JpaLinkDao" />
 	<bean id="feedbackDao" class="org.ale.thot.dao.impl.JpaFeedbackDao" />
 	<bean id="jsonMapper" class="org.codehaus.jackson.map.ObjectMapper" />
 	<bean id="timeslotDao" class="org.ale.thot.dao.impl.JsonTimeslotDao">

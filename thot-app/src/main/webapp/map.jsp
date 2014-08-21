@@ -14,8 +14,8 @@
 		<h2><spring:message code="map" text="map"/></h2> 
 	</div>
 
-<br style="clear: both;"/>
-
+	<br style="clear: both;"/>
+	
 	<div class="row-fluid">
 		<div class="span10">
 	    	<div class="content-heading">
@@ -23,5 +23,7 @@
 	      	</div>
 		</div>
 	</div>
+	
+	<%@ include file="footer.html"%>
 
-<%@ include file="footer.html"%>
+</div>
