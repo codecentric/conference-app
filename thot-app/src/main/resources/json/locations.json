@@ -32,5 +32,10 @@
     {
         "shortName": "Couch Lounge",
         "description": "Couch Lounge"
+    },
+    
+    {
+        "shortName": "Lobby",
+        "description": "Lobby"
     }
 ]
