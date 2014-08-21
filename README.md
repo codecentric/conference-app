@@ -1,8 +1,12 @@
-## Production Link http://bit.ly/thot-2014
+### Production Link http://bit.ly/thot-2014
 
-## Continuous Delivery Build Pipeline  http://54.247.3.187/jenkins/view/ALE-2014-Pipeline/
+### Continuous Delivery Build Pipeline  http://54.247.3.187/jenkins/view/ALE-2014-Pipeline/
 
-## Amazon EC2 Dashboard http://54.247.3.187/jenkins/view/Dashboard/
+### Amazon EC2 Dashboard http://54.247.3.187/jenkins/view/Dashboard/
+
+### Sonar SQM http://54.247.3.187/sonar/dashboard/index/1
+
+### Nexus Artifact Repository http://54.247.3.187/nexus
 
 ## Twitter #ale14
 
