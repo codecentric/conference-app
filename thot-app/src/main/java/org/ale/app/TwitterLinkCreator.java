@@ -3,7 +3,7 @@ package org.ale.app;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TwitterLinkCreator {
+public class TwitterLinkCreator{
 
 	public static final Pattern TWITTER_NAME_PATTERN = Pattern.compile("@[a-zA-Z0-9_]+");
 	
