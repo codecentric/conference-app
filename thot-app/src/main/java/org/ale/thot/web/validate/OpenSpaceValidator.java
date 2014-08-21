@@ -13,10 +13,10 @@ public class OpenSpaceValidator {
 			ValidationUtils.rejectIfEmpty(errors, "title", null, "Title cannot be empty!");
 		}
 
-		String speakter = formData.getSpeaker();
-        if( speakter == null
+		String speaker = formData.getSpeaker();
+        if( speaker == null
                 ||
-            (speakter != null && (speakter.startsWith("@") || !TWITTER_NAME_PATTERN.matcher(speakter).matches() ))) {
+            (speaker != null && (speaker.startsWith("@") || !TWITTER_NAME_PATTERN.matcher(speaker).matches() ))) {
         	errors.rejectValue("speaker", null, "Speaker twitter name is incorrect");
         }
 
