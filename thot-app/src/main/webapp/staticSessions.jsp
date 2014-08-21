@@ -37,7 +37,7 @@
 								<%@ include file="schedule_tableheader.html"%>
 								<tbody>
 									<c:forEach items="${currentSessions}" var="session">
-				                        <c:url value="timeslot" var="url" scope="page">
+				                        <c:url value="comments" var="url" scope="page">
 				                            <c:param name="sessionId" value="${session.getId()}" />
 				                        </c:url>
 										<tr class="sessions" data-link="${url}">
