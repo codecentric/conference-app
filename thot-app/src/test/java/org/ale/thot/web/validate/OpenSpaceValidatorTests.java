@@ -24,6 +24,7 @@ import static org.mockito.Mockito.verify;
 public class OpenSpaceValidatorTests {
 
     OpenSpaceFormDataBuilder openSpaceFormDataBuilder;
+    OpenSpaceFormData formData;
 
     @Before
     public void setup(){
@@ -33,7 +34,7 @@ public class OpenSpaceValidatorTests {
     @Test
     public void returnErrorWhenTitleIsNull(){
         String nullTitle = null;
-        OpenSpaceFormData formData = openSpaceFormDataBuilder.withTitle(nullTitle).build();
+        formData = openSpaceFormDataBuilder.withTitle(nullTitle).build();
         Errors errors = mock(Errors.class);
 
         OpenSpaceValidator.validate(formData, errors);
@@ -44,7 +45,7 @@ public class OpenSpaceValidatorTests {
     @Test
     public void returnErrorWhenTitleIsEmpty(){
         String emptyTitle = "";
-        OpenSpaceFormData formData = openSpaceFormDataBuilder.withTitle(emptyTitle).build();
+        formData = openSpaceFormDataBuilder.withTitle(emptyTitle).build();
         Errors errors = mock(Errors.class);
 
         OpenSpaceValidator.validate(formData, errors);
@@ -56,7 +57,7 @@ public class OpenSpaceValidatorTests {
     @Test
     public void returnErrorWhenSpeakerNameIsNull(){
         String speaker = null;
-        OpenSpaceFormData formData = openSpaceFormDataBuilder.withSpeaker(speaker).build();
+        formData = openSpaceFormDataBuilder.withSpeaker(speaker).build();
         Errors errors = mock(Errors.class);
 
         OpenSpaceValidator.validate(formData, errors);
@@ -67,7 +68,7 @@ public class OpenSpaceValidatorTests {
     @Test
     public void returnErrorWhenSpeakerNameIsEmpty(){
         String emptySpeakerName = "@";
-        OpenSpaceFormData formData = openSpaceFormDataBuilder.withSpeaker(emptySpeakerName).build();
+        formData = openSpaceFormDataBuilder.withSpeaker(emptySpeakerName).build();
         Errors errors = mock(Errors.class);
 
         OpenSpaceValidator.validate(formData, errors);
@@ -77,7 +78,7 @@ public class OpenSpaceValidatorTests {
 
     @Test
     public void returnErrorWhenSpeakerNameContainsPipe(){
-        OpenSpaceFormData formData = openSpaceFormDataBuilder.withSpeaker("@adi|adi").build();
+        formData = openSpaceFormDataBuilder.withSpeaker("@adi|adi").build();
         Errors errors = mock(Errors.class);
 
         OpenSpaceValidator.validate(formData, errors);
@@ -87,7 +88,8 @@ public class OpenSpaceValidatorTests {
 
     @Test
     public void returnErrorWhenSpeakerNameDoesNotStartWithAt(){
-        OpenSpaceFormData formData = openSpaceFormDataBuilder.withSpeaker("notStartingWith@").build();
+
+        formData = openSpaceFormDataBuilder.withSpeaker("notStartingWith@").build();
         Errors errors = mock(Errors.class);
 
         OpenSpaceValidator.validate(formData, errors);
