@@ -175,33 +175,42 @@ public class Session implements Comparable<Session> {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Session other = (Session) obj;
 		if (description == null) {
-			if (other.description != null)
+			if (other.description != null) {
 				return false;
-		} else if (!description.equals(other.description))
+			}
+		} else if (!description.equals(other.description)) {
 			return false;
+		}
 		if (author == null) {
-			if (other.author != null)
+			if (other.author != null) {
 				return false;
-		} else if (!author.equals(other.author))
+			}
+		} else if (!author.equals(other.author)) {
 			return false;
+		}
 		if (title == null) {
-			if (other.title != null)
+			if (other.title != null) {
 				return false;
-		} else if (!title.equals(other.title))
+			}
+		} else if (!title.equals(other.title)) {
 			return false;
+		}
 		return true;
 	}
 
 	public boolean isInProgress(Calendar now) {
-		if(end == null){
+		if(end == null) {
 			return false;
 		}
 	

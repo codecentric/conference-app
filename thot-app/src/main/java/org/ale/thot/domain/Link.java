@@ -96,35 +96,45 @@ public class Link {
 	
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Link other = (Link) obj;
 		if (comment == null) {
-			if (other.comment != null)
+			if (other.comment != null) {
 				return false;
+			}
 		} else if (!comment.equals(other.comment))
 			return false;
 		if (date == null) {
-			if (other.date != null)
+			if (other.date != null) {
 				return false;
-		} else if (!date.equals(other.date))
+			}
+		} else if (!date.equals(other.date)) {
 			return false;
-		if (id != other.id)
+		}
+		if (id != other.id) {
 			return false;
+		}
 		if (link == null) {
-			if (other.link != null)
+			if (other.link != null) {
 				return false;
+			}
 		} else if (!link.equals(other.link))
 			return false;
 		if (sessionId == null) {
-			if (other.sessionId != null)
+			if (other.sessionId != null) {
 				return false;
-		} else if (!sessionId.equals(other.sessionId))
+			}
+		} else if (!sessionId.equals(other.sessionId)) {
 			return false;
+		}
 		return true;
 	}
 }

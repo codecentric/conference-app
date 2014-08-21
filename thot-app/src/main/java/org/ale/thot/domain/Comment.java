@@ -101,28 +101,37 @@ public class Comment {
 	
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Comment other = (Comment) obj;
 		if (text == null) {
-			if (other.text != null)
+			if (other.text != null) {
 				return false;
-		} else if (!text.equals(other.text))
+			}
+		} else if (!text.equals(other.text)) {
 			return false;
+		}
 		if (author == null) {
-			if (other.author != null)
+			if (other.author != null) {
 				return false;
-		} else if (!author.equals(other.author))
+			}
+		} else if (!author.equals(other.author)) {
 			return false;
+		}
 		if (date == null) {
-			if (other.date != null)
+			if (other.date != null) {
 				return false;
-		} else if (!date.equals(other.date))
+			}
+		} else if (!date.equals(other.date)) {
 			return false;
+		}
 		return true;
 	}
 
