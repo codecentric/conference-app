@@ -25,5 +25,7 @@ public interface SessionDao {
 	List<Session> getStaticSessionsByDate(String shortName);
 
 	List<Session> getCurrentSessions();
+	
+	List<Session> getAllSessionsByAuthor(String author);
 
 }

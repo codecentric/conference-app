@@ -20,7 +20,8 @@ import javax.persistence.NamedQuery;
 		@NamedQuery(name = "findListOfConferenceDays", query = "select distinct s.date from session s where s.type ='session'"),
 		@NamedQuery(name = "findAllSessions", query = "from session where type is null order by date"),
 		@NamedQuery(name = "findAllStaticSessions", query = "from session where type ='session' order by date"),
-		@NamedQuery(name = "findStaticSessionsForDate", query = "from session where type ='session' and date=:date") })
+		@NamedQuery(name = "findStaticSessionsForDate", query = "from session where type ='session' and date=:date"),
+		@NamedQuery(name = "findAllSessionsForAuthor", query = "from session where author like :author order by date") })
 public class Session implements Comparable<Session> {
 	public static String EMPTY_TITLE = "Available Session";
 	public static String EMPTY_DESCRIPTION = "This session is still available.";
@@ -259,5 +260,9 @@ public class Session implements Comparable<Session> {
 
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
+	}
+	
+	public void setType(String sessionType){
+		this.type = sessionType;
 	}
 }
