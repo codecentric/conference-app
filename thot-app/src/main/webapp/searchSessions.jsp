@@ -18,7 +18,7 @@
 
 	<div class="row-fluid">
 		<form:form commandName="searchFormData" method="POST">
-			<div>Author Name:</div>
+			<div><spring:message code="search.authorname" text="Author Name"/>:</div>
 			<form:input maxlength="255" id="name" path="name" />
 			<br />
 			<br />
