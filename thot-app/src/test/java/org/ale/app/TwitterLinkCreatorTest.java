@@ -46,13 +46,4 @@ public class TwitterLinkCreatorTest {
         assertEquals(linkWithOneTwitterName, result);
 	}
 
-    @Test
-    public void something(){
-        String invalidTwitterNameWithDot = "@something|something";
-        String linkWithOneTwitterName = "<a href=\"" + twitterLink + "something\">@something</a>";
-
-        String result = TwitterLinkCreator.process(invalidTwitterNameWithDot);
-
-        assertEquals(linkWithOneTwitterName, result);
-    }
 }

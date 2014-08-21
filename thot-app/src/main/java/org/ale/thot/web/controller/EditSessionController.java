@@ -91,13 +91,13 @@ public class EditSessionController {
 	@RequestMapping(value="/editSession", method = RequestMethod.POST)
 	public ModelAndView processSubmit(HttpServletRequest request,
 			ModelMap modelMap,
-			@ModelAttribute("sessionDataFormData") OpenSpaceFormData cmd,
+			@ModelAttribute("sessionDataFormData") OpenSpaceFormData formData,
 			BindingResult result) {
 
-		modelMap.put("sessionDataFormData", cmd);
+		modelMap.put("sessionDataFormData", formData);
 
 		// do validation
-		OpenSpaceValidator.validate(cmd, result);
+		OpenSpaceValidator.validate(formData, result);
 		if (result.hasErrors()) {
 			return new ModelAndView("editSession");
 		}
@@ -106,10 +106,10 @@ public class EditSessionController {
 		if (sessionId != null) {
 			try {
 				Session session = sessionDao.getSessionById(sessionId);
-				session.setAuthor(Html.escapeHtml(cmd.getSpeaker()));
-				session.setTitle(Html.escapeHtml(cmd.getTitle()));
+				session.setAuthor(Html.escapeHtml(formData.getSpeaker()));
+				session.setTitle(Html.escapeHtml(formData.getTitle()));
 				session.setDescription(Html.lineBreaksToBrTags(Html
-						.escapeHtml(cmd.getDescription())));
+						.escapeHtml(formData.getDescription())));
 				// session.setSlot(cmd.getStart());
 				// session.setLocation(cmd.getLocation());
 				sessionDao.saveSession(session);
@@ -121,11 +121,11 @@ public class EditSessionController {
 		} else {
 
 			// save the data
-			Session session = new Session(cmd.getDate(), cmd.getStart(),
-					cmd.getLocation(), cmd.getTitle(), cmd.getSpeaker(),
-					cmd.getDescription());
-			session.setEnd(cmd.getEnd());
-			session.setType(SessionType.openspace);
+			Session session = new Session(formData.getDate(), formData.getStart(),
+					formData.getLocation(), formData.getTitle(), formData.getSpeaker(),
+					formData.getDescription());
+                        session.setEnd(formData.getEnd());
+                        session.setType(SessionType.openspace);
 			sessionDao.saveSession(session);
 		}
 
