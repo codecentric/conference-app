@@ -12,13 +12,19 @@
 
 	<h3>Wednesday - 20.08.2014</h3>
 
+	<h4>Version 1.1</h4>
+	
+	<ul>
+		<li>Commenting and rating of session</li>
+		<li>Adding Links for additional resources to session (i.e. Slides, PDF files, ...)</li>
+	</ul>
+
 	<h4>Version 1</h4>
 	
 	<ul>
 		<li>Feedback function for the app</li>
-		<li>Commenting and rating of session</li>
-		<li>Adding Links for additional resources to session</li>
-		<li>I18N language support</li>
+		<li>I18N language support (New: Romanian)</li>
+		<li>Fixed Tab Bug, always show current day for Open Spaces</li>
 	</ul>
 
 	<h3>
