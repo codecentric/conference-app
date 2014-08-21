@@ -3,12 +3,24 @@
 
 <div class="container-fluid">
 
-	<p>
-	  <a class="twitter-timeline" href="https://twitter.com/hashtag/ale14" data-widget-id="274445737469820929">#ale14 Tweets</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	  <a class="twitter-timeline" href="https://twitter.com/hashtag/osswdev" data-widget-id="274512147617300480">#osswdev Tweets</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	</p>
+	<div class="row-fluid">
+		<div class="tabbable">
+			<ul class="nav nav-tabs" id="tagTabs">
+				<li class="active"><a href="#ale14-tag" data-toggle="tab">#ale14</a></li>
+				<li><a href="#osswdev-tag" data-toggle="tab">#osswdev</a></li>
+			</ul>
+		</div>
+		<div class="tab-content">
+			<div class="tab-pane" id="ale14-tag">
+				<a class="twitter-timeline" href="https://twitter.com/hashtag/ale14" data-widget-id="274445737469820929">#ale14 Tweets</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
+			<div class="tab-pane" id="osswdev-tag">
+				<a class="twitter-timeline" href="https://twitter.com/hashtag/osswdev" data-widget-id="274512147617300480">#osswdev Tweets</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
+		</div>
+	</div>
 	
 	<%@ include file="footer.html"%>
 
