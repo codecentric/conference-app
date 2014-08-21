@@ -2,26 +2,46 @@ package org.ale.app;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Before;
 import org.junit.Test;
 
 
 public class TwitterLinkCreatorTest {
 
-	@Test
+    private String twitterAddress;
+
+    @Before
+    public void setup(){
+        twitterAddress = "<a href=\"http://twitter.com/";
+    }
+
+    @Test
 	public void shouldProcessSingleTwitterName() {
-		String result = TwitterLinkCreator.process("@foobar");
-		assertEquals("<a href=\"http://twitter.com/foobar\">@foobar</a>", result);
+        String validTwitterName = "@foobar";
+        String linkWithOneTwitterName = twitterAddress + "foobar\">@foobar</a>";
+
+        String result = TwitterLinkCreator.process(validTwitterName);
+
+        assertEquals(linkWithOneTwitterName, result);
 	}
 	
 	@Test
 	public void shouldProcessSeveralTwitterNames() {
-		String result = TwitterLinkCreator.process("@foo, @bar");
-		assertEquals("<a href=\"http://twitter.com/foo\">@foo</a>, <a href=\"http://twitter.com/bar\">@bar</a>", result);
+        String twoValidTwitterNames = "@foo, @bar";
+        String linkWithTwoTwitterNames = twitterAddress + "foo\">@foo</a>, " + twitterAddress + "bar\">@bar</a>";
+
+        String result = TwitterLinkCreator.process(twoValidTwitterNames);
+
+        assertEquals(linkWithTwoTwitterNames, result);
 	}
 	
 	@Test
 	public void shouldProcessNameWithUnderscore() {
-		String result = TwitterLinkCreator.process("@foo_bar");
-		assertEquals("<a href=\"http://twitter.com/foo_bar\">@foo_bar</a>", result);
+        String validTwitterNameWithUnderscore = "@foo_bar";
+        String linkWithOneTwitterName = twitterAddress + "foo_bar\">@foo_bar</a>";
+
+        String result = TwitterLinkCreator.process(validTwitterNameWithUnderscore);
+
+        assertEquals(linkWithOneTwitterName, result);
 	}
 }

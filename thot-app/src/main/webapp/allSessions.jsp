@@ -25,7 +25,7 @@
 			
 			<div class="tab-content">	
 			<c:forEach items="${days}" var="day">
-				<div class="table-responsive" id="${day.getShortNameWithoutDots()}">
+				<div class="tab-pane table-responsive" id="${day.getShortNameWithoutDots()}">
 					<table class="table table-striped">
 						<thead>
 							<tr>
