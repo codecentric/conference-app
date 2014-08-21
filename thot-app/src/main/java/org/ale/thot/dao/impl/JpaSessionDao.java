@@ -22,22 +22,25 @@ public class JpaSessionDao implements SessionDao {
 
 	@PersistenceContext
 	private EntityManager em;
-	
-	public JpaSessionDao() { }
-	
+
+	public JpaSessionDao() {
+	}
+
 	// test constructor
 	public JpaSessionDao(EntityManager em) {
 		this.em = em;
 	}
-	
+
 	public List<Session> getSessionsByDate(String date) {
-		return em.createNamedQuery("findSessionsForDate", Session.class).setParameter("date", date).getResultList();
+		return em.createNamedQuery("findSessionsForDate", Session.class)
+				.setParameter("date", date).getResultList();
 	}
 
 	public List<Session> getAllSessions() {
-		return em.createNamedQuery("findAllSessions", Session.class).getResultList();
+		return em.createNamedQuery("findAllSessions", Session.class)
+				.getResultList();
 	}
-	
+
 	public void saveSession(Session session) {
 		em.merge(session);
 	}
@@ -47,29 +50,31 @@ public class JpaSessionDao implements SessionDao {
 	}
 
 	public List<Session> getAllStaticSessions() {
-		return em.createNamedQuery("findAllStaticSessions", Session.class).getResultList();
-	}
-	
-	public List<Session> getAllSessionsByDateAndType(String date, SessionType... type) {
-		return em.createNamedQuery("findSessionsForDate", Session.class)
-				.setParameter("date", date)
-				.setParameter("type", Arrays.asList(type))
+		return em.createNamedQuery("findAllStaticSessions", Session.class)
 				.getResultList();
 	}
 
+	public List<Session> getAllSessionsByDateAndType(String date,
+			SessionType... type) {
+		return em.createNamedQuery("findSessionsForDate", Session.class)
+				.setParameter("date", date)
+				.setParameter("type", Arrays.asList(type)).getResultList();
+	}
+
 	public List<Session> getStaticSessionsByDate(String date) {
-		return em.createNamedQuery("findStaticSessionsForDate", Session.class).setParameter("date", date).getResultList();
+		return em.createNamedQuery("findStaticSessionsForDate", Session.class)
+				.setParameter("date", date).getResultList();
 	}
 
 	public List<Session> getCurrentSessions() {
 		List<Session> todaySessions = getStaticSessionsByDate(getNowAsString());
 		List<Session> currentSessions = new ArrayList<Session>();
 		for (Session session : todaySessions) {
-			if(session.isInProgress(Calendar.getInstance())){
+			if (session.isInProgress(Calendar.getInstance())) {
 				currentSessions.add(session);
 			}
 		}
-		
+
 		return currentSessions;
 	}
 
@@ -80,18 +85,20 @@ public class JpaSessionDao implements SessionDao {
 
 	@Override
 	public List<String> getListOfConferenceDays() {
-		return em.createNamedQuery("findListOfConferenceDays",String.class).getResultList();
+		return em.createNamedQuery("findListOfConferenceDays", String.class)
+				.getResultList();
 	}
 
 	@Override
 	public List<Session> getAllSessionsByDate(String now) {
-		return em.createNamedQuery("findAllSessionsForDate", Session.class).setParameter("date", now).getResultList();
+		return em.createNamedQuery("findAllSessionsForDate", Session.class)
+				.setParameter("date", now).getResultList();
 	}
 
 	@Override
 	public List<Session> getAllSessionsByAuthor(String author) {
-		// TODO Auto-generated method stub
-		return null;
+		return em.createNamedQuery("findAllSessionsForAuthor", Session.class)
+				.setParameter("author", "%" + author + "%").getResultList();
 	}
-	
+
 }
