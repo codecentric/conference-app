@@ -10,7 +10,7 @@ public class OpenSpaceValidator {
 
 	public static void validate(OpenSpaceFormData formData, Errors errors) {
 		if ( formData.getTitle() == null || formData.getTitle().isEmpty() ) {
-			ValidationUtils.rejectIfEmpty(errors, "title", null, "Title cannot be empty!");
+            errors.rejectValue("title", null, "Title cannot be empty!");
 		}
 
 		String speaker = formData.getSpeaker();

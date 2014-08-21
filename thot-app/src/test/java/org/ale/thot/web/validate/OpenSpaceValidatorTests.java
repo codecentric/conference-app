@@ -22,16 +22,16 @@ import static org.mockito.Mockito.verify;
  */
 public class OpenSpaceValidatorTests {
     @Test
-    @Ignore
-    public void something(){
+    public void returnErrorWhenTitleIsNull(){
         OpenSpaceFormData formData = new OpenSpaceFormData();
-        String validTwitterName = "@adi";
+        formData.setTitle(null);
+        String validTwitterName = "@someValidName";
         formData.setSpeaker(validTwitterName);
         Errors errors = mock(Errors.class);
 
         OpenSpaceValidator.validate(formData, errors);
 
-        assertTrue(errors.getAllErrors().isEmpty());
+        verify(errors).rejectValue("title", null, "Title cannot be empty!");
     }
 
     @Test
