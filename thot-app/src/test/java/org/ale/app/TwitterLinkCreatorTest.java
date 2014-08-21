@@ -20,7 +20,7 @@ public class TwitterLinkCreatorTest {
 	}
 	
 	@Test
-	public void shouldProcessNameWithDash() {
+	public void shouldProcessNameWithUnderscore() {
 		String result = TwitterLinkCreator.process("@foo_bar");
 		assertEquals("<a href=\"http://twitter.com/foo_bar\">@foo_bar</a>", result);
 	}
