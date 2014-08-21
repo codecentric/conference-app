@@ -2,6 +2,7 @@ package org.ale.thot.web.validate;
 
 import org.ale.thot.model.OpenSpaceFormData;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
@@ -14,12 +15,14 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 /**
  * Created by adi on 8/21/14.
  */
 public class OpenSpaceValidatorTests {
     @Test
+    @Ignore
     public void something(){
         OpenSpaceFormData formData = new OpenSpaceFormData();
         String validTwitterName = "@adi";
@@ -32,16 +35,15 @@ public class OpenSpaceValidatorTests {
     }
 
     @Test
-    public void somethingElse(){
+    public void returnErrorWhenSpeakerNameIsEmpty(){
         OpenSpaceFormData openSpaceFormData = new OpenSpaceFormData();
-        openSpaceFormData.setSpeaker("some speaker");
-        String emptyTitle = "";
-        openSpaceFormData.setTitle(emptyTitle);
-        BindingResult bindingResult = mock(BindingResult.class);
+        openSpaceFormData.setTitle("non empty title");
+        openSpaceFormData.setSpeaker("@");
+        Errors errors = mock(Errors.class);
 
-        OpenSpaceValidator.validate(openSpaceFormData, bindingResult);
+        OpenSpaceValidator.validate(openSpaceFormData, errors);
 
-        assertTrue(bindingResult.hasErrors());
+        verify(errors).rejectValue("speaker", null, "Speaker twitter name is incorrect");
     }
 
 
