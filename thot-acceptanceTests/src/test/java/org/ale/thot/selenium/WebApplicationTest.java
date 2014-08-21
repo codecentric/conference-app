@@ -10,8 +10,7 @@ import static org.jbehave.core.reporters.Format.XML;
 import java.util.List;
 
 import org.ale.thot.selenium.pages.Pages;
-import org.ale.thot.selenium.steps.SpeakerSteps;
-import org.ale.thot.selenium.steps.WebApplicationSteps;
+import org.ale.thot.selenium.steps.StaticSessionSteps;
 import org.jbehave.core.Embeddable;
 import org.jbehave.core.annotations.AfterStories;
 import org.jbehave.core.configuration.Configuration;
@@ -77,7 +76,7 @@ public class WebApplicationTest extends JUnitStories {
 		Pages pages = new Pages(selenium,
 				SeleniumConfiguration.defaultConditionRunner(selenium), "/thot-app");
 		return new InstanceStepsFactory(configuration(), TEAR_DOWN_WEB_DRIVER,
-				new WebApplicationSteps(pages), new SpeakerSteps(pages));
+				new StaticSessionSteps(pages));
 	}
 
 	public Object TEAR_DOWN_WEB_DRIVER = this;
@@ -91,7 +90,7 @@ public class WebApplicationTest extends JUnitStories {
 	protected List<String> storyPaths() {
 		return new StoryFinder().findPaths(
 				codeLocationFromClass(this.getClass()).getFile(),
-				asList("**/speaker/*.story"), null);
+				asList("**/stories/*.story"), null);
 	}
 
 }

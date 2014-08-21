@@ -12,5 +12,9 @@ public class StaticSessions extends AbstractPage {
 	public void open() {
         open("/staticSessions");
     }
+	
+	public void checkIfCurrentSessionsAreShown(){
+		isElementPresent("current_sessions");
+	}
 
 }
