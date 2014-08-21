@@ -31,7 +31,6 @@ public class TimeslotController {
 	public void setupForm(ModelMap modelMap, HttpServletRequest request) {
 		String sessionId = request.getParameter("sessionId");
 		try {
-			long lSessionId = Long.valueOf(sessionId);
 			Session session = null;
 			session = sessionDao.getSessionById(sessionId);
 			modelMap.put("sessionId", sessionId);
