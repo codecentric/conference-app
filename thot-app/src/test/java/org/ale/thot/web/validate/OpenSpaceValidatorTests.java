@@ -24,7 +24,8 @@ public class OpenSpaceValidatorTests {
     @Test
     public void returnErrorWhenTitleIsNull(){
         OpenSpaceFormData formData = new OpenSpaceFormData();
-        formData.setTitle(null);
+        String nullTitle = null;
+        formData.setTitle(nullTitle);
         String validTwitterName = "@someValidName";
         formData.setSpeaker(validTwitterName);
         Errors errors = mock(Errors.class);
@@ -33,6 +34,21 @@ public class OpenSpaceValidatorTests {
 
         verify(errors).rejectValue("title", null, "Title cannot be empty!");
     }
+
+    @Test
+    public void returnErrorWhenTitleIsEmpty(){
+        OpenSpaceFormData formData = new OpenSpaceFormData();
+        String emptyTitle = "";
+        formData.setTitle(emptyTitle);
+        String validTwitterName = "@someValidName";
+        formData.setSpeaker(validTwitterName);
+        Errors errors = mock(Errors.class);
+
+        OpenSpaceValidator.validate(formData, errors);
+
+        verify(errors).rejectValue("title", null, "Title cannot be empty!");
+    }
+
 
     @Test
     public void returnErrorWhenSpeakerNameIsNull(){
