@@ -26,7 +26,7 @@ public class TwitterLinkCreatorTest {
 	public void shouldProcessSeveralTwitterNames() {
 		String result = TwitterLinkCreator.process("@foo, @bar");
 
-        assertEquals(twitterAddress +"foo\">@foo</a>, <a href=\"http://twitter.com/"+"bar\">@bar</a>", result);
+        assertEquals(twitterAddress +"foo\">@foo</a>, "+twitterAddress+"bar\">@bar</a>", result);
 	}
 	
 	@Test
