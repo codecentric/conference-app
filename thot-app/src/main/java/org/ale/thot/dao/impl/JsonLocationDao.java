@@ -6,12 +6,15 @@ import java.util.List;
 
 import org.ale.thot.dao.LocationDao;
 import org.ale.thot.domain.Location;
+import org.apache.log4j.Logger;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class JsonLocationDao implements LocationDao {
+	
+	private static final Logger LOGGER = Logger.getLogger(JsonLocationDao.class);
 	
 	@Autowired
 	private ObjectMapper jsonMapper;
@@ -31,9 +34,9 @@ public class JsonLocationDao implements LocationDao {
 					locations = jsonMapper.readValue(jsonStream, new TypeReference<List<Location>>() {});
 				}
 			} catch (JsonParseException e) {
-				e.printStackTrace();
+				LOGGER.error("JsonParseException", e);
 			} catch (IOException e) {
-				e.printStackTrace();
+				LOGGER.error("IOException", e);
 			}
 		}
 		return locations;

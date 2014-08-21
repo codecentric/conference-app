@@ -10,6 +10,7 @@ import org.ale.thot.dao.CommentDao;
 import org.ale.thot.dao.LinkDao;
 import org.ale.thot.dao.SessionDao;
 import org.ale.thot.domain.Session;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -20,6 +21,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/comments")
 public class CommentsController {
 
+	private static final Logger LOGGER = Logger.getLogger(CommentsController.class);
+	
 	private static final String SESSION_TYPE_SESSION = "session";
 	
 	@Autowired
@@ -78,7 +81,7 @@ public class CommentsController {
 		try {
 			out = URLDecoder.decode(out, "UTF-8");
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			LOGGER.error("UnsupportedEncodingException", e);
 		}
 		return out;
 	}
