@@ -45,5 +45,4 @@ public class TwitterLinkCreatorTest {
 
         assertEquals(linkWithOneTwitterName, result);
 	}
-
 }
