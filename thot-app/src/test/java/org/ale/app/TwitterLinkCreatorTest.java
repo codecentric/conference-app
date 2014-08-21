@@ -17,22 +17,31 @@ public class TwitterLinkCreatorTest {
 
     @Test
 	public void shouldProcessSingleTwitterName() {
-        String result = TwitterLinkCreator.process("@foobar");
+        String validTwitterName = "@foobar";
+        String linkWithOneTwitterName = twitterAddress + "foobar\">@foobar</a>";
 
-        assertEquals(twitterAddress +"foobar\">@foobar</a>", result);
+        String result = TwitterLinkCreator.process(validTwitterName);
+
+        assertEquals(linkWithOneTwitterName, result);
 	}
 	
 	@Test
 	public void shouldProcessSeveralTwitterNames() {
-		String result = TwitterLinkCreator.process("@foo, @bar");
+        String twoValidTwitterNames = "@foo, @bar";
+        String linkWithTwoTwitterNames = twitterAddress + "foo\">@foo</a>, " + twitterAddress + "bar\">@bar</a>";
 
-        assertEquals(twitterAddress +"foo\">@foo</a>, "+twitterAddress+"bar\">@bar</a>", result);
+        String result = TwitterLinkCreator.process(twoValidTwitterNames);
+
+        assertEquals(linkWithTwoTwitterNames, result);
 	}
 	
 	@Test
 	public void shouldProcessNameWithUnderscore() {
-		String result = TwitterLinkCreator.process("@foo_bar");
+        String validTwitterNameWithUnderscore = "@foo_bar";
+        String linkWithOneTwitterName = twitterAddress + "foo_bar\">@foo_bar</a>";
 
-        assertEquals(twitterAddress +"foo_bar\">@foo_bar</a>", result);
+        String result = TwitterLinkCreator.process(validTwitterNameWithUnderscore);
+
+        assertEquals(linkWithOneTwitterName, result);
 	}
 }
