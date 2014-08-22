@@ -22,7 +22,7 @@
 		 			<c:choose>
 		 				<c:when test="${!currentSessions.isEmpty()}">
 							<table class="table table-striped">
-								<%@ include file="schedule_tableheader.html"%>
+								<%@ include file="currentSessions_tableheader.html"%>
 								<tbody>
 									<c:forEach items="${currentSessions}" var="session">
 				                        <c:url value="comments" var="url" scope="page">
@@ -35,6 +35,7 @@
 											<td>${session.title}</td>
 											<td>${session.author}</td>
 											<td>${session.location}</td>
+											<td>${session.type.label}</td>
 											<td><a class="btn btn-primary" href='comments?sessionId=${session.id}'>Comment</a></td>
 										</tr>
 									</c:forEach>
