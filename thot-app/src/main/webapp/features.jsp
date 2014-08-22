@@ -10,6 +10,17 @@
 		</h1>
 	</div>
 
+	<h3>Friday - 22.08.2014</h3>
+
+	<h4>Version 1.3</h4>
+	
+	<ul>
+		<li>Added Session Type to Tables</li>
+		<li>Added upcoming sessions to current sessions</li>
+		<li>Fixed Session Type bugs</li>
+		<li>Added more acceptance tests</li>
+	</ul>
+
 	<h3>Thursday - 21.08.2014</h3>
 
 	<h4>Version 1.2</h4>
