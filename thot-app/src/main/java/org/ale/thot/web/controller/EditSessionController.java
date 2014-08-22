@@ -106,6 +106,7 @@ public class EditSessionController {
 		OpenSpaceValidator.validate(formData, result);
 
 		if (result.hasErrors()) {
+			System.out.println("Validation errors ocurred.");
 			return new ModelAndView("editSession");
 		}
 
@@ -117,8 +118,6 @@ public class EditSessionController {
 				session.setTitle(Html.escapeHtml(formData.getTitle()));
 				session.setDescription(Html.lineBreaksToBrTags(Html
 						.escapeHtml(formData.getDescription())));
-				// session.setSlot(cmd.getStart());
-				// session.setLocation(cmd.getLocation());
 				sessionDao.saveSession(session);
 
 				return new ModelAndView("redirect:allSessions");
@@ -126,13 +125,12 @@ public class EditSessionController {
 				// do nothing!
 			}
 		} else {
-
 			// save the data
 			Session session = new Session(formData.getDate(), formData.getStart(),
 					formData.getLocation(), formData.getTitle(), formData.getSpeaker(),
 					formData.getDescription());
-                        session.setEnd(formData.getEnd());
-                        session.setType(SessionType.openspace);
+            session.setEnd(formData.getEnd());
+            session.setType(SessionType.openspace);
 			sessionDao.saveSession(session);
 		}
 

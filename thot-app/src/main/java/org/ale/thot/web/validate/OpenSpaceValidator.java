@@ -16,7 +16,7 @@ public class OpenSpaceValidator {
 		String speaker = formData.getSpeaker();
         if(speaker == null
                 ||
-            (speaker != null && !nameValidator.isValid(speaker))) {
+            (speaker != null && speaker.startsWith("@") && !nameValidator.isValid(speaker))) {
         	errors.rejectValue("speaker", null, "Speaker twitter name is incorrect");
         }
 	}
