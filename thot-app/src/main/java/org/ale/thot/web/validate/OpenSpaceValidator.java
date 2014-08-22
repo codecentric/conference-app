@@ -1,7 +1,6 @@
 package org.ale.thot.web.validate;
 
 import org.ale.app.INameValidator;
-import org.ale.thot.Time24HoursValidator;
 import org.ale.thot.model.OpenSpaceFormData;
 import org.springframework.validation.Errors;
 

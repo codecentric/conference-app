@@ -1,4 +1,4 @@
-package org.ale.thot;
+package org.ale.thot.web.validate;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

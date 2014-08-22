@@ -2,7 +2,6 @@ package org.ale.thot.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.ale.thot.Time24HoursValidator;
 import org.ale.thot.dao.LocationDao;
 import org.ale.thot.dao.SessionDao;
 import org.ale.thot.dao.TimeslotDao;
@@ -10,6 +9,7 @@ import org.ale.thot.domain.Session;
 import org.ale.thot.domain.SessionType;
 import org.ale.thot.model.OpenSpaceFormData;
 import org.ale.thot.web.validate.OpenSpaceValidator;
+import org.ale.thot.web.validate.Time24HoursValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
