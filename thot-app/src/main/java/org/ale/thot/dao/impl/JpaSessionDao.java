@@ -46,7 +46,7 @@ public class JpaSessionDao implements SessionDao {
 	}
 
 	public Session getSessionById(String id) {
-		return em.find(Session.class, Long.parseLong(id));
+		return em.find(Session.class, Integer.parseInt(id));
 	}
 
 	public List<Session> getAllStaticSessions() {
