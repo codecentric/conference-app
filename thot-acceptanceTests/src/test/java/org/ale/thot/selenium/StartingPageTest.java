@@ -6,9 +6,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class FeaturePageTest extends AbstractPageTest {
+public class StartingPageTest extends AbstractPageTest {
 
-	private String pageLink = "/features.jsp";
+	private String pageLink = "/";
 	
 	@Test
 	public void openPageAndValidateTitle() {
@@ -17,10 +17,13 @@ public class FeaturePageTest extends AbstractPageTest {
 	}
 	
 	@Test
-	public void openFeaturePage() {
+	public void openStartingPage() {
 		open(pageLink);
 		WebElement title = driver.findElement(By.id("title"));
 		assertTrue(title.isDisplayed());
+
+		WebElement currentSessions = driver.findElement(By.id("current_sessions"));
+		assertTrue(currentSessions.isDisplayed());
 	}
 
 }
