@@ -20,6 +20,8 @@
 			<p>${location}</p>
 			<h4>Start time</h4>
 			<p>${timeslot}</p>
+			<h4>End time</h4>
+			<p>${timeslotEnd}</p>
 
 			<c:if test="${sessionEditable}">
 				<a class="btn btn-primary"

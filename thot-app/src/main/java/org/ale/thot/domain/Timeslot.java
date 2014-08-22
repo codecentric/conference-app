@@ -23,6 +23,10 @@ public class Timeslot {
 		return start;
 	}
 	
+	public String getEnd() {
+		return end;
+	}
+	
 	@Override
 	public String toString() {
 		String endToConcatenate = end != null ? " - " + end : "";

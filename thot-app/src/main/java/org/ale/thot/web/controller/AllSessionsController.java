@@ -6,6 +6,7 @@ import org.ale.thot.dao.TimeslotDao;
 import org.ale.thot.domain.Day;
 import org.ale.thot.domain.Location;
 import org.ale.thot.domain.Session;
+import org.ale.thot.domain.SessionType;
 import org.ale.thot.domain.Timeslot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -44,7 +45,7 @@ public class AllSessionsController {
 		Map<String, List<Timeslot>> allTimeslots = new HashMap<String, List<Timeslot>>();
 
 		for(Day day : conferenceDays) {
-			List<Session> daySessions = sessionDao.getSessionsByDate(day.getShortName());
+			List<Session> daySessions = sessionDao.getAllSessionsByDateAndType(day.getShortName(), SessionType.openspace);
 			// if there are no sessions for this day in the database let's create some empty session objects 
 			// if(daySessions == null || daySessions.isEmpty()) {
 			//   createDefaultSessionsForDay(day, locations);

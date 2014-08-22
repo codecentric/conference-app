@@ -8,26 +8,14 @@
 	<%@ include file="menu.jsp"%>
 
 	<div class="container-fluid">
-		<!--/span-->
 		<div class="well well-small">
 			<h1>
-				<spring:message code="sessions" text="sessions" />
+				<spring:message code="current.sessions" text="Current Sessions" />
 			</h1>
-			<br />
-			<p>
-				<spring:message code="session.day.selection" text="session.day.selection" />
-			</p>
 		</div>
 
 		<br style="clear: both;" />
 
-		<ul class="nav nav-tabs">
-			<li class="active"><a href="#current_sessions" data-toggle="tab"><spring:message code="current_session" text="current sessions" /></a></li>
-			<c:forEach items="${sessionDays}" var="day" varStatus="status">
-				<li><a href="#date${status.index}" data-toggle="tab"> ${day} </a></li>
-			</c:forEach>
-		</ul>
-		
 		<div class="tab-content">
 		 	<div class="tab-pane active" id="current_sessions">
 		 		<div class="row-fluid">
@@ -47,7 +35,7 @@
 											<td>${session.title}</td>
 											<td>${session.author}</td>
 											<td>${session.location}</td>
-											<td><a class="btn btn-primary" href='addComment?sessionId=${session.id}'>Comment</a></td>
+											<td><a class="btn btn-primary" href='comments?sessionId=${session.id}'>Comment</a></td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -97,4 +85,4 @@
     </script>
     <%@ include file="footer.html"%>
     
-    </div>
+</div>
