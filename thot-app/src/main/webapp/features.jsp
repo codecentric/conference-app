@@ -12,13 +12,19 @@
 
 	<h3>Friday - 22.08.2014</h3>
 
+	<h4>Version 1.5</h4>
+	
+	<ul>
+		<li>Added Anytime Anywhere Sessions incl. Validation</li>
+		<li>Propose new sessions</li>
+	</ul>
+
 	<h4>Version 1.4</h4>
 	
 	<ul>
 		<li>Added ALE Logo</li>
 		<li>Fixed index html Bug</li>
 	</ul>
-	
 	
 	<h4>Version 1.3</h4>
 	
