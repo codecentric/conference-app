@@ -209,9 +209,6 @@ public class Session implements Comparable<Session> {
 	 * @return true if session will start in +/- 1 hour from now
 	 */
 	public boolean isInNearProgress(DateTime now ) {
-		if(end == null) {
-			return false;
-		}
 	     DateTime startTime  = DateTime.parse(this.date + " " + this.start, DateTimeFormat.forPattern("dd.MM.yyyy HH:mm"));
 	     DateTime erlearStart = now.minusHours(1);
 	     DateTime laterStart = now.plusHours(1);
