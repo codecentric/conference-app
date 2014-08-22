@@ -6,9 +6,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class CurrentSessionsPageTest extends AbstractPageTest {
+public class OpenSpaceSessionsPageTest extends AbstractPageTest {
 
-	private String pageLink = "/currentSessions";
+	private String pageLink = "/allSessions";
 	
 	@Test
 	public void openPageAndValidateTitle() {
@@ -22,5 +22,14 @@ public class CurrentSessionsPageTest extends AbstractPageTest {
 		WebElement title = driver.findElement(By.id("title"));
 		assertTrue(title.isDisplayed());
 	}
-
+	
+	@Test
+	public void checkProposeNewSessionClickable() {
+		open(pageLink);
+		WebElement proposeNewSession = driver.findElement(By.id("proposeNewSession"));
+		assertTrue(proposeNewSession.isDisplayed());
+		proposeNewSession.click();
+	
+		
+	}
 }

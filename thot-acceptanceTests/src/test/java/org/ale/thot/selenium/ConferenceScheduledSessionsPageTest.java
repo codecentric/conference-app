@@ -6,9 +6,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class CurrentSessionsPageTest extends AbstractPageTest {
+public class ConferenceScheduledSessionsPageTest extends AbstractPageTest {
 
-	private String pageLink = "/currentSessions";
+	private String pageLink = "/staticSessions";
 	
 	@Test
 	public void openPageAndValidateTitle() {
