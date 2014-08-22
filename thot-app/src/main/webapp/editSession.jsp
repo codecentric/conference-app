@@ -34,7 +34,10 @@
 				<form:hidden path="start"/>
 				<form:hidden path="end"/>
 				<form:hidden path="location"/>
-			</form:form>
+            <c:if test="${!newSession}">
+                <input name="sessionId" type="hidden" value="${sessionDataFormData.sessionId}" />
+            </c:if>
+        </form:form>
 		</div>
 
 <%@ include file="footer.html"%>
