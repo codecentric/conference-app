@@ -1,6 +1,7 @@
 package org.ale.thot.web.validate;
 
 import org.ale.app.INameValidator;
+import org.ale.thot.Time24HoursValidator;
 import org.ale.thot.model.OpenSpaceFormData;
 import org.springframework.validation.Errors;
 
@@ -19,5 +20,14 @@ public class OpenSpaceValidator {
             (speaker != null && speaker.startsWith("@") && !nameValidator.isValid(speaker))) {
         	errors.rejectValue("speaker", null, "Speaker twitter name is incorrect");
         }
+        
+        Time24HoursValidator timeValidator = new Time24HoursValidator();
+        if( ! timeValidator.validate(formData.getStart())) {
+        	errors.rejectValue("start", null, "Start time needs to be in format hh:mm");
+        }
+        if( ! timeValidator.validate(formData.getEnd())) {
+        	errors.rejectValue("end", null, "End time needs to be in format hh:mm");
+        }
+        
 	}
 }

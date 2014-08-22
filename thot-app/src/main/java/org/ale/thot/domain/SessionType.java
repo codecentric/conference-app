@@ -1,7 +1,7 @@
 package org.ale.thot.domain;
 
 public enum SessionType {
-	openspace("Openspace"), session("Session");
+	openspace("Openspace"), session("Session"), openspaceanywhere("Openspace Anywhere");
 	
 	private String label;
 	

@@ -26,6 +26,7 @@
 			<div class="tab-content">	
 			<c:forEach items="${days}" var="day">
 				<div class="tab-pane table-responsive" id="${day.getShortNameWithoutDots()}">
+
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -54,9 +55,41 @@
 						</c:forEach>
 						</tbody>
 					</table>
-				</div>
-			</c:forEach>
+
+					<hr/>
+
+					<a class="btn btn-primary" href="proposeNewSession?day=${day.getShortName()}">Propose a new session anytime anywhere</a>
+
+					<hr/>
 					
+					<h3>Anytime Anywhere Open Sessions</h3>
+					
+					<div class="row-fluid">
+						<table class="table table-striped">
+							<%@ include file="schedule_tableheader.html"%>
+							<tbody>
+								<c:forEach items="${openspaceAnywhereSessions}" var="session">
+			                        <c:url value="comments" var="url" scope="page">
+			                            <c:param name="sessionId" value="${session.id}" />
+			                        </c:url>
+									<tr class="sessions" data-link="${url}">
+										<td>${session.date}</td>
+										<td>${session.start}</td>
+										<td>${session.end}</td>
+										<td>${session.title}</td>
+										<td>${session.author}</td>
+										<td>${session.location}</td>
+										<td><a class="btn btn-primary" href='addComment?sessionId=${session.id}'>Comment</a></td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+					</div>
+			
+				</div>
+
+			</c:forEach>
+
 			</div>
 		</div>
 	</div>
