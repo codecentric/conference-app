@@ -160,50 +160,11 @@
                     <wtpversion>2.0</wtpversion>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.cargo</groupId>
-                <artifactId>cargo-maven2-plugin</artifactId>
-                <version>1.2.4</version>
-                <configuration>
-                    <container>
-                        <containerId>tomcat7x</containerId>
-                        <type>remote</type>
-                    </container>
-                    <configuration>
-                        <type>runtime</type>
-                        <properties>
-                            <cargo.hostname>${cargo.host}</cargo.hostname>
-                            <cargo.protocol>http</cargo.protocol>
-                            <cargo.servlet.port>8080</cargo.servlet.port>
-                            <cargo.remote.username>${cargo.user}</cargo.remote.username>
-                            <cargo.remote.password>${cargo.pwd}</cargo.remote.password>
-                        </properties>
-                    </configuration>
-                    <deployer>
-                        <type>remote</type>
-                    </deployer>
-                    <deployables>
-                        <deployable>
-                            <groupId>${project.groupId}</groupId>
-                            <artifactId>${project.artifactId}</artifactId>
-                            <type>war</type>
-                            <!-- <properties>
-                                <context>optional root context</context>
-                            </properties>
-                            <pingURL>optional url to ping to know if deployable is done or
-                                not</pingURL>
-                            <pingTimeout>optional timeout to ping (default 20000
-                                milliseconds)</pingTimeout> -->
-                        </deployable>
-                    </deployables>
-                </configuration>
-            </plugin>
-
             <!-- Run the application using "mvn jetty:run" -->
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>7.6.5.v20120716</version>
+                <version>8.1.14.v20131031</version>
             </plugin>
 
         </plugins>
@@ -218,33 +179,7 @@
 
     <profiles>
         <profile>
-            <id>local</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <cargo.host>localhost</cargo.host>
-                <cargo.user>admin</cargo.user>
-                <cargo.pwd>admin</cargo.pwd>
-            </properties>
-        </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <cargo.host>107.20.22.51</cargo.host>
-                <cargo.user>admin</cargo.user>
-                <cargo.pwd>admin</cargo.pwd>
-            </properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties>
-                <cargo.host>54.242.239.6</cargo.host>
-                <cargo.user>admin</cargo.user>
-                <cargo.pwd>admin</cargo.pwd>
-            </properties>
-        </profile>
-        <profile>
+        	<!-- coverage data for SonarQube -->
             <id>with-jacoco</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
@@ -271,17 +206,7 @@
                             </execution>
                         </executions>
                     </plugin>
-
                 </plugins>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.mortbay.jetty</groupId>
-                            <artifactId>jetty-maven-plugin</artifactId>
-                            <version>8.1.14.v20131031</version>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
             </build>
         </profile>
     </profiles>
