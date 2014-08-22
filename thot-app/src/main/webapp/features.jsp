@@ -5,7 +5,7 @@
 <div class="container-fluid">
 
 	<div class="well well-small">
-		<h1>
+		<h1 id="versionTitle">
 			<spring:message code="versionhistory" text="versionhistory" />
 		</h1>
 	</div>
