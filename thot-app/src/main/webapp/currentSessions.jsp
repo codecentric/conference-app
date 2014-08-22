@@ -8,8 +8,9 @@
 	<%@ include file="menu.jsp"%>
 
 	<div class="container-fluid">
+	
 		<div class="well well-small">
-			<h1>
+			<h1 id="title">
 				<spring:message code="current.sessions" text="Current Sessions" />
 			</h1>
 		</div>

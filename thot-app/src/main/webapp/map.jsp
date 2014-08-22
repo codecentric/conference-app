@@ -10,7 +10,7 @@
 
 <div class="container-fluid">
 
-	<div class="well well-small">
+	<div id="title" class="well well-small">
 		<h2><spring:message code="map" text="map"/></h2> 
 	</div>
 

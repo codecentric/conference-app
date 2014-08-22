@@ -11,7 +11,7 @@
 <div class="container-fluid">
 
 	<div class="well well-small">
-		<h1><spring:message code="feedback" text="Recent comments"/></h1>
+		<h1 id="title"><spring:message code="feedback" text="Recent comments"/></h1>
 	</div>
 	
 	<br style="clear: both;"/>
