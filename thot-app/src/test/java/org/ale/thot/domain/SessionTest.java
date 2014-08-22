@@ -125,9 +125,9 @@ public class SessionTest {
 	}
     
     @Test
-	public void isInNearProgressReturnsFalseIfStartIsInTwoHours() {
+	public void isInNearProgressReturnsFalseIfStartIsInFourHours() {
     	session.setDate("01.01.2014");
-		session.setStart("10:00");
+		session.setStart("12:00");
 		session.setEnd("11:00");
 		setNowDt("01.01.2014", "08:00");
 		assertFalse(session.isInNearProgress(nowDt));
