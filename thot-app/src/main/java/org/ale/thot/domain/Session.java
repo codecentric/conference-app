@@ -13,6 +13,9 @@ import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+
 /**
  * Domain object to represent data for a session.
  */
@@ -200,6 +203,20 @@ public class Session implements Comparable<Session> {
 		
 		return timeIdent >= startAsInt && timeIdent <= endAsInt;
 	}
+	
+	/**Method defines if session is near to be started or finished +/- 1 hour 
+	 * @param now
+	 * @return true if session will start in +/- 1 hour from now
+	 */
+	public boolean isInNearProgress(DateTime now ) {
+		if(end == null) {
+			return false;
+		}
+	     DateTime startTime  = DateTime.parse(this.date + " " + this.start, DateTimeFormat.forPattern("dd.MM.yyyy HH:mm"));
+	     DateTime erlearStart = now.minusHours(1);
+	     DateTime laterStart = now.plusHours(1);
+		return (startTime.isAfter(erlearStart) && (startTime.isBefore(laterStart) || startTime.isEqual(laterStart)));
+	}
 
 	public void setStart(String start) {
 		this.start = start;
@@ -207,6 +224,10 @@ public class Session implements Comparable<Session> {
 
 	public void setEnd(String end) {
 		this.end = end;
+	}
+	
+	public void setDate(String date){
+		this.date = date;
 	}
 
     @Override

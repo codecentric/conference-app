@@ -6,6 +6,8 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Calendar;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,6 +16,7 @@ public class SessionTest {
 	private Session session;
 	private Session session2;
 	private Calendar now;
+	private DateTime nowDt;
 
 	@Before
 	public void setup(){
@@ -25,6 +28,10 @@ public class SessionTest {
 		now = Calendar.getInstance();
 		now.set(Calendar.HOUR_OF_DAY, hour);
 		now.set(Calendar.MINUTE, minute);
+	}
+	
+	private void setNowDt(String date, String start) {
+		nowDt = DateTime.parse(date + " " + start, DateTimeFormat.forPattern("dd.MM.yyyy HH:mm"));
 	}
 	
 	@Test
@@ -108,5 +115,21 @@ public class SessionTest {
         assertTrue(session.compareTo(session2) > 0);
     }
     
-
+    @Test
+	public void isInNearProgressReturnsTrueIfStartIsInOneHour() {
+    	session.setDate("01.01.2014");
+		session.setStart("10:00");
+		session.setEnd("11:00");
+		setNowDt("01.01.2014", "09:00");
+		assertTrue(session.isInNearProgress(nowDt));
+	}
+    
+    @Test
+	public void isInNearProgressReturnsFalseIfStartIsInTwoHours() {
+    	session.setDate("01.01.2014");
+		session.setStart("10:00");
+		session.setEnd("11:00");
+		setNowDt("01.01.2014", "08:00");
+		assertFalse(session.isInNearProgress(nowDt));
+	}
 }

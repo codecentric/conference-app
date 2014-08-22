@@ -10,6 +10,7 @@ import java.util.TreeMap;
 import org.ale.thot.dao.SessionDao;
 import org.ale.thot.domain.Session;
 import org.ale.thot.domain.SessionType;
+import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -41,9 +42,9 @@ public class CurrentSessionsController {
 	private List<Session> filterCurrentSessions(List<Session> allSessionsByDate) {
 		List<Session> result = new ArrayList<Session>();
 		for(Session session : allSessionsByDate ) {
-//			if( ! (session.getType() == null ) ) {
+			   if(session.isInNearProgress(DateTime.now())){
 				result.add(session);
-//			}
+			   }
 		}
 		return result;
 	}

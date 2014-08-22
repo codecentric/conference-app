@@ -13,6 +13,7 @@ import javax.persistence.PersistenceContext;
 import org.ale.thot.dao.SessionDao;
 import org.ale.thot.domain.Session;
 import org.ale.thot.domain.SessionType;
+import org.joda.time.DateTime;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -78,6 +79,17 @@ public class JpaSessionDao implements SessionDao {
 		return currentSessions;
 	}
 
+	public List<Session> getAllCurrentSessions() {
+		List<Session> todaySessions = getAllSessionsByDate(getNowAsString());
+		List<Session> currentSessions = new ArrayList<Session>();
+		for (Session session : todaySessions) {
+			if (session.isInNearProgress(DateTime.now())) {
+				currentSessions.add(session);
+			}
+		}
+
+		return currentSessions;
+	}
 	String getNowAsString() {
 		SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
 		return format.format(new Date());
