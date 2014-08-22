@@ -44,7 +44,7 @@
 									<td>${session.end}</td>
 									<td>${session.title}</td>
 									<td>${session.location}</td>
-									<td>${session.type}</td>
+									<td>${session.type.label}</td>
 									<td><a class="btn btn-primary"
 										href='comments?sessionId=${session.id}'>Comment</a></td>
 								</tr>
