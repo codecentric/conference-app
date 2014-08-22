@@ -10,6 +10,18 @@
 		</h1>
 	</div>
 
+	<h3>Thursday - 21.08.2014</h3>
+
+	<h4>Version 1.2</h4>
+	
+	<ul>
+		<li>Added author search</li>
+		<li>Added current session page that displays all open space and static sessions</li>
+		<li>Update DB schema: update session set type = 'openspace' where type is null;</li>
+		<li>Fixed minor layouting bugs for mobil devices</li>
+		<li>Put Twitter widgets on different tabs (mobil devices)</li>
+	</ul>
+	
 	<h3>Wednesday - 20.08.2014</h3>
 
 	<h4>Version 1.1</h4>
