@@ -10,7 +10,7 @@
 <div class="container-fluid">
 
 	<div class="well well-small">
-		<h1><spring:message code="marketplace" text="marketplace"/></h1>
+		<h1 id="title"><spring:message code="marketplace" text="marketplace"/></h1>
 	</div>
 
 	<br style="clear: both;"/>
@@ -58,7 +58,7 @@
 
 					<hr/>
 
-					<a class="btn btn-primary" href="proposeNewSession?day=${day.getShortName()}">Propose a new session anytime anywhere</a>
+					<a id="proposeNewSession" class="btn btn-primary" href="proposeNewSession?day=${day.getShortName()}">Propose a new session anytime anywhere</a>
 
 					<hr/>
 					

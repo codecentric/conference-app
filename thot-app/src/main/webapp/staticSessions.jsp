@@ -10,13 +10,10 @@
 	<div class="container-fluid">
 		<!--/span-->
 		<div class="well well-small">
-			<h1>
-				<spring:message code="sessions" text="sessions" />
-			</h1>
+			<h1 id="title"><spring:message code="sessions" text="sessions" /></h1>
+			
 			<br />
-			<p>
-				<spring:message code="session.day.selection" text="session.day.selection" />
-			</p>
+			<p><spring:message code="session.day.selection" text="session.day.selection" /></p>
 		</div>
 
 		<br style="clear: both;" />
