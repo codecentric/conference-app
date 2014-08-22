@@ -211,8 +211,9 @@ public class Session implements Comparable<Session> {
 	public boolean isInNearProgress(DateTime now ) {
 	     DateTime startTime  = DateTime.parse(this.date + " " + this.start, DateTimeFormat.forPattern("dd.MM.yyyy HH:mm"));
 	     DateTime erlearStart = now.minusHours(1);
-	     DateTime laterStart = now.plusHours(1);
-		return (startTime.isAfter(erlearStart) && (startTime.isBefore(laterStart) || startTime.isEqual(laterStart)));
+	     DateTime laterStart = now.plusHours(2);
+		return ((startTime.isAfter(erlearStart) || startTime.isEqual(erlearStart))
+			 && (startTime.isBefore(laterStart) || startTime.isEqual(laterStart)));
 	}
 
 	public void setStart(String start) {
