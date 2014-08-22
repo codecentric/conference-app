@@ -31,7 +31,7 @@ public class Session implements Comparable<Session> {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private int id;
 
 	private Date startDate;
 	private String date;
@@ -171,49 +171,19 @@ public class Session implements Comparable<Session> {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result
-				+ ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((author == null) ? 0 : author.hashCode());
-		result = prime * result + ((title == null) ? 0 : title.hashCode());
-		return result;
+        return id;
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj == null) {
-			return false;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		Session other = (Session) obj;
-		if (description == null) {
-			if (other.description != null) {
-				return false;
-			}
-		} else if (!description.equals(other.description)) {
-			return false;
-		}
-		if (author == null) {
-			if (other.author != null) {
-				return false;
-			}
-		} else if (!author.equals(other.author)) {
-			return false;
-		}
-		if (title == null) {
-			if (other.title != null) {
-				return false;
-			}
-		} else if (!title.equals(other.title)) {
-			return false;
-		}
-		return true;
+		if ((obj instanceof Session) == false) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        Session other = (Session) obj;
+        return id == other.id;
 	}
 
 	public boolean isInProgress(Calendar now) {

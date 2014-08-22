@@ -19,7 +19,7 @@ public interface SessionDao {
 	/* returns all sessions for a specific date */
 	List<Session> getSessionsByDate(String date);
 	
-	void saveSession(Session session);
+	Session saveSession(Session session);
 
 	Session getSessionById(String id);
 

@@ -41,8 +41,8 @@ public class JpaSessionDao implements SessionDao {
 				.getResultList();
 	}
 
-	public void saveSession(Session session) {
-		em.merge(session);
+	public Session saveSession(Session session) {
+		return em.merge(session);
 	}
 
 	public Session getSessionById(String id) {
