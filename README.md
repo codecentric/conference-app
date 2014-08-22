@@ -21,4 +21,3 @@ Open Space Software Development @ALE 2014
 | Test | http://54.220.156.170:8080/thot-app |
 | Staging | http://79.125.57.180:8080/thot-app | 
 | Production | http://54.74.244.250:8080/thot-app |
-
