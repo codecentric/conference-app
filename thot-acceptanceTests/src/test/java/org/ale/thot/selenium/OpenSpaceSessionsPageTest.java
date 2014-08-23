@@ -23,13 +23,4 @@ public class OpenSpaceSessionsPageTest extends AbstractPageTest {
 		assertTrue(title.isDisplayed());
 	}
 	
-	@Test
-	public void checkProposeNewSessionClickable() {
-		open(pageLink);
-		WebElement proposeNewSession = driver.findElement(By.id("proposeNewSession"));
-		assertTrue(proposeNewSession.isDisplayed());
-		proposeNewSession.click();
-	
-		
-	}
 }

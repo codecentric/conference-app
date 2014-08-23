@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public abstract class AbstractPageTest {
 
-	private static String serverUrl = "http://localhost:9080/thot-app";
+	private static String serverUrl = "http://localhost:9080/thot";
 	private static final String SYSTEM_PROPERTY = "server.url";
 	private String baseUrl;
 	

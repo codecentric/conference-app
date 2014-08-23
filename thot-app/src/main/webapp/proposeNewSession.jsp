@@ -10,7 +10,7 @@
 <div class="container-fluid">
 
 	<div class="well well-small">
-		<h1>Propose new Session - Anytime / Anywhere</h1>
+		<h1 title="proposeNewSession">Propose new Session - Anytime / Anywhere</h1>
 	</div>
 	
 	<div class="row-fluid">
