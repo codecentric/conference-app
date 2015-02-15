@@ -19,7 +19,7 @@ import org.ale.app.TwitterLinkCreator;
 @Entity(name="comment")
 @NamedQueries({
 	@NamedQuery(name = "findCommentForSession", query = "from comment where sessionId=:sessionId order by date desc"),
-	@NamedQuery(name = "findRecentComments", query = "select c.date, c.author, c.text, s.id, s.title from comment c, session s where c.sessionId = s.id order by c.date desc limit 25")
+	@NamedQuery(name = "findRecentComments", query = "select c.date, c.author, c.text, s.id, s.title from comment c, session s where c.sessionId = s.id order by c.date desc")
 })
 public class Comment {
 

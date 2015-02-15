@@ -37,7 +37,7 @@ public class JpaCommentDao implements CommentDao {
 		List<TimelineEntry> result = new ArrayList<TimelineEntry>();
 
 		@SuppressWarnings("unchecked")
-		List<Object[]> resultList = em.createNamedQuery("findRecentComments").getResultList();
+		List<Object[]> resultList = em.createNamedQuery("findRecentComments").setMaxResults(25).getResultList();
 
 		for ( Object[] entry : resultList ) {
 			result.add(new TimelineEntry(
