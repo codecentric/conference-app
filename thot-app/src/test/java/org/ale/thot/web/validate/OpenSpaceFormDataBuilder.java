@@ -10,27 +10,27 @@ public class OpenSpaceFormDataBuilder {
     private String title = "Correct title";
     private String speaker = "@someValidName";
 
-    public OpenSpaceFormDataBuilder valid(){
-        openSpaceFormData = new OpenSpaceFormData();
-        openSpaceFormData.setSpeaker(speaker);
-        openSpaceFormData.setTitle(title);
-        return this;
+    public OpenSpaceFormDataBuilder valid() {
+	openSpaceFormData = new OpenSpaceFormData();
+	openSpaceFormData.setSpeaker(speaker);
+	openSpaceFormData.setTitle(title);
+	return this;
     }
 
-    public OpenSpaceFormDataBuilder withTitle(String title){
-        this.title = title;
-        return this;
+    public OpenSpaceFormDataBuilder withTitle(String title) {
+	this.title = title;
+	return this;
     }
 
-    public OpenSpaceFormDataBuilder withSpeaker(String speaker){
-        this.speaker = speaker;
-        return this;
+    public OpenSpaceFormDataBuilder withSpeaker(String speaker) {
+	this.speaker = speaker;
+	return this;
     }
 
-    public OpenSpaceFormData build(){
-        openSpaceFormData = new OpenSpaceFormData();
-        openSpaceFormData.setSpeaker(speaker);
-        openSpaceFormData.setTitle(title);
-        return openSpaceFormData;
+    public OpenSpaceFormData build() {
+	openSpaceFormData = new OpenSpaceFormData();
+	openSpaceFormData.setSpeaker(speaker);
+	openSpaceFormData.setTitle(title);
+	return openSpaceFormData;
     }
 }

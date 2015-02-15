@@ -12,14 +12,12 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-<!-- 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
- -->
 <!-- 
 	<link rel="stylesheet" href="<%= request.getContextPath() %>/webjars/bootstrap/2.3.2/css/bootstrap.min.css">
- -->	
 	<link href="<%= request.getContextPath() %>/assets/css/bootstrap.css" rel="stylesheet">
+ -->	
 	<link href="<%= request.getContextPath() %>/assets/css/thot.css" rel="stylesheet">
 	<link href="<%= request.getContextPath() %>/assets/css/bootstrap-responsive.css" rel="stylesheet">
 	

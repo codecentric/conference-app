@@ -24,42 +24,37 @@ import org.springframework.web.servlet.view.RedirectView;
 @RequestMapping("/addLink")
 public class AddLinkController {
 
-	@Autowired
-	private LinkDao linkDao;
+    @Autowired
+    private LinkDao linkDao;
 
-	@Autowired
-	private SessionDao sessionDao;
+    @Autowired
+    private SessionDao sessionDao;
 
-	public AddLinkController() {
-		super();
-	}
+    public AddLinkController() {
+	super();
+    }
 
-	@RequestMapping(method = RequestMethod.GET)
-	public void setupForm(ModelMap modelMap, HttpServletRequest request) {
-		String sessionId = request.getParameter("sessionId");
-		Session session = sessionDao.getSessionById(sessionId);
+    @RequestMapping(method = RequestMethod.GET)
+    public void setupForm(ModelMap modelMap, HttpServletRequest request) {
+	String sessionId = request.getParameter("sessionId");
+	Session session = sessionDao.getSessionById(sessionId);
 
-		LinkFormData linkFormData = new LinkFormData();
+	LinkFormData linkFormData = new LinkFormData();
 
-		modelMap.put("linkFormData", linkFormData);
-		modelMap.put("sessionTitle", session.getTitle());
-	}
+	modelMap.put("linkFormData", linkFormData);
+	modelMap.put("sessionTitle", session.getTitle());
+    }
 
-	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView processSubmit(final HttpServletRequest request,
-			ModelMap modelMap,
-			final @ModelAttribute("linkFormData") LinkFormData form,
-			BindingResult result) {
-		Link link = new Link(new Date(), Html.escapeHtml(form.getComment()),
-				Html.escapeHtml(form.getUrl()), form.getSessionId());
-		linkDao.saveLink(link);
-		return new ModelAndView(new RedirectView("comments") {
-			{
-				this.getAttributesMap().put("sessionId", form.getSessionId());
-				this.getAttributesMap().put("title",
-						request.getParameter("title"));
-			}
-		});
-	}
+    @RequestMapping(method = RequestMethod.POST)
+    public ModelAndView processSubmit(final HttpServletRequest request, ModelMap modelMap, final @ModelAttribute("linkFormData") LinkFormData form, BindingResult result) {
+	Link link = new Link(new Date(), Html.escapeHtml(form.getComment()), Html.escapeHtml(form.getUrl()), form.getSessionId());
+	linkDao.saveLink(link);
+	return new ModelAndView(new RedirectView("comments") {
+	    {
+		this.getAttributesMap().put("sessionId", form.getSessionId());
+		this.getAttributesMap().put("title", request.getParameter("title"));
+	    }
+	});
+    }
 
 }

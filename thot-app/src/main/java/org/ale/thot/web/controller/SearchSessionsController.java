@@ -18,46 +18,44 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/searchSessions")
 public class SearchSessionsController {
-	
-	@Autowired
-	private SessionDao sessionDao;
 
-	@ModelAttribute("searchFormData")
-	public SearchFormData getSearchFormData() {
-		return new SearchFormData();
-	}
-	
-	@RequestMapping(method = RequestMethod.GET)
-	public void setupForm(ModelMap modelMap) {
-       modelMap.put("searchFormData", new SearchFormData());
-       modelMap.put("sessionsList", new ArrayList<Session>());
-	}
+    @Autowired
+    private SessionDao sessionDao;
 
-	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView searchSessions(
-			ModelMap modelMap,
-			@ModelAttribute("searchFormData") SearchFormData formData) {
-		
-		modelMap.put("searchFormData", formData);
-		
-		List<Session> sessions = loadSessionsForAuthorName(formData.getName());
-		
-		modelMap.put("sessionsList", sessions);
-		
-		ModelAndView modelAndView = new ModelAndView("searchSessions");
-		modelAndView.addObject("sessionsList", sessions);
-		
-		return modelAndView;
+    @ModelAttribute("searchFormData")
+    public SearchFormData getSearchFormData() {
+	return new SearchFormData();
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public void setupForm(ModelMap modelMap) {
+	modelMap.put("searchFormData", new SearchFormData());
+	modelMap.put("sessionsList", new ArrayList<Session>());
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ModelAndView searchSessions(ModelMap modelMap, @ModelAttribute("searchFormData") SearchFormData formData) {
+
+	modelMap.put("searchFormData", formData);
+
+	List<Session> sessions = loadSessionsForAuthorName(formData.getName());
+
+	modelMap.put("sessionsList", sessions);
+
+	ModelAndView modelAndView = new ModelAndView("searchSessions");
+	modelAndView.addObject("sessionsList", sessions);
+
+	return modelAndView;
+    }
+
+    private List<Session> loadSessionsForAuthorName(String name) {
+	List<Session> sessions = sessionDao.getAllSessionsByAuthor(name);
+	for (Session session : sessions) {
+	    // TODO remove after DB cleanup
+	    if (session.getType() == null) {
+		session.setType(SessionType.openspace);
+	    }
 	}
-   
-	private List<Session> loadSessionsForAuthorName(String name) {
-	  List<Session> sessions = sessionDao.getAllSessionsByAuthor(name);
-	  for(Session session : sessions){
-		  // TODO remove after DB cleanup
-		  if (session.getType() == null){
-			  session.setType(SessionType.openspace);
-		  }
-	  } 
-		return sessions;
-	}
+	return sessions;
+    }
 }

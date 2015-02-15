@@ -6,9 +6,10 @@
 
 <%@ include file="header.jsp"%>
 <body>
-<%@ include file="menu.jsp"%>
 
 <div class="container-fluid">
+
+<%@ include file="menu.jsp"%>
 
 	<div class="well well-small">
 		<h1 id="title"><spring:message code="feedback" text="Recent comments"/></h1>
@@ -16,7 +17,7 @@
 	
 	<br style="clear: both;"/>
 
-	<div class="row-fluid">
+	<div class="row">
 		<form:form commandName="feedbackFormData" method="POST">
 			<div>Name:</div>
 			<form:input maxlength="255" id="name" path="name" />
@@ -29,7 +30,7 @@
 		</form:form>
 	</div>
 	
-	<div class="row-fluid">
+	<div class="row">
 		<div class="tabbable">
 			<div class="tab-content">
 				<table>

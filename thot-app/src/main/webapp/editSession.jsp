@@ -5,15 +5,16 @@
 
 <%@ include file="header.jsp"%>
 <body>
-<%@ include file="menu.jsp"%>
 
 <div class="container-fluid">
+
+<%@ include file="menu.jsp"%>
 
 	<div class="well well-small">
 		<h1><spring:message code="editsession.sessiondata" text="Topic"/></h1>
 	</div>
 	
-	<div class="row-fluid">
+	<div class="row">
 		<form:form commandName="sessionDataFormData" method="POST" action="editSession">
 	    <div>
 	    	<spring:message code="editsession.topic" text="Topic"/>:(*)</div>

@@ -6,9 +6,10 @@
 
 <%@ include file="header.jsp"%>
 <body>
-<%@ include file="menu.jsp"%>
 
 <div class="container-fluid">
+
+<%@ include file="menu.jsp"%>
 
 	<div id="title" class="well well-small">
 		<h2><spring:message code="map" text="map"/></h2> 
@@ -16,7 +17,7 @@
 
 	<br style="clear: both;"/>
 	
-	<div class="row-fluid">
+	<div class="row">
 		<div class="span10">
 	    	<div class="content-heading">
 	      		<img src="<%= request.getContextPath() %>/assets/img/parkinn-floorplan.jpeg"/>

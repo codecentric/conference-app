@@ -16,7 +16,7 @@
 	
 	<br style="clear: both;"/>
 
-	<div class="row-fluid">
+	<div class="row">
 		<form:form commandName="searchFormData" method="POST">
 			<div><spring:message code="search.authorname" text="Author Name"/>:</div>
 			<form:input maxlength="255" id="name" path="name" />
@@ -26,7 +26,7 @@
 		</form:form>
 	</div>
 
-		<div class="row-fluid">
+		<div class="row">
 			<div class="tabbable">
 				<div class="tab-content">
 

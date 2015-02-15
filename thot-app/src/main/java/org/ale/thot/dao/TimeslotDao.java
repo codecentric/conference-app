@@ -7,7 +7,7 @@ import org.ale.thot.domain.Timeslot;
 
 public interface TimeslotDao {
 
-	List<Timeslot> getTimeslots(String day);
+    List<Timeslot> getTimeslots(String day);
 
-	List<Day> getConferenceDays();
+    List<Day> getConferenceDays();
 }

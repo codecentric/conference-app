@@ -6,9 +6,10 @@
 
 <%@ include file="header.jsp"%>
 <body>
-<%@ include file="menu.jsp"%>
 
 <div class="container-fluid">
+
+<%@ include file="menu.jsp"%>
 
 	<div class="well well-small">
 		<h2>Comments for session:</h2>
@@ -17,7 +18,7 @@
 
 	<br style="clear: both;"/>
 
-	<div class="row-fluid">
+	<div class="row">
 		<!-- commit form -->
 		<form:form commandName="commentFormData" method="POST">
 	        <div>Name:(*)</div>

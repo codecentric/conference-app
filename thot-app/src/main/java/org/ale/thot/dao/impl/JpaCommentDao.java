@@ -17,42 +17,39 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class JpaCommentDao implements CommentDao {
 
-	@PersistenceContext
-	private EntityManager em;
+    @PersistenceContext
+    private EntityManager em;
 
-	public JpaCommentDao() { }
+    public JpaCommentDao() {
+    }
 
-	// test constructor
-	public JpaCommentDao(EntityManager em) {
-		this.em = em;
-	}
+    // test constructor
+    public JpaCommentDao(EntityManager em) {
+	this.em = em;
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Comment> getCommentsBySessionId(Long sessionId) {
+	Query query = em.createNamedQuery("findCommentForSession");
+	return query.setParameter("sessionId", sessionId).getResultList();
+    }
+
+    public List<TimelineEntry> getRecentComments() {
+	List<TimelineEntry> result = new ArrayList<TimelineEntry>();
 
 	@SuppressWarnings("unchecked")
-	public List<Comment> getCommentsBySessionId(Long sessionId) {
-		Query query = em.createNamedQuery("findCommentForSession");
-		return query.setParameter("sessionId", sessionId).getResultList();
+	List<Object[]> resultList = em.createNamedQuery("findRecentComments").setMaxResults(25).getResultList();
+
+	for (Object[] entry : resultList) {
+	    result.add(new TimelineEntry(entry[0] != null ? entry[0].toString() : "", entry[0] != null ? entry[1].toString() : "", entry[0] != null ? entry[2].toString() : "",
+		    entry[0] != null ? entry[3].toString() : "", entry[0] != null ? entry[4].toString() : ""));
 	}
 
-	public List<TimelineEntry> getRecentComments() {
-		List<TimelineEntry> result = new ArrayList<TimelineEntry>();
+	return result;
+    }
 
-		@SuppressWarnings("unchecked")
-		List<Object[]> resultList = em.createNamedQuery("findRecentComments").setMaxResults(25).getResultList();
-
-		for ( Object[] entry : resultList ) {
-			result.add(new TimelineEntry(
-					entry[0] != null ? entry[0].toString() : "", 
-							entry[0] != null ? entry[1].toString() : "",
-									entry[0] != null ? entry[2].toString() : "",
-											entry[0] != null ? entry[3].toString() : "", 
-													entry[0] != null ? entry[4].toString() : ""));
-		}
-
-		return result;
-	}
-
-	public void saveComment(Comment comment) {
-		em.merge(comment);
-	}
+    public void saveComment(Comment comment) {
+	em.merge(comment);
+    }
 
 }

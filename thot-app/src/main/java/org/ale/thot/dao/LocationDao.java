@@ -6,8 +6,8 @@ import org.ale.thot.domain.Location;
 
 public interface LocationDao {
 
-	List<Location> getLocations();
+    List<Location> getLocations();
 
-	Location getLocation(String shortName);
+    Location getLocation(String shortName);
 
 }

@@ -6,9 +6,10 @@
 
 <%@ include file="header.jsp"%>
 <body>
-<%@ include file="menu.jsp"%>
 
 <div class="container-fluid">
+
+<%@ include file="menu.jsp"%>
 
 	<!--/span-->
 	<div class="well well-small">
@@ -18,7 +19,7 @@
 
 	<br style="clear: both;"/>
 
-	<div class="row-fluid">
+	<div class="row">
 	<!-- commit form -->
 	<form:form commandName="linkFormData" method="POST">
         <div>URL:(*)</div>
@@ -35,6 +36,8 @@
 		<input type="submit" id="addLink" value="Add link" />
 
 	</form:form>
-</div></div>
+</div>
 
 <%@ include file="footer.html"%>
+
+</div>

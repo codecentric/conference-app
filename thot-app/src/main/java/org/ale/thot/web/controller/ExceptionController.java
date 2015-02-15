@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @Controller
 public class ExceptionController {
 
-	@ExceptionHandler(Exception.class)
-	public String handleException(Exception ex, HttpServletRequest request) {
-		return "404";
-	}
-	
+    @ExceptionHandler(Exception.class)
+    public String handleException(Exception ex, HttpServletRequest request) {
+	return "404";
+    }
+
 }

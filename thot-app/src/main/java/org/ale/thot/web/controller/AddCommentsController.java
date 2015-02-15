@@ -27,54 +27,51 @@ import org.springframework.web.servlet.view.RedirectView;
 @RequestMapping("/addComment")
 public class AddCommentsController {
 
-	private static final String THOT_USERNAME = "THOT_username";
-	
-	@Autowired
-	private CommentDao commentDao;
-	
-	@Autowired
-	private SessionDao sessionDao;
-	
-	public AddCommentsController() {
-		super();
-	}
-	
-	@RequestMapping(method = RequestMethod.GET)
-	public void setupForm(ModelMap modelMap, HttpServletRequest request) {
-		HttpSession httpSession = request.getSession();
-		
-		String sessionId = request.getParameter("sessionId");
-		Session session = null;
-		session = sessionDao.getSessionById(sessionId);
+    private static final String THOT_USERNAME = "THOT_username";
 
-		CommentFormData commentFormData = new CommentFormData();
-		if ( httpSession.getAttribute(THOT_USERNAME) != null ) {
-			commentFormData.setAuthor((String) httpSession.getAttribute(THOT_USERNAME));
-		}
+    @Autowired
+    private CommentDao commentDao;
 
-		List<Integer> ratingList = Arrays.asList(1,2,3,4,5);
-        modelMap.put("ratingList", ratingList);
-        modelMap.put("commentFormData", commentFormData);
-        modelMap.put("sessionTitle", session.getTitle());
+    @Autowired
+    private SessionDao sessionDao;
+
+    public AddCommentsController() {
+	super();
+    }
+
+    @RequestMapping(method = RequestMethod.GET)
+    public void setupForm(ModelMap modelMap, HttpServletRequest request) {
+	HttpSession httpSession = request.getSession();
+
+	String sessionId = request.getParameter("sessionId");
+	Session session = null;
+	session = sessionDao.getSessionById(sessionId);
+
+	CommentFormData commentFormData = new CommentFormData();
+	if (httpSession.getAttribute(THOT_USERNAME) != null) {
+	    commentFormData.setAuthor((String) httpSession.getAttribute(THOT_USERNAME));
 	}
-   
-	
-	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView processSubmit(
-			final HttpServletRequest request, 
-			ModelMap modelMap,
-			final @ModelAttribute("commentFormData") CommentFormData cmd, 
-			BindingResult result) {
-		
-		String author = cmd.getAuthor();
-		request.getSession().setAttribute(THOT_USERNAME, author);
-		
-		Comment comment = new Comment(new Date(), Html.escapeHtml(author), Html.escapeHtml(cmd.getText()),  Long.valueOf(cmd.getSessionId()), cmd.getRating()  );
-		commentDao.saveComment(comment);
-		return new ModelAndView(new RedirectView("comments"){{
-			this.getAttributesMap().put("sessionId", cmd.getSessionId());
-			this.getAttributesMap().put("title", request.getParameter("title"));
-		}});
-	}
-	
+
+	List<Integer> ratingList = Arrays.asList(1, 2, 3, 4, 5);
+	modelMap.put("ratingList", ratingList);
+	modelMap.put("commentFormData", commentFormData);
+	modelMap.put("sessionTitle", session.getTitle());
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public ModelAndView processSubmit(final HttpServletRequest request, ModelMap modelMap, final @ModelAttribute("commentFormData") CommentFormData cmd, BindingResult result) {
+
+	String author = cmd.getAuthor();
+	request.getSession().setAttribute(THOT_USERNAME, author);
+
+	Comment comment = new Comment(new Date(), Html.escapeHtml(author), Html.escapeHtml(cmd.getText()), Long.valueOf(cmd.getSessionId()), cmd.getRating());
+	commentDao.saveComment(comment);
+	return new ModelAndView(new RedirectView("comments") {
+	    {
+		this.getAttributesMap().put("sessionId", cmd.getSessionId());
+		this.getAttributesMap().put("title", request.getParameter("title"));
+	    }
+	});
+    }
+
 }

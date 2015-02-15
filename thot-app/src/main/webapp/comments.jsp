@@ -5,10 +5,12 @@
 <%@ page session="false"%>
 
 <%@ include file="header.jsp"%>
-<body onload="JavaScript:timedRefresh(20000);">
-	<%@ include file="menu.jsp"%>
 
-	<div class="container-fluid">
+<body onload="JavaScript:timedRefresh(20000);">
+
+<div class="container-fluid">
+
+<%@ include file="menu.jsp"%>
 
 		<div class="well well-small">
 			<h2>${sessionTitle}</h2>
@@ -32,7 +34,7 @@
 
 		<br style="clear: both;" />
 
-		<div class="row-fluid">
+		<div class="row">
 			
 			<h3>Audience comments</h3>
 			
@@ -64,7 +66,7 @@
 			</table>
 		</div>
 		
-		<div class="row-fluid">
+		<div class="row">
 		
 			<h3>Links to additional resources</h3>
 		
@@ -95,16 +97,6 @@
 			</table>
 		</div>
 
-	<script type="text/JavaScript">
-	<!--
-		function timedRefresh(timeoutPeriod) {
-			setTimeout("location.reload(true);", timeoutPeriod);
-		}
-	
-
-		
-	//   -->
-	</script>
-
 	<%@ include file="footer.html"%>
+	
 </div>

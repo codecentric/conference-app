@@ -6,8 +6,8 @@ import org.ale.thot.domain.Link;
 
 public interface LinkDao {
 
-	public List<Link> getLinksBySessionId(Long sessionId);
+    public List<Link> getLinksBySessionId(Long sessionId);
 
-	public void saveLink(Link link);
+    public void saveLink(Link link);
 
 }

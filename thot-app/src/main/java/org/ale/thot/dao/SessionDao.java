@@ -10,27 +10,27 @@ import org.ale.thot.domain.SessionType;
  */
 public interface SessionDao {
 
-	List<Session> getAllSessions();
+    List<Session> getAllSessions();
 
-	List<String> getListOfConferenceDays();
-	
-	List<Session> getAllStaticSessions();
-	
-	/* returns all sessions for a specific date */
-	List<Session> getSessionsByDate(String date);
-	
-	Session saveSession(Session session);
+    List<String> getListOfConferenceDays();
 
-	Session getSessionById(String id);
+    List<Session> getAllStaticSessions();
 
-	List<Session> getStaticSessionsByDate(String shortName);
+    /* returns all sessions for a specific date */
+    List<Session> getSessionsByDate(String date);
 
-	List<Session> getCurrentSessions();
-	
-	List<Session> getAllSessionsByAuthor(String author);
+    Session saveSession(Session session);
 
-	List<Session> getAllSessionsByDate(String now);
+    Session getSessionById(String id);
 
-	List<Session> getAllSessionsByDateAndType(String date, SessionType... type);
+    List<Session> getStaticSessionsByDate(String shortName);
+
+    List<Session> getCurrentSessions();
+
+    List<Session> getAllSessionsByAuthor(String author);
+
+    List<Session> getAllSessionsByDate(String now);
+
+    List<Session> getAllSessionsByDateAndType(String date, SessionType... type);
 
 }

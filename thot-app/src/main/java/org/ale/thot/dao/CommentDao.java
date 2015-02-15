@@ -7,10 +7,10 @@ import org.ale.thot.model.TimelineEntry;
 
 public interface CommentDao {
 
-	public List<Comment> getCommentsBySessionId(Long sessionId);
-	
-	public List<TimelineEntry> getRecentComments();
+    public List<Comment> getCommentsBySessionId(Long sessionId);
 
-	public void saveComment(Comment comment);
+    public List<TimelineEntry> getRecentComments();
+
+    public void saveComment(Comment comment);
 
 }

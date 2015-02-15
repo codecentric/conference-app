@@ -5,10 +5,11 @@
 <%@ page session="false"%>
 
 <%@ include file="header.jsp"%>
-<body onload="JavaScript:timedRefresh(20000);">
-	<%@ include file="menu.jsp"%>
+<body>
 
-	<div class="container-fluid">
+<div class="container-fluid">
+
+<%@ include file="menu.jsp"%>
 
 		<div class="well well-small">
 

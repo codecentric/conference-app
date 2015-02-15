@@ -12,17 +12,17 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class JpaFeedbackDao implements FeedbackDao {
 
-	@PersistenceContext
-	private EntityManager em;
-	
-	@Override
-	public void save(Feedback feedback) {
-		em.merge(feedback);
-	}
+    @PersistenceContext
+    private EntityManager em;
 
-	@Override
-	public List<Feedback> getFeedbackList() {
-		return em.createNamedQuery("findFeedback", Feedback.class).getResultList();
-	}
+    @Override
+    public void save(Feedback feedback) {
+	em.merge(feedback);
+    }
+
+    @Override
+    public List<Feedback> getFeedbackList() {
+	return em.createNamedQuery("findFeedback", Feedback.class).getResultList();
+    }
 
 }

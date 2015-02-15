@@ -5,9 +5,11 @@
 
 <%@ include file="header.jsp"%>
 <body>
-	<%@ include file="menu.jsp"%>
 
-	<div class="container-fluid">
+<div class="container-fluid">
+
+<%@ include file="menu.jsp"%>
+
 		<!--/span-->
 		<div class="well well-small">
 			<h1 id="title"><spring:message code="sessions" text="sessions" /></h1>
@@ -27,7 +29,7 @@
 		
 		<div class="tab-content">
 		 	<div class="tab-pane active" id="current_sessions">
-		 		<div class="row-fluid">
+		 		<div class="row">
 		 			<c:choose>
 		 				<c:when test="${!currentSessions.isEmpty()}">
 							<table class="table table-striped">
@@ -60,7 +62,7 @@
 			 <c:forEach items="${sessionMap}" var="entry" varStatus="status">
 			 	<div class="tab-pane" id="date${status.index}">
 
-					<div class="row-fluid">
+					<div class="row">
 						<table class="table table-striped">
 							<%@ include file="schedule_tableheader.html"%>
 							<tbody>
@@ -85,13 +87,6 @@
 			</c:forEach>
 		</div>
 
-    <script type="text/JavaScript">
-    <!--
-        function initTab() {
-            $('#daysTab a:last').tab('show');
-        }
-    //   -->
-    </script>
     <%@ include file="footer.html"%>
     
     </div>

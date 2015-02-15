@@ -12,134 +12,130 @@ import javax.persistence.NamedQuery;
 
 import org.ale.app.TwitterLinkCreator;
 
-
 /**
  * Domain object to represent data for a comment.
  */
-@Entity(name="comment")
-@NamedQueries({
-	@NamedQuery(name = "findCommentForSession", query = "from comment where sessionId=:sessionId order by date desc"),
-	@NamedQuery(name = "findRecentComments", query = "select c.date, c.author, c.text, s.id, s.title from comment c, session s where c.sessionId = s.id order by c.date desc")
-})
+@Entity(name = "comment")
+@NamedQueries({ @NamedQuery(name = "findCommentForSession", query = "from comment where sessionId=:sessionId order by date desc"),
+	@NamedQuery(name = "findRecentComments", query = "select c.date, c.author, c.text, s.id, s.title from comment c, session s where c.sessionId = s.id order by c.date desc") })
 public class Comment {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-	private Date date;
-	
-	private String author;
-	
-	@Column(length = 2048)
-	private String text;
-	private Long sessionId;
-	private Integer rating;
-	
-	public Comment() { }
-	
-	public Comment(Date date, String author, String text, Long sessionId, Integer rating) {
-		super();
-		this.date = date;	
-		this.author = author;
-		this.text= text;
-		this.sessionId = sessionId;
-		this.rating = rating;
-	}
-		
-	public long getId() {
-		return id;
-	}
+    private Date date;
 
-	public Date getDate() {
-		return date;
-	}
+    private String author;
 
-	public void setDate(Date date) {
-		this.date = date;
-	}
+    @Column(length = 2048)
+    private String text;
+    private Long sessionId;
+    private Integer rating;
 
-	public String getAuthor() {
-		return author;
-	}
+    public Comment() {
+    }
 
-	public String getProcessedAuthor() {
-		return TwitterLinkCreator.process(author);
-	}
-	
-	public void setAuthor(String author) {
-		this.author = author;
-	}
+    public Comment(Date date, String author, String text, Long sessionId, Integer rating) {
+	super();
+	this.date = date;
+	this.author = author;
+	this.text = text;
+	this.sessionId = sessionId;
+	this.rating = rating;
+    }
 
-	public String getText() {
-		return text;
-	}
+    public long getId() {
+	return id;
+    }
 
-	public void setText(String text) {
-		this.text = text;
-	}
+    public Date getDate() {
+	return date;
+    }
 
-	public Long getSessionId() {
-		return sessionId;
-	}
+    public void setDate(Date date) {
+	this.date = date;
+    }
 
-	public void setSessionId(Long sessionId) {
-		this.sessionId = sessionId;
-	}
+    public String getAuthor() {
+	return author;
+    }
 
-	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result
-				+ ((text == null) ? 0 : text.hashCode());
-		result = prime * result + ((author == null) ? 0 : author.hashCode());
-		result = prime * result + ((date == null) ? 0 : date.hashCode());
-		return result;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj == null) {
-			return false;
-		}
-		if (getClass() != obj.getClass()) {
-			return false;
-		}
-		Comment other = (Comment) obj;
-		if (text == null) {
-			if (other.text != null) {
-				return false;
-			}
-		} else if (!text.equals(other.text)) {
-			return false;
-		}
-		if (author == null) {
-			if (other.author != null) {
-				return false;
-			}
-		} else if (!author.equals(other.author)) {
-			return false;
-		}
-		if (date == null) {
-			if (other.date != null) {
-				return false;
-			}
-		} else if (!date.equals(other.date)) {
-			return false;
-		}
-		return true;
-	}
+    public String getProcessedAuthor() {
+	return TwitterLinkCreator.process(author);
+    }
 
-	public Integer getRating() {
-		return rating;
-	}
+    public void setAuthor(String author) {
+	this.author = author;
+    }
 
-	public void setRating(Integer rating) {
-		this.rating = rating;
+    public String getText() {
+	return text;
+    }
+
+    public void setText(String text) {
+	this.text = text;
+    }
+
+    public Long getSessionId() {
+	return sessionId;
+    }
+
+    public void setSessionId(Long sessionId) {
+	this.sessionId = sessionId;
+    }
+
+    @Override
+    public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	result = prime * result + ((text == null) ? 0 : text.hashCode());
+	result = prime * result + ((author == null) ? 0 : author.hashCode());
+	result = prime * result + ((date == null) ? 0 : date.hashCode());
+	return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+	if (this == obj) {
+	    return true;
 	}
+	if (obj == null) {
+	    return false;
+	}
+	if (getClass() != obj.getClass()) {
+	    return false;
+	}
+	Comment other = (Comment) obj;
+	if (text == null) {
+	    if (other.text != null) {
+		return false;
+	    }
+	} else if (!text.equals(other.text)) {
+	    return false;
+	}
+	if (author == null) {
+	    if (other.author != null) {
+		return false;
+	    }
+	} else if (!author.equals(other.author)) {
+	    return false;
+	}
+	if (date == null) {
+	    if (other.date != null) {
+		return false;
+	    }
+	} else if (!date.equals(other.date)) {
+	    return false;
+	}
+	return true;
+    }
+
+    public Integer getRating() {
+	return rating;
+    }
+
+    public void setRating(Integer rating) {
+	this.rating = rating;
+    }
 }

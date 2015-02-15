@@ -5,15 +5,16 @@
 
 <%@ include file="header.jsp"%>
 <body>
-<%@ include file="menu.jsp"%>
 
 <div class="container-fluid">
+
+<%@ include file="menu.jsp"%>
 
 	<div class="well well-small">
 		<h1 title="proposeNewSession">Propose new Session - Anytime / Anywhere</h1>
 	</div>
 	
-	<div class="row-fluid">
+	<div class="row">
 		<form:form commandName="sessionDataFormData" method="POST" action="proposeNewSession">
 	    <div>
 		        <h3>Session for Day - ${day}</h3><br/>

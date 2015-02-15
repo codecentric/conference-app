@@ -4,10 +4,12 @@
 <%@ page session="false"%>
 
 <%@ include file="header.jsp"%>
+
 <body onload="JavaScript:initTab();">
-<%@ include file="menu.jsp"%>
 
 <div class="container-fluid">
+
+<%@ include file="menu.jsp"%>
 
 	<div class="well well-small">
 		<h1 id="title"><spring:message code="marketplace" text="marketplace"/></h1>
@@ -15,7 +17,7 @@
 
 	<br style="clear: both;"/>
 
-	<div class="row-fluid">
+	<div class="row">
 		<div class="tabbable">
 			<ul class="nav nav-tabs" id="daysTab">
 				<c:forEach items="${days}" var="day">
@@ -64,7 +66,7 @@
 					
 					<h3>Anytime Anywhere Open Sessions</h3>
 					
-					<div class="row-fluid">
+					<div class="row">
 						<table class="table table-striped">
 							<%@ include file="schedule_tableheader.html"%>
 							<tbody>
