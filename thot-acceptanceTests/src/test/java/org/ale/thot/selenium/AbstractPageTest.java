@@ -13,7 +13,7 @@ public abstract class AbstractPageTest {
 	private String baseUrl;
 	
 	protected WebDriver driver;
-	protected String PAGE_TITLE = "Open Space Software Development - ALE 2014";
+	protected String PAGE_TITLE = "Hackerspace - JavaLand 2015";
 	
 	@Before
 	public void setUp() {
