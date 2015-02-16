@@ -4,7 +4,7 @@
 
 	<groupId>org.cc.thot</groupId>
 	<artifactId>thot-app</artifactId>
-	<version>1.0.0</version>
+	<version>2.0.0</version>
 	<packaging>war</packaging>
 	<name>Conference App</name>
 
@@ -16,9 +16,9 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:git@github.com:codecentric/ale-2014.git</connection>
-		<url>https://github.com/codecentric/ale-2014</url>
-		<developerConnection>scm:git:git@github.com:codecentric/ale-2014.git</developerConnection>
+		<connection>scm:git:git@github.com:codecentric/conference-app.git</connection>
+		<url>https://github.com/codecentric/conference-app</url>
+		<developerConnection>scm:git:git@github.com:codecentric/conference-app.git</developerConnection>
 	</scm>
 
 	<dependencies>
