@@ -17,12 +17,13 @@
               <li><a href="currentSessions"><spring:message code="current.sessions.title" text="Current Sessions"/></a></li>		 
 			  <li><a href="staticSessions"><spring:message code="sessions" text="Sessions"/></a></li>
 			  <li><a href="twitterWall.jsp"><spring:message code="twitter" text="Twitter"/></a></li>
+			  <li><a href="searchSessions"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+			  <li><a href="venueMap.jsp"><spring:message code="map" text="Venue Map"/></a></li>
+			  <li><a href="feedback"><spring:message code="feedback" text="User Feedback"/></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="searchSessions"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-						<li><a href="map.jsp"><spring:message code="map" text="Venue Map"/></a></li>
-						<li><a href="feedback"><spring:message code="feedback" text="User Feedback"/></a></li>
-						<li><a href="features.jsp"><spring:message code="versionhistory" text="Changelog"/></a></li>
+              <li><a href="features.jsp"><spring:message code="versionhistory" text="Changelog"/></a></li>
+              <li><a href="appStructure.jsp"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
