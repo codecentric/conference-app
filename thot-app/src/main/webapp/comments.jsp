@@ -6,31 +6,30 @@
 
 <%@ include file="header.jsp"%>
 <body onload="JavaScript:timedRefresh(20000);">
-	<%@ include file="menu.jsp"%>
+<%@ include file="menu.jsp"%>
 
-	<div class="container-fluid">
+<div class="container-fluid">
 
-		<div class="well well-small">
-			<h2>${sessionTitle}</h2>
-			<h4>Description</h4>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h2 class="panel-title">${sessionTitle}</h2>
+			<h5>Description</h5>
 			<p>${sessionDescription}</p>
-			<h4>Proposed by</h4>
+			<h5>Proposed by</h5>
 			<p>${sessionSpeaker}</p>
-			<h4>Location</h4>
+			<h5>Location</h5>
 			<p>${location}</p>
-			<h4>Start time</h4>
+			<h5>Start time</h5>
 			<p>${timeslot}</p>
-			<h4>End time</h4>
+			<h5>End time</h5>
 			<p>${timeslotEnd}</p>
-
 			<c:if test="${sessionEditable}">
 				<a class="btn btn-primary"
 					href="<%= request.getContextPath() %>/editSession?sessionId=${sessionId}">Edit
 					session data</a>
 			</c:if>
-		</div>
-
-		<br style="clear: both;" />
+	  </div>
+	  <div class="panel-body">
 
 		<div class="row-fluid">
 			
@@ -54,7 +53,7 @@
 				<tbody>
 					<c:forEach items="${comments}" var="comment">
 						<tr>
-							<td>${comment.processedAuthor}</td>
+							<td>${comment.author}</td>
 							<td>${comment.text}</td>
 							<td><fmt:formatDate value="${comment.date}" type="both" dateStyle="short" timeStyle="short" /></td>
 							<td><a href="http://twitter.com/?status=Neuer Kommentar: ${comment.text} - http://bit.ly/thot-2014 - %23osswdev %23ale14 via @OSSWDEV">Tweet comment</a></td>
@@ -94,17 +93,9 @@
 				</tbody>
 			</table>
 		</div>
-
-	<script type="text/JavaScript">
-	<!--
-		function timedRefresh(timeoutPeriod) {
-			setTimeout("location.reload(true);", timeoutPeriod);
-		}
+  	  </div>
+	</div>
 	
-
-		
-	//   -->
-	</script>
-
-	<%@ include file="footer.html"%>
 </div>
+
+<%@ include file="footer.html"%>

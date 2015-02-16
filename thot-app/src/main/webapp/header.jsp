@@ -7,12 +7,17 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title><spring:message code="header.title" text="Open Space Software Development - ALE 2014"/></title>
+	<title><spring:message code="header.title" text="Hackerspace - Building a conference app - JavaLand 2015"/></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 
+	<link rel="stylesheet" href="<%= request.getContextPath() %>/webjars/bootstrap/2.3.2/css/bootstrap.min.css">
 	<link href="<%= request.getContextPath() %>/assets/css/bootstrap.css" rel="stylesheet">
+ -->	
 	<link href="<%= request.getContextPath() %>/assets/css/thot.css" rel="stylesheet">
 	<link href="<%= request.getContextPath() %>/assets/css/bootstrap-responsive.css" rel="stylesheet">
 	

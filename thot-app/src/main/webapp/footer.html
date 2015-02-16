@@ -1,21 +1,23 @@
-<hr/>
-   <footer>
-        <p><spring:message code="footer.about" text="This is a community app developed by participants of "/><br/> 
-        <a target ="_blank" href="http://ale2014.alenetwork.eu/"><spring:message code="footer.conferencename" text="ALE 2014"/></a>
-        <spring:message code="footer.conferencelocation" text="(Krakow, Poland)"/><br/>
-        <p><spring:message code="footer.sposoredby" text="Hosting is sponsord by "/><a href="http://blog.codecentric.de/en"><spring:message code="footer.sposorname" text="codecentric"/></a></p>
-   </footer>
- 
-    <script type="text/JavaScript">
-		<!--
-		function timedRefresh(timeoutPeriod) {
-			setTimeout("location.reload(true);",timeoutPeriod);
-		}
-		//   -->
-		</script>
-    
-    <script src="<%= request.getContextPath() %>/assets/js/jquery.js"></script>  
-    <script src="<%= request.getContextPath() %>/assets/js/bootstrap.js"></script>
-    <script src="<%= request.getContextPath() %>/assets/js/thot.js"></script>
+
+	<footer class="footer">
+      <div class="container">
+        <spring:message code="footer.about"
+			text="This is a community app developed by participants of " />
+		<a target="_blank" href="http://www.javaland.eu/"><spring:message
+				code="footer.conferencename" text="ALE 2014" /></a>
+		<spring:message code="footer.conferencelocation"
+			text="(Krakow, Poland)" />
+		<br />
+		<spring:message code="footer.sposoredby"
+			text="Hosting is sponsord by " />
+		<a href="http://blog.codecentric.de/en"><spring:message
+				code="footer.sposorname" text="codecentric" /></a>
+      </div>
+    </footer>
+
+<script src="<%= request.getContextPath() %>/assets/js/jquery.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/bootstrap.js"></script>
+<script src="<%= request.getContextPath() %>/assets/js/thot.js"></script>
+
 </body>
 </html>

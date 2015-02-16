@@ -5,19 +5,16 @@
 
 <%@ include file="header.jsp"%>
 <body>
-	<%@ include file="menu.jsp"%>
+<%@ include file="menu.jsp"%>
 
-	<div class="container-fluid">
-		<!--/span-->
-		<div class="well well-small">
-			<h1 id="title"><spring:message code="sessions" text="sessions" /></h1>
-			
-			<br />
-			<p><spring:message code="session.day.selection" text="session.day.selection" /></p>
-		</div>
+<div class="container-fluid">
 
-		<br style="clear: both;" />
-
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><spring:message code="sessions" text="Conference Schedule"/>
+	    <small><spring:message code="session.day.selection" text="session.day.selection" /></small></h3>
+	  </div>
+	  <div class="panel-body">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#current_sessions" data-toggle="tab"><spring:message code="current_session" text="current sessions" /></a></li>
 			<c:forEach items="${sessionDays}" var="day" varStatus="status">
@@ -51,6 +48,7 @@
 							</table>
 							</c:when>
 					<c:otherwise>
+						<br/>
 						<spring:message code="no.sessions.available" text="no.sessions.available" />
 					</c:otherwise>
 					</c:choose>
@@ -60,7 +58,7 @@
 			 <c:forEach items="${sessionMap}" var="entry" varStatus="status">
 			 	<div class="tab-pane" id="date${status.index}">
 
-					<div class="row-fluid">
+					<div class="row-fuid">
 						<table class="table table-striped">
 							<%@ include file="schedule_tableheader.html"%>
 							<tbody>
@@ -84,14 +82,9 @@
 			 	</div>
 			</c:forEach>
 		</div>
+	  </div>
+	</div>
 
-    <script type="text/JavaScript">
-    <!--
-        function initTab() {
-            $('#daysTab a:last').tab('show');
-        }
-    //   -->
-    </script>
-    <%@ include file="footer.html"%>
-    
-    </div>
+</div>
+
+<%@ include file="footer.html"%>

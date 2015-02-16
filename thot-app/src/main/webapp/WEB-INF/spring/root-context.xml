@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Application context definition for PetClinic on JPA. -->
 <beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="
+			http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
 			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
 			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
@@ -12,15 +14,17 @@
 	
 	<context:annotation-config />
 	
+	<mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
+	
 	<tx:annotation-driven />
 	
-	<context:component-scan base-package="org.ale-thot.domain" />
+	<context:component-scan base-package="org.cc.thot.domain" />
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="username" value="ale-admin" />
         <property name="password" value="ale2014krakau" />
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost/ale?useUnicode=true&amp;characterEncoding=UTF-8" />
+        <property name="url" value="jdbc:mysql://192.168.59.103/ale?useUnicode=true&amp;characterEncoding=UTF-8" />
     </bean>
 
 <!-- UNCOMMENT THIS FOR EMBEDDED HSQLDB     
@@ -40,16 +44,16 @@
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
 		p:entityManagerFactory-ref="entityManagerFactory" />
 
-	<bean id="sessionDao" class="org.ale.thot.dao.impl.JpaSessionDao" />
-	<bean id="commentDao" class="org.ale.thot.dao.impl.JpaCommentDao" />
-	<bean id="linkDao" class="org.ale.thot.dao.impl.JpaLinkDao" />
-	<bean id="feedbackDao" class="org.ale.thot.dao.impl.JpaFeedbackDao" />
+	<bean id="sessionDao" class="org.cc.thot.dao.impl.JpaSessionDao" />
+	<bean id="commentDao" class="org.cc.thot.dao.impl.JpaCommentDao" />
+	<bean id="linkDao" class="org.cc.thot.dao.impl.JpaLinkDao" />
+	<bean id="feedbackDao" class="org.cc.thot.dao.impl.JpaFeedbackDao" />
 	<bean id="jsonMapper" class="org.codehaus.jackson.map.ObjectMapper" />
-	<bean id="timeslotDao" class="org.ale.thot.dao.impl.JsonTimeslotDao">
+	<bean id="timeslotDao" class="org.cc.thot.dao.impl.JsonTimeslotDao">
 		<constructor-arg name="mapper" type="org.codehaus.jackson.map.ObjectMapper" ref="jsonMapper" />
 		<constructor-arg name="filePath" type="java.lang.String" value="json/daysAndTimeslots.json" />
 	</bean>
-	<bean id="locationDao" class="org.ale.thot.dao.impl.JsonLocationDao">
+	<bean id="locationDao" class="org.cc.thot.dao.impl.JsonLocationDao">
 		<constructor-arg name="mapper" type="org.codehaus.jackson.map.ObjectMapper" ref="jsonMapper" />
 		<constructor-arg name="filePath" type="java.lang.String" value="json/locations.json" />
 	</bean>

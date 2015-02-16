@@ -2,29 +2,31 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.ale.thot</groupId>
+	<groupId>org.cc.thot</groupId>
 	<artifactId>thot-app</artifactId>
-	<version>2.0.0-${BUILD_NUMBER}</version>
+	<version>1.0.0</version>
 	<packaging>war</packaging>
-	<name>Thot application</name>
+	<name>Conference App</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<spring.version>3.1.2.RELEASE</spring.version>
-		<hibernate.version>4.1.6.Final</hibernate.version>
+		<spring.version>4.1.4.RELEASE</spring.version>
+		<hibernate.version>4.3.8.Final</hibernate.version>
 		<jettyVersion>8.1.14.v20131031</jettyVersion>
 	</properties>
 
 	<scm>
 		<connection>scm:git:git@github.com:codecentric/ale-2014.git</connection>
-		<!-- Read-Only access -->
 		<url>https://github.com/codecentric/ale-2014</url>
 		<developerConnection>scm:git:git@github.com:codecentric/ale-2014.git</developerConnection>
-		<!-- Read+Write access -->
 	</scm>
 
 	<dependencies>
-
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>2.3.2</version>
+		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-jaxrs</artifactId>
