@@ -5,7 +5,7 @@
 * Amazon EC2 Dashboard **(offline)**
 * Sonar SQM **(offline)**
 * Nexus Artifact Repository **(offline)**
-* Twitter handle #hackerspace & #javaland
+* Twitter handle **#hackerspace** & **#javaland**
 
 ## JavaLand 2015
 
