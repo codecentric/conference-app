@@ -6,25 +6,28 @@
 
 <%@ include file="header.jsp"%>
 <body>
+<%@ include file="menu.jsp"%>
 
 <div class="container-fluid">
 
-<%@ include file="menu.jsp"%>
-
-	<div id="title" class="well well-small">
-		<h2><spring:message code="map" text="map"/></h2> 
-	</div>
-
-	<br style="clear: both;"/>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><spring:message code="map" text="Map"/></h3>
+	  </div>
+	  <div class="panel-body">
 	
-	<div class="row">
-		<div class="span10">
-	    	<div class="content-heading">
-	      		<img src="<%= request.getContextPath() %>/assets/img/parkinn-floorplan.jpeg"/>
-	      	</div>
+		<div class="row">
+			<div class="span10">
+		    	<div class="content-heading">
+		      		<img src="<%= request.getContextPath() %>/assets/img/javaland2014-location.jpg"/>
+		      	</div>
+			</div>
 		</div>
-	</div>
 	
-	<%@ include file="footer.html"%>
+	</div>
+  </div>
 
 </div>
+
+	
+	<%@ include file="footer.html"%>

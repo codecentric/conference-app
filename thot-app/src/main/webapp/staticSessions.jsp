@@ -5,21 +5,16 @@
 
 <%@ include file="header.jsp"%>
 <body>
+<%@ include file="menu.jsp"%>
 
 <div class="container-fluid">
 
-<%@ include file="menu.jsp"%>
-
-		<!--/span-->
-		<div class="well well-small">
-			<h1 id="title"><spring:message code="sessions" text="sessions" /></h1>
-			
-			<br />
-			<p><spring:message code="session.day.selection" text="session.day.selection" /></p>
-		</div>
-
-		<br style="clear: both;" />
-
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><spring:message code="sessions" text="Conference Schedule"/>
+	    <small><spring:message code="session.day.selection" text="session.day.selection" /></small></h3>
+	  </div>
+	  <div class="panel-body">
 		<ul class="nav nav-tabs">
 			<li class="active"><a href="#current_sessions" data-toggle="tab"><spring:message code="current_session" text="current sessions" /></a></li>
 			<c:forEach items="${sessionDays}" var="day" varStatus="status">
@@ -29,7 +24,7 @@
 		
 		<div class="tab-content">
 		 	<div class="tab-pane active" id="current_sessions">
-		 		<div class="row">
+		 		<div class="row-fluid">
 		 			<c:choose>
 		 				<c:when test="${!currentSessions.isEmpty()}">
 							<table class="table table-striped">
@@ -53,6 +48,7 @@
 							</table>
 							</c:when>
 					<c:otherwise>
+						<br/>
 						<spring:message code="no.sessions.available" text="no.sessions.available" />
 					</c:otherwise>
 					</c:choose>
@@ -62,7 +58,7 @@
 			 <c:forEach items="${sessionMap}" var="entry" varStatus="status">
 			 	<div class="tab-pane" id="date${status.index}">
 
-					<div class="row">
+					<div class="row-fuid">
 						<table class="table table-striped">
 							<%@ include file="schedule_tableheader.html"%>
 							<tbody>
@@ -86,7 +82,9 @@
 			 	</div>
 			</c:forEach>
 		</div>
+	  </div>
+	</div>
 
-    <%@ include file="footer.html"%>
-    
-    </div>
+</div>
+
+<%@ include file="footer.html"%>

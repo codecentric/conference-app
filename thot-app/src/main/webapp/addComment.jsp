@@ -6,37 +6,41 @@
 
 <%@ include file="header.jsp"%>
 <body>
+<%@ include file="menu.jsp"%>
 
 <div class="container-fluid">
 
-<%@ include file="menu.jsp"%>
-
-	<div class="well well-small">
-		<h2>Comments for session:</h2>
-	    <h3>${sessionTitle}</h3> 
-	</div>
-
-	<br style="clear: both;"/>
-
-	<div class="row">
-		<!-- commit form -->
-		<form:form commandName="commentFormData" method="POST">
-	        <div>Name:(*)</div>
-	        <form:input maxlength="255" id="author" path="author"/>
-			<form:errors class="form-error" path="author" />
-			<br />
-	        
-	        <div>Comment:</div>
-	        <form:textarea maxlength="255" id="text" path="text" />
-			<form:errors class="form-error" path="text" />
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h2>Comments for session: <small>${sessionTitle}</small></h2>
+	  </div>
+	  <div class="panel-body">
 	
-			<br />
-			
-			<input class="btn btn-primary" type="submit" id="addComment" value="Add comment" />
-	
-		</form:form>
-	</div>
+			<form:form commandName="commentFormData" method="POST" class="form-horizontal">
+			  <div class="form-group">
+			    <label for="author" class="col-sm-2 control-label">Name</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="author" placeholder="author">
+			      <form:errors class="form-error" path="author" />
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="text" class="col-sm-2 control-label">Comment</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="text">
+			      <form:errors class="form-error" path="text" />
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-default" id="addComment">Add comment</button>
+			    </div>
+			  </div>
+			</form:form>
 
-	<%@ include file="footer.html"%>
+	  </div>
+	</div>
 
 </div>
+
+<%@ include file="footer.html"%>

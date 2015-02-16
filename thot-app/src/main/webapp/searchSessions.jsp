@@ -10,23 +10,23 @@
 
 <div class="container-fluid">
 
-	<div class="well well-small">
-		<h1><spring:message code="search" text="search"/></h1>
-	</div>
-	
-	<br style="clear: both;"/>
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h3 class="panel-title"><spring:message code="search" text="Author Search"/></h3>
+	  </div>
+	  <div class="panel-body">
 
-	<div class="row">
-		<form:form commandName="searchFormData" method="POST">
-			<div><spring:message code="search.authorname" text="Author Name"/>:</div>
-			<form:input maxlength="255" id="name" path="name" />
-			<br />
-			<br />
-			<input type="submit" id="searchSessions" value="Search" class="btn btn-primary" />
-		</form:form>
-	</div>
+		<div class="row-fluid">
+			<form:form commandName="searchFormData" method="POST">
+				<div><spring:message code="search.authorname" text="Author Name"/>:</div>
+				<form:input maxlength="255" id="name" path="name" />
+				<br />
+				<br />
+				<input type="submit" id="searchSessions" value="Search" class="btn btn-primary" />
+			</form:form>
+		</div>
 
-		<div class="row">
+		<div class="row-fluid">
 			<div class="tabbable">
 				<div class="tab-content">
 
@@ -54,7 +54,9 @@
 				</div>
 			</div>
 		</div>
-
-		<%@ include file="footer.html"%>
+	</div>
+  </div>
 
 </div>
+
+<%@ include file="footer.html"%>
