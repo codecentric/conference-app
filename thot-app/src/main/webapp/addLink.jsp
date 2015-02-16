@@ -18,21 +18,28 @@
 	
 		<div class="row-fluid">
 		<!-- commit form -->
-		<form:form commandName="linkFormData" method="POST">
-	        <div>URL:(*)</div>
-	        <form:input maxlength="255" id="url" path="url"/>
-			<form:errors class="form-error" path="url" />
-			<br />
-	        
-	        <div>Comment:</div>
-	        <form:textarea maxlength="255" id="comment" path="comment" />
-			<form:errors class="form-error" path="comment" />
-	
-			<br />
-			
-			<input type="submit" id="addLink" value="Add link" />
-	
+		<form:form commandName="linkFormData" method="POST" class="form-horizontal">
+		  <div class="form-group">
+		    <label for="author" class="col-sm-2 control-label">URL</label>
+		    <div class="col-sm-5">
+		      <input type="text" class="form-control" id="url" name="url">
+		      <form:errors class="form-error" path="url" />
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="text" class="col-sm-2 control-label">Comment</label>
+		    <div class="col-sm-5">
+		      <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
+		      <form:errors class="form-error" path="comment" />
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-sm-offset-2 col-sm-10">
+		      <button type="submit" class="btn btn-default" id="addLink">Add link</button>
+		    </div>
+		  </div>
 		</form:form>
+
 	  </div>
 	</div>
   </div>
