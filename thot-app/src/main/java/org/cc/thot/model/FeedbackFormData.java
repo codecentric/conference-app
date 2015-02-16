@@ -2,6 +2,7 @@ package org.cc.thot.model;
 
 public class FeedbackFormData {
 
+    private String id;
     private String name;
     private String feedbackContent;
 
@@ -19,6 +20,14 @@ public class FeedbackFormData {
 
     public void setName(String name) {
 	this.name = name;
+    }
+
+    public String getId() {
+	return id;
+    }
+
+    public void setId(String id) {
+	this.id = id;
     }
 
 }

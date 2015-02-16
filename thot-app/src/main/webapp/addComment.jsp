@@ -18,16 +18,16 @@
 	
 			<form:form commandName="commentFormData" method="POST" class="form-horizontal">
 			  <div class="form-group">
-			    <label for="author" class="col-sm-2 control-label">Name</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="author" placeholder="author">
+			    <label for="author" class="col-sm-2 control-label">Your Name</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="author">
 			      <form:errors class="form-error" path="author" />
 			    </div>
 			  </div>
 			  <div class="form-group">
 			    <label for="text" class="col-sm-2 control-label">Comment</label>
-			    <div class="col-sm-10">
-			      <input type="text" class="form-control" id="text">
+			    <div class="col-sm-5">
+			      <textarea class="form-control" rows="3" id="text"></textarea>
 			      <form:errors class="form-error" path="text" />
 			    </div>
 			  </div>

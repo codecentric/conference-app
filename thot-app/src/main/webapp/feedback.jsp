@@ -17,15 +17,26 @@
 	  <div class="panel-body">
 
 		<div class="row-fluid">
-			<form:form commandName="feedbackFormData" method="POST">
-				<div>Name:</div>
-				<form:input maxlength="255" id="name" path="name" size="50" />
-				<br />
-				<div>Feedback:</div>
-				<form:textarea  maxlength="4096" cols="50" rows="4" id="feedbackContent" path="feedbackContent" />
-				<br />
-				<br />
-				<input type="submit" id="addFeedback" value="Send Feedback" class="btn btn-primary" />
+			<form:form commandName="feedbackFormData" method="POST" class="form-horizontal">
+			  <div class="form-group">
+			    <label for="author" class="col-sm-2 control-label">Name</label>
+			    <div class="col-sm-5">
+			      <input type="text" class="form-control" id="name" name="name">
+			      <form:errors class="form-error" path="name" />
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label for="text" class="col-sm-2 control-label">Feedback</label>
+			    <div class="col-sm-5">
+			      <textarea class="form-control" rows="3" id="feedbackContent" name="feedbackContent"></textarea>
+			      <form:errors class="form-error" path="feedbackContent" />
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+			      <button type="submit" class="btn btn-default" id="addFeedback">Send Feedback</button>
+			    </div>
+			  </div>
 			</form:form>
 		</div>
 		
