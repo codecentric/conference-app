@@ -13,15 +13,24 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class JsonTimeslotDao implements TimeslotDao {
 
     private static final Logger LOGGER = Logger.getLogger(JsonTimeslotDao.class);
 
     @Autowired
     private ObjectMapper jsonMapper;
+    
     private static List<Day> days;
+    
+    @Value("default.file.path.days.and.timeslots:json/daysAndTimeslots.json")
     private String filePath;
+    
+    public JsonTimeslotDao() {
+    }
 
     public JsonTimeslotDao(ObjectMapper mapper, String filePath) {
 	this.filePath = filePath;

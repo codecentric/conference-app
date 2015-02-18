@@ -16,13 +16,13 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <!-- 
 	<link rel="stylesheet" href="<%= request.getContextPath() %>/webjars/bootstrap/2.3.2/css/bootstrap.min.css">
-	<link href="<%= request.getContextPath() %>/assets/css/bootstrap.css" rel="stylesheet">
+	<link href="<%= request.getContextPath() %>/css/bootstrap.css" rel="stylesheet">
  -->	
-	<link href="<%= request.getContextPath() %>/assets/css/thot.css" rel="stylesheet">
-	<link href="<%= request.getContextPath() %>/assets/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="<%= request.getContextPath() %>/css/thot.css" rel="stylesheet">
+	<link href="<%= request.getContextPath() %>/css/bootstrap-responsive.css" rel="stylesheet">
 	
 	<!-- Favicon -->
-	<link rel="icon" type="image/png" href="<%= request.getContextPath() %>/assets/img/favicon.png"/>
+	<link rel="icon" type="image/png" href="<%= request.getContextPath() %>/img/favicon.png"/>
 	
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

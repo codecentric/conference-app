@@ -7,9 +7,11 @@ import javax.persistence.PersistenceContext;
 
 import org.cc.thot.dao.FeedbackDao;
 import org.cc.thot.domain.Feedback;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
+@Repository
 public class JpaFeedbackDao implements FeedbackDao {
 
     @PersistenceContext

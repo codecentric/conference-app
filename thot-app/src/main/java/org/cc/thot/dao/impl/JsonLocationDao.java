@@ -11,15 +11,24 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.type.TypeReference;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class JsonLocationDao implements LocationDao {
 
     private static final Logger LOGGER = Logger.getLogger(JsonLocationDao.class);
 
     @Autowired
     private ObjectMapper jsonMapper;
+    
     private static List<Location> locations;
+    
+    @Value("default.file.path.json.location:json/locations.json")
     private String filePath;
+    
+    public JsonLocationDao() {
+    }
 
     public JsonLocationDao(ObjectMapper mapper, String filePath) {
 	this.filePath = filePath;
