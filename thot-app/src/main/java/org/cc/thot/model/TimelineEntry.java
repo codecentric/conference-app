@@ -1,6 +1,6 @@
 package org.cc.thot.model;
 
-import org.cc.app.TwitterLinkCreator;
+import org.cc.thot.util.TwitterLinkCreator;
 
 public class TimelineEntry {
 

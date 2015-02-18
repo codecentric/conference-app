@@ -2,6 +2,7 @@ package org.cc.thot.config;
 
 import java.util.Locale;
 
+import org.cc.thot.web.validate.impl.Time24HoursValidator;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +23,11 @@ public class ApplicationWebConfiguration extends WebMvcConfigurerAdapter {
     @Bean
     public ObjectMapper objectMapper() {
 	return new ObjectMapper();
+    }
+    
+    @Bean
+    public Time24HoursValidator time24HoursValidator() {
+	return new Time24HoursValidator();
     } 
     
     @Bean

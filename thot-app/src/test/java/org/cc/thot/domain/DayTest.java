@@ -2,10 +2,9 @@ package org.cc.thot.domain;
 
 import java.util.ArrayList;
 
-import junit.framework.Assert;
-
 import org.cc.thot.domain.Day;
 import org.cc.thot.domain.Timeslot;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class DayTest {

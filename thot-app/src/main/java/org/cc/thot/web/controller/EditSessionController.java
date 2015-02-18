@@ -14,7 +14,6 @@ import org.cc.thot.domain.SessionType;
 import org.cc.thot.domain.Timeslot;
 import org.cc.thot.model.Html;
 import org.cc.thot.model.OpenSpaceFormData;
-import org.cc.thot.web.validate.OpenSpaceValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -39,7 +38,7 @@ public class EditSessionController {
 
     @Autowired
     private TimeslotDao timeslotDao;
-
+    
     public EditSessionController() {
 	super();
     }
@@ -95,10 +94,6 @@ public class EditSessionController {
     public ModelAndView processSubmit(HttpServletRequest request, ModelMap modelMap, @ModelAttribute("sessionDataFormData") OpenSpaceFormData formData, BindingResult result) {
 
 	modelMap.put("sessionDataFormData", formData);
-
-	// do validation
-	OpenSpaceValidator.nameValidator = new NameValidator();
-	OpenSpaceValidator.validate(formData, result);
 
 	if (result.hasErrors()) {
 	    System.out.println("Validation errors ocurred.");

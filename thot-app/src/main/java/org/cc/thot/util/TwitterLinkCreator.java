@@ -1,4 +1,4 @@
-package org.cc.app;
+package org.cc.thot.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

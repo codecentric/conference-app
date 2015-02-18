@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import org.cc.app.XlsSessionReader;
 import org.cc.thot.dao.SessionDao;
 import org.cc.thot.domain.Session;
+import org.cc.thot.util.XlsSessionReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

@@ -2,8 +2,8 @@ package org.cc;
 
 import java.util.List;
 
-import org.cc.app.XlsSessionReader;
 import org.cc.thot.domain.Session;
+import org.cc.thot.util.XlsSessionReader;
 
 public class XlsSessionsToDbScript {
 

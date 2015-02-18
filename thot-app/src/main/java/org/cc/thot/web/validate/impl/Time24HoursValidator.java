@@ -1,4 +1,4 @@
-package org.cc.thot.web.validate;
+package org.cc.thot.web.validate.impl;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

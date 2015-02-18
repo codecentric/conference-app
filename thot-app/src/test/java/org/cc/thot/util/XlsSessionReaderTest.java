@@ -1,4 +1,4 @@
-package org.cc.app;
+package org.cc.thot.util;
 
 import org.junit.Test;
 

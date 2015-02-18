@@ -1,4 +1,4 @@
-package org.cc.app;
+package org.cc.thot.util;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

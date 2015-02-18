@@ -1,8 +1,8 @@
-package org.cc.app;
+package org.cc.thot.util;
 
 import static org.junit.Assert.assertEquals;
 
-import org.cc.app.TwitterLinkCreator;
+import org.cc.thot.util.TwitterLinkCreator;
 import org.junit.Before;
 import org.junit.Test;
 

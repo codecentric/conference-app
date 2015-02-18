@@ -6,9 +6,9 @@ import java.net.URLDecoder;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.log4j.Logger;
-import org.cc.app.TwitterLinkCreator;
 import org.cc.thot.dao.SessionDao;
 import org.cc.thot.domain.Session;
+import org.cc.thot.util.TwitterLinkCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
