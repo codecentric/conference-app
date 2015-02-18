@@ -19,7 +19,7 @@
 		<div class="row">
 			<div class="span10">
 		    	<div class="content-heading">
-		      		<img src="<%= request.getContextPath() %>/assets/img/javaland2014-location.jpg"/>
+		      		<img src="<%= request.getContextPath() %>/img/javaland2014-location.jpg"/>
 		      	</div>
 			</div>
 		</div>

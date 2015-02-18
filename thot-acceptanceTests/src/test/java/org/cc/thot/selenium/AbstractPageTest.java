@@ -8,29 +8,29 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public abstract class AbstractPageTest {
 
-	private static String serverUrl = "http://localhost:9080/thot";
-	private static final String SYSTEM_PROPERTY = "server.url";
-	private String baseUrl;
-	
-	protected WebDriver driver;
-	protected String PAGE_TITLE = "Hackerspace - JavaLand 2015";
-	
-	@Before
-	public void setUp() {
-		driver = new FirefoxDriver();
-		baseUrl = System.getProperty(SYSTEM_PROPERTY);
-		if (StringUtils.isEmpty(baseUrl)) {
-			baseUrl = serverUrl;
-		}
-	}
+    private static String serverUrl = "http://localhost:9080/thot";
+    private static final String SYSTEM_PROPERTY = "server.url";
+    private String baseUrl;
 
-	@After
-	public void tearDownWebDriver() {
-		driver.close();
-	}
+    protected WebDriver driver;
+    protected String PAGE_TITLE = "Hackerspace - JavaLand 2015";
 
-	protected void open(String url) {
-		driver.navigate().to(baseUrl + url);
+    @Before
+    public void setUp() {
+	driver = new FirefoxDriver();
+	baseUrl = System.getProperty(SYSTEM_PROPERTY);
+	if (StringUtils.isEmpty(baseUrl)) {
+	    baseUrl = serverUrl;
 	}
+    }
+
+    @After
+    public void tearDownWebDriver() {
+	driver.close();
+    }
+
+    protected void open(String url) {
+	driver.navigate().to(baseUrl + url);
+    }
 
 }
