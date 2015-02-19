@@ -15,6 +15,7 @@ Hackerspace @JavaLand 2015
 
 ## Quickstart
 
+```
 cd thot-monitoring
 mvn clean install 
 java -jar target/thot-monitoring-1.0.0.jar
@@ -22,7 +23,7 @@ java -jar target/thot-monitoring-1.0.0.jar
 cd thot-app
 mvn clean install
 java -jar target/thot-app-3.0.0.jar
-
+```
 
 # Open WebApp
 http://localhost:8080
