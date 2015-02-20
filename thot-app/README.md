@@ -1,4 +1,4 @@
-h2. Quickstart
+## Quickstart
 
 For running the app incl. the Spring Boot Admin client use the following commands.
 
@@ -19,10 +19,14 @@ java -jar -Dspring.config.location=config/production.test target/thot-app*.jar
 For demo reasons we start the app three times with different ports. 
 In your spring admin client web app you should see three versions of the thot app.
 
-http://localhost:8888
+* http://localhost:8888
 
 You can access the thot apps under:
 
-Test Environment - http://localhost:8080/thot
-Staging Environment - http://localhost:8081/thot
-Production Environment - http://localhost:8082/thot
+| Environment         | Link          | 
+| ------------------- |:-------------:|
+| Test       | http://localhost:8080/thot |
+| Staging    | http://localhost:8081/thot | 
+| Production | http://localhost:8082/thot |
+| Monitoring | http://localhost:8888/     |
+
