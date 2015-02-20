@@ -12,22 +12,30 @@
 
 	<div class="panel panel-default">
 	  <div class="panel-heading">
-	    <h2 class="panel-title">${sessionTitle}</h2>
-			<h5>Description</h5>
-			<p>${sessionDescription}</p>
-			<h5>Proposed by</h5>
-			<p>${sessionSpeaker}</p>
-			<h5>Location</h5>
-			<p>${location}</p>
-			<h5>Start time</h5>
-			<p>${timeslot}</p>
-			<h5>End time</h5>
-			<p>${timeslotEnd}</p>
+	    <div class="row-fluid">
+		  <div class="col-xs-6 col-md-12">
+		  	<h5><span class="label label-info">Description</span> ${sessionTitle}</h5>
+		  </div>
+		</div>
+		<div class="row-fluid">
+		  <div class="col-xs-3 col-md-2">
+		  	<h5><span class="label label-info">Start time</span> ${timeslot}</h5>
+		  </div>
+		  <div class="col-xs-3 col-md-2">
+			<h5><span class="label label-info">End time</span> ${timeslotEnd}</h5>	
 			<c:if test="${sessionEditable}">
 				<a class="btn btn-primary"
 					href="<%= request.getContextPath() %>/editSession?sessionId=${sessionId}">Edit
 					session data</a>
-			</c:if>
+			</c:if>	  
+		  </div>
+		  <div class="col-xs-4 col-md-4">
+			<h5><span class="label label-info">Proposed by</span> ${sessionSpeaker}</h5>		  
+		  </div>
+		  <div class="col-xs-4 col-md-4">
+		  	<h5><span class="label label-info">Location</span> ${location}</h5>
+		  </div>
+		</div>
 	  </div>
 	  <div class="panel-body">
 
