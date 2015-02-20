@@ -1,3 +1,12 @@
+<spring:eval expression="@environment.getProperty('feature.toggle.current.sessions')" var="featureToggleCurrentSessions" />
+<spring:eval expression="@environment.getProperty('feature.toggle.static.sessions')" var="featureToggleStaticSessions" />
+<spring:eval expression="@environment.getProperty('feature.toggle.twitter.wall')" var="featureToggleTwitterWall" />
+<spring:eval expression="@environment.getProperty('feature.toggle.search.sessions')" var="featureToggleSearchSessions" />
+<spring:eval expression="@environment.getProperty('feature.toggle.venue.map')" var="featureToggleVenueMap" />
+<spring:eval expression="@environment.getProperty('feature.toggle.feedback')" var="featureToggleFeedback" />
+<spring:eval expression="@environment.getProperty('feature.toggle.changelog')" var="featureToggleChangelog" />
+<spring:eval expression="@environment.getProperty('feature.toggle.app.structure')" var="featureToggleAppStructure" />
+
     <div class="container-fluid">
 
       <!-- Static navbar -->
@@ -14,16 +23,32 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="currentSessions"><spring:message code="current.sessions.title" text="Current Sessions"/></a></li>		 
-			  <li><a href="staticSessions"><spring:message code="sessions" text="Sessions"/></a></li>
-			  <li><a href="twitterWall"><spring:message code="twitter" text="Twitter"/></a></li>
-			  <li><a href="searchSessions"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-			  <li><a href="venueMap"><spring:message code="map" text="Venue Map"/></a></li>
-			  <li><a href="feedback"><spring:message code="feedback" text="User Feedback"/></a></li>
+              <c:if test="${featureToggleCurrentSessions}">
+              	<li><a href="currentSessions"><spring:message code="current.sessions.title" text="Current Sessions"/></a></li>	
+              </c:if>
+              <c:if test="${featureToggleStaticSessions}">	 
+			  	<li><a href="staticSessions"><spring:message code="sessions" text="Sessions"/></a></li>
+			  </c:if>
+			  <c:if test="${featureToggleTwitterWall}">
+				<li><a href="twitterWall"><spring:message code="twitter" text="Twitter"/></a></li>
+			  </c:if>
+			  <c:if test="${featureToggleSearchSessions}">
+			  	<li><a href="searchSessions"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+			  </c:if>
+			  <c:if test="${featureToggleVenueMap}">
+			  	<li><a href="venueMap"><spring:message code="map" text="Venue Map"/></a></li>
+			  </c:if>
+			  <c:if test="${featureToggleFeedback}">
+			  	<li><a href="feedback"><spring:message code="feedback" text="User Feedback"/></a></li>
+			  </c:if>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="changelog"><spring:message code="versionhistory" text="Changelog"/></a></li>
-              <li><a href="appStructure"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span></a></li>
+              <c:if test="${featureToggleChangelog}">
+                <li><a href="changelog"><spring:message code="versionhistory" text="Changelog"/></a></li>
+              </c:if>
+              <c:if test="${featureToggleAppStructure}">
+                <li><a href="appStructure"><span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span></a></li>
+              </c:if>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
