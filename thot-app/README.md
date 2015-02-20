@@ -12,8 +12,8 @@ java -jar target/thot-monitoring*.jar
 cd thot-app
 mvn clean install
 java -jar -Dspring.config.location=config/production.properties target/thot-app*.jar
-java -jar -Dspring.config.location=config/production.staging target/thot-app*.jar
-java -jar -Dspring.config.location=config/production.test target/thot-app*.jar
+java -jar -Dspring.config.location=config/staging.properties target/thot-app*.jar
+java -jar -Dspring.config.location=config/test.properties target/thot-app*.jar
 ```
 
 For demo reasons we start the app three times with different ports. 
@@ -25,8 +25,8 @@ You can access the thot apps under:
 
 | Environment         | Link          | 
 | ------------------- |:-------------:|
-| Test       | http://localhost:8080/thot |
-| Staging    | http://localhost:8081/thot | 
-| Production | http://localhost:8082/thot |
-| Monitoring | http://localhost:8888/     |
+| Test        | http://localhost:8080/thot |
+| Staging     | http://localhost:8081/thot | 
+| Production  | http://localhost:8082/thot |
+| Monitoring  | http://localhost:8888/ |
 
