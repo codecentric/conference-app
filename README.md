@@ -1,4 +1,4 @@
-## Important Links
+# Important Links
 
 * Production Link **(offline)**
 * Continuous Delivery Build Pipeline **(offline)**
@@ -13,26 +13,26 @@ Hackerspace @JavaLand 2015
 
 * http://javaland.eu
 
-## Quickstart
+# Quickstart
 
 ```
-cd thot-monitoring
+cd monitoring
 mvn clean install 
-java -jar target/thot-monitoring-1.0.0.jar
+java -jar target/monitoring-1.0.0.jar
 
-cd thot-app
+cd app
 mvn clean install
-java -jar target/thot-app-3.0.0.jar
+java -jar target/conference-app-3.0.0.jar
 ```
 
-# Open WebApp
+## Open WebApp
 http://localhost:8080
 
-# Open Monitoring App
+## Open Monitoring App
 http://localhost:8888
 
 
-## Environments 
+# Environments 
 
 | Environment         | Link          | 
 | ------------------- |:-------------:|
