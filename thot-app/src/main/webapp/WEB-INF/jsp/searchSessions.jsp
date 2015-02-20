@@ -18,13 +18,17 @@
 
 		<div class="row-fluid">
 			<form:form commandName="searchFormData" method="POST">
-				<div><spring:message code="search.authorname" text="Author Name"/>:</div>
-				<form:input maxlength="255" id="name" path="name" />
-				<br />
-				<br />
-				<input type="submit" id="searchSessions" value="Search" class="btn btn-primary" />
+			  <div class="form-group">
+			    <div class="col-sm-3">
+			      <input type="text" class="form-control" id="name" name="name">
+			      <form:errors class="form-error" path="name" />
+			    </div>
+			  </div>
+		      <button type="submit" class="btn btn-default" id="searchSessions">Search</button>
 			</form:form>
 		</div>
+		
+		<hr/>
 
 		<div class="row-fluid">
 			<div class="tabbable">
