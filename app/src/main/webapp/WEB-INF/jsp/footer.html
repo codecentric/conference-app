@@ -1,0 +1,23 @@
+
+	<footer class="footer">
+      <div class="container">
+        <spring:message code="footer.about"
+			text="This is a community app developed by participants of " />
+		<a target="_blank" href="http://www.javaland.eu/"><spring:message
+				code="footer.conferencename" text="JavaLand 2015" /></a>
+		<spring:message code="footer.conferencelocation"
+			text="(Cologne, Germany)" />
+		<br />
+		<spring:message code="footer.sposoredby"
+			text="Hosting is sponsord by " />
+		<a href="http://blog.codecentric.de/en"><spring:message
+				code="footer.sposorname" text="codecentric" /></a>
+      </div>
+    </footer>
+
+<script src="<%= request.getContextPath() %>/js/jquery.js"></script>
+<script src="<%= request.getContextPath() %>/js/bootstrap.js"></script>
+<script src="<%= request.getContextPath() %>/js/conference-app.js"></script>
+
+</body>
+</html>
