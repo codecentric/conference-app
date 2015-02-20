@@ -1,4 +1,4 @@
-package org.cc.thot.selenium;
+package de.codecentric.selenium;
 
 import static org.junit.Assert.assertTrue;
 
@@ -6,9 +6,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class ConferenceScheduledSessionsPageTest extends AbstractPageTest {
+public class CurrentSessionsPageTest extends AbstractPageTest {
 
-	private String pageLink = "/staticSessions";
+	private String pageLink = "/currentSessions";
 	
 	@Test
 	public void openPageAndValidateTitle() {

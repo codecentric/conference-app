@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="<%= request.getContextPath() %>/webjars/bootstrap/2.3.2/css/bootstrap.min.css">
 	<link href="<%= request.getContextPath() %>/css/bootstrap.css" rel="stylesheet">
  -->	
-	<link href="<%= request.getContextPath() %>/css/thot.css" rel="stylesheet">
+	<link href="<%= request.getContextPath() %>/css/conference-app.css" rel="stylesheet">
 	<link href="<%= request.getContextPath() %>/css/bootstrap-responsive.css" rel="stylesheet">
 	
 	<!-- Favicon -->

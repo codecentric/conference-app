@@ -8,5 +8,5 @@
 
 ... against localhost
 
-<code>mvn test -Dserver.url=http://localhost:8080/thot-app</code>
+<code>mvn test -Dserver.url=http://localhost:8080</code>
 

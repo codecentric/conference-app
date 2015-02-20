@@ -56,7 +56,7 @@
 							<td>${comment.author}</td>
 							<td>${comment.text}</td>
 							<td><fmt:formatDate value="${comment.date}" type="both" dateStyle="short" timeStyle="short" /></td>
-							<td><a href="http://twitter.com/?status=Neuer Kommentar: ${comment.text} - http://bit.ly/thot-2014 - %23osswdev %23ale14 via @OSSWDEV">Tweet comment</a></td>
+							<td><a href="http://twitter.com/?status=Neuer Kommentar: ${comment.text} - http://bit.ly/conference-app-2015 - %23osswdev %23javaland15 via @OSSWDEV">Tweet comment</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

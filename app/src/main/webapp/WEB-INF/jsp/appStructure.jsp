@@ -27,16 +27,16 @@
       	        data.addColumn('string', 'Manager');
 
       	        data.addRows([
-      	          [{v:'thot', f:'thot<div style="color:green; font-style:italic">Startpage</div>'}, ''],
-      	          [{v:'currentSessions', f:'thot/currentSessions<div style="color:green; font-style:italic">Current Sessions</div>'}, 'thot'],
-      	          [{v:'staticSessions', f:'thot/staticSessions<div style="color:green; font-style:italic">Static Sessions</div>'}, 'thot'],
-      	          [{v:'twitterWall', f:'thot/twitterWall.jsp<div style="color:green; font-style:italic">Twitter Wall</div>'}, 'thot'],
-      	          [{v:'searchSessions', f:'thot/searchSessions<div style="color:green; font-style:italic">Search Sessions</div>'}, 'thot'],
-      	          [{v:'map', f:'thot/venueMap.jsp<div style="color:green; font-style:italic">Venue Map</div>'}, 'thot'],
-      	          [{v:'feedback', f:'thot/feedback<div style="color:green; font-style:italic">Feedback</div>'}, 'thot'],
-      	          [{v:'features', f:'thot/features<div style="color:green; font-style:italic">Features</div>'}, 'thot'],
-      	          [{v:'comments', f:'thot/comments<div style="color:green; font-style:italic">Comments</div>'}, 'staticSessions'],
-      	          [{v:'addLink', f:'thot/addLink<div style="color:green; font-style:italic">Add Link</div>'}, 'staticSessions'],
+      	          [{v:'home', f:'home<div style="color:green; font-style:italic">Startpage</div>'}, ''],
+      	          [{v:'currentSessions', f:'currentSessions<div style="color:green; font-style:italic">Current Sessions</div>'}, 'home'],
+      	          [{v:'staticSessions', f:'staticSessions<div style="color:green; font-style:italic">Static Sessions</div>'}, 'home'],
+      	          [{v:'twitterWall', f:'twitterWall.jsp<div style="color:green; font-style:italic">Twitter Wall</div>'}, 'home'],
+      	          [{v:'searchSessions', f:'searchSessions<div style="color:green; font-style:italic">Search Sessions</div>'}, 'home'],
+      	          [{v:'map', f:'venueMap.jsp<div style="color:green; font-style:italic">Venue Map</div>'}, 'home'],
+      	          [{v:'feedback', f:'feedback<div style="color:green; font-style:italic">Feedback</div>'}, 'home'],
+      	          [{v:'features', f:'features<div style="color:green; font-style:italic">Features</div>'}, 'home'],
+      	          [{v:'comments', f:'comments<div style="color:green; font-style:italic">Comments</div>'}, 'staticSessions'],
+      	          [{v:'addLink', f:'addLink<div style="color:green; font-style:italic">Add Link</div>'}, 'staticSessions'],
       	        ]);
 
       	        var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));

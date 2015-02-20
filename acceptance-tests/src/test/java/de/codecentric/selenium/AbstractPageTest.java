@@ -1,4 +1,4 @@
-package org.cc.thot.selenium;
+package de.codecentric.selenium;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.After;
@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public abstract class AbstractPageTest {
 
-    private static String serverUrl = "http://localhost:9080/thot";
+    private static String serverUrl = "http://localhost:8080";
     private static final String SYSTEM_PROPERTY = "server.url";
     private String baseUrl;
 

@@ -1,4 +1,4 @@
-package org.cc.thot.selenium;
+package de.codecentric.selenium;
 
 import static org.junit.Assert.assertTrue;
 

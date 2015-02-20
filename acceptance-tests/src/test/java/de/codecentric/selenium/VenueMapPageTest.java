@@ -1,4 +1,4 @@
-package org.cc.thot.selenium;
+package de.codecentric.selenium;
 
 import static org.junit.Assert.assertTrue;
 
@@ -6,9 +6,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class StartingPageTest extends AbstractPageTest {
+public class VenueMapPageTest extends AbstractPageTest {
 
-	private String pageLink = "/";
+	private String pageLink = "/feedback";
 	
 	@Test
 	public void openPageAndValidateTitle() {
@@ -17,13 +17,10 @@ public class StartingPageTest extends AbstractPageTest {
 	}
 	
 	@Test
-	public void openStartingPage() {
+	public void openVenueMapPage() {
 		open(pageLink);
 		WebElement title = driver.findElement(By.id("title"));
 		assertTrue(title.isDisplayed());
-
-		WebElement currentSessions = driver.findElement(By.id("current_sessions"));
-		assertTrue(currentSessions.isDisplayed());
 	}
 
 }
