@@ -31,10 +31,6 @@ public class AddLinkController {
     @Autowired
     private SessionDao sessionDao;
 
-    public AddLinkController() {
-	super();
-    }
-
     @RequestMapping(method = RequestMethod.GET)
     public void setupForm(ModelMap modelMap, HttpServletRequest request) {
 	String sessionId = request.getParameter("sessionId");
@@ -53,7 +49,6 @@ public class AddLinkController {
 	return new ModelAndView(new RedirectView("comments") {
 	    {
 		this.getAttributesMap().put("sessionId", form.getSessionId());
-		this.getAttributesMap().put("title", request.getParameter("title"));
 	    }
 	});
     }

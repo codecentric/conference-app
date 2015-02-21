@@ -1,8 +1,6 @@
 package de.codecentric.controller;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -36,25 +34,18 @@ public class AddCommentsController {
     @Autowired
     private SessionDao sessionDao;
 
-    public AddCommentsController() {
-	super();
-    }
-
     @RequestMapping(method = RequestMethod.GET)
     public void setupForm(ModelMap modelMap, HttpServletRequest request) {
 	HttpSession httpSession = request.getSession();
 
 	String sessionId = request.getParameter("sessionId");
-	Session session = null;
-	session = sessionDao.getSessionById(sessionId);
+	Session session = sessionDao.getSessionById(sessionId);
 
 	CommentFormData commentFormData = new CommentFormData();
 	if (httpSession.getAttribute(USERNAME) != null) {
 	    commentFormData.setAuthor((String) httpSession.getAttribute(USERNAME));
 	}
 
-	List<Integer> ratingList = Arrays.asList(1, 2, 3, 4, 5);
-	modelMap.put("ratingList", ratingList);
 	modelMap.put("commentFormData", commentFormData);
 	modelMap.put("sessionTitle", session.getTitle());
     }
@@ -70,7 +61,6 @@ public class AddCommentsController {
 	return new ModelAndView(new RedirectView("comments") {
 	    {
 		this.getAttributesMap().put("sessionId", cmd.getSessionId());
-		this.getAttributesMap().put("title", request.getParameter("title"));
 	    }
 	});
     }

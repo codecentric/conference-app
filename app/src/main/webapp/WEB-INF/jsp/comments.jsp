@@ -45,7 +45,7 @@
 			
 			<div style="float: right;">
 				<a class="btn btn-primary"
-					href="<%= request.getContextPath() %>/addComment?sessionId=<%= request.getParameter("sessionId")%>&title=${sessionTitle}">Add
+					href="<%= request.getContextPath() %>/addComment?sessionId=<%= request.getParameter("sessionId")%>">Add
 					Comment</a>
 			</div>
 

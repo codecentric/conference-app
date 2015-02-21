@@ -20,14 +20,14 @@
 		  <div class="form-group">
 		    <label for="author" class="col-sm-2 control-label">Your Name</label>
 		    <div class="col-sm-5">
-		      <input type="text" class="form-control" id="author">
+		      <input type="text" class="form-control" id="author" name="author">
 		      <form:errors class="form-error" path="author" />
 		    </div>
 		  </div>
 		  <div class="form-group">
 		    <label for="text" class="col-sm-2 control-label">Comment</label>
 		    <div class="col-sm-5">
-		      <textarea class="form-control" rows="3" id="text"></textarea>
+		      <textarea class="form-control" rows="3" id="text" name="text"></textarea>
 		      <form:errors class="form-error" path="text" />
 		    </div>
 		  </div>

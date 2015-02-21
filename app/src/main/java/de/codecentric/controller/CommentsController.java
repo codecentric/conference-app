@@ -35,10 +35,6 @@ public class CommentsController {
     @Autowired
     private SessionDao sessionDao;
 
-    public CommentsController() {
-	super();
-    }
-
     @RequestMapping(method = RequestMethod.GET)
     public void setupForm(ModelMap modelMap, HttpServletRequest request) {
 	String sessionId = request.getParameter("sessionId");
