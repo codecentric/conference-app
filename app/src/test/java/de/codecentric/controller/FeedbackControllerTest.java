@@ -1,9 +1,14 @@
 package de.codecentric.controller;
 
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
+
+import java.util.Arrays;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -18,18 +23,23 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.servlet.View;
 
 import de.codecentric.Application;
+import de.codecentric.dao.FeedbackDao;
+import de.codecentric.domain.Feedback;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(classes = { Application.class, FeedbackDao.class })
 @WebAppConfiguration
-public class TwitterWallControllerTest {
+public class FeedbackControllerTest {
 
     @InjectMocks
-    TwitterWallController controller;
-    
+    FeedbackController controller;
+
+    @Mock
+    FeedbackDao feedbackDao;
+
     @Mock
     View mockView;
-    
+
     private MockMvc mockMvc;
 
     @Before
@@ -39,8 +49,14 @@ public class TwitterWallControllerTest {
     }
 
     @Test
-    public void testTwitterWallController() throws Exception {
-	mockMvc.perform(get("/twitterWall")).andExpect(status().isOk()).andExpect(view().name("twitterWall"));
+    public void testFeedbackController() throws Exception {
+	List<Feedback> feedbackList = Arrays.asList(new Feedback());
+	when(feedbackDao.getFeedbackList()).thenReturn(feedbackList);
+
+	mockMvc.perform(get("/feedback"))
+		.andExpect(status().isOk())
+		.andExpect(model().attribute("feedbackList", feedbackList))
+		.andExpect(view().name("feedback"));
     }
 
 }
