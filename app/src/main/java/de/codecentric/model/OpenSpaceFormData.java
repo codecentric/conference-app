@@ -1,6 +1,7 @@
 package de.codecentric.model;
 
 import de.codecentric.domain.Session;
+import de.codecentric.util.Html;
 
 
 public class OpenSpaceFormData {

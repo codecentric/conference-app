@@ -10,7 +10,8 @@ import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
-import de.codecentric.web.validate.impl.Time24HoursValidator;
+import de.codecentric.validate.TimeValidator;
+import de.codecentric.validate.impl.Time24HoursValidator;
 
 @Configuration
 public class ApplicationWebConfiguration extends WebMvcConfigurerAdapter {
@@ -27,7 +28,7 @@ public class ApplicationWebConfiguration extends WebMvcConfigurerAdapter {
     }
     
     @Bean
-    public Time24HoursValidator time24HoursValidator() {
+    public TimeValidator timeValidator() {
 	return new Time24HoursValidator();
     } 
     
