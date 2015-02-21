@@ -29,18 +29,16 @@ public class Comment {
     @Column(length = 2048)
     private String text;
     private Long sessionId;
-    private Integer rating;
 
     public Comment() {
     }
 
-    public Comment(Date date, String author, String text, Long sessionId, Integer rating) {
+    public Comment(Date date, String author, String text, Long sessionId) {
 	super();
 	this.date = date;
 	this.author = author;
 	this.text = text;
 	this.sessionId = sessionId;
-	this.rating = rating;
     }
 
     public long getId() {
@@ -128,13 +126,5 @@ public class Comment {
 	    return false;
 	}
 	return true;
-    }
-
-    public Integer getRating() {
-	return rating;
-    }
-
-    public void setRating(Integer rating) {
-	this.rating = rating;
     }
 }

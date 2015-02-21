@@ -56,7 +56,7 @@ public class AddCommentsController {
 	String author = cmd.getAuthor();
 	request.getSession().setAttribute(USERNAME, author);
 
-	Comment comment = new Comment(new Date(), Html.escapeHtml(author), Html.escapeHtml(cmd.getText()), Long.valueOf(cmd.getSessionId()), cmd.getRating());
+	Comment comment = new Comment(new Date(), Html.escapeHtml(author), Html.escapeHtml(cmd.getText()), Long.valueOf(cmd.getSessionId()));
 	commentDao.saveComment(comment);
 	return new ModelAndView(new RedirectView("comments") {
 	    {
