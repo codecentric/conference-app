@@ -34,10 +34,10 @@ public class CurrentSessionsController {
 	SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
 	String now = format.format(new Date());
 
-	modelMap.put("sessionDays", sessionsByDateMap.keySet());
-	modelMap.put("sessionMap", sessionsByDateMap);
 	List<Session> allSessionsByDate = sessionDao.getAllSessionsByDateAndType(now, SessionType.openspace, SessionType.session);
 	modelMap.put("currentSessions", filterCurrentSessions(allSessionsByDate));
+	modelMap.put("sessionDays", sessionsByDateMap.keySet());
+	modelMap.put("sessionMap", sessionsByDateMap);
     }
 
     private List<Session> filterCurrentSessions(List<Session> allSessionsByDate) {
@@ -52,6 +52,7 @@ public class CurrentSessionsController {
 
     private Map<String, List<Session>> getStaticSessionMap(List<Session> staticSessions) {
 	Map<String, List<Session>> sessionsByDateMap = new TreeMap<String, List<Session>>();
+	
 	for (Session session : staticSessions) {
 	    String key = session.getDate();
 	    List<Session> list;
