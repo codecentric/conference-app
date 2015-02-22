@@ -40,14 +40,11 @@ public class SearchSessionsController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView searchSessions(ModelMap modelMap, @ModelAttribute("searchFormData") SearchFormData formData) {
-	logger.info("searchSessions " + formData.getName());
-
-	modelMap.put("searchFormData", formData);
+	logger.info("searchSessions by author " + formData.getName());
 
 	List<Session> sessions = loadSessionsForAuthorName(formData.getName());
-	logger.info("searchSessions list " + sessions.size());
-
 	modelMap.put("sessionsList", sessions);
+	modelMap.put("searchFormData", formData);
 
 	ModelAndView modelAndView = new ModelAndView("searchSessions");
 	modelAndView.addObject("sessionsList", sessions);

@@ -85,4 +85,14 @@ public class CommentsControllerTest {
 		.andExpect(view().name("comments"));
     }
     
+    @Test
+    public void testExceptionSetupForm() throws Exception {
+	mockMvc.perform(get("/comments"))
+		.andExpect(status().isOk())
+		.andExpect(model().attribute("comments", containsString("")))
+		.andExpect(model().attribute("sessionTitle", containsString("Nice try :)")))
+		.andExpect(model().attributeExists("sessionDescription"))
+		.andExpect(view().name("comments"));
+    }
+    
 }
