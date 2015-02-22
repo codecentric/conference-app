@@ -14,15 +14,15 @@
 	  <div class="panel-heading">
 	    <div class="row-fluid">
 		  <div class="col-xs-6 col-md-12">
-		  	<h5><span class="label label-info">Description</span> ${sessionTitle}</h5>
+		  	<h5><span class="label label-info">Description</span> ${session.title}</h5>
 		  </div>
 		</div>
 		<div class="row-fluid">
 		  <div class="col-xs-3 col-md-2">
-		  	<h5><span class="label label-info">Start time</span> ${timeslot}</h5>
+		  	<h5><span class="label label-info">Start time</span> ${session.start}</h5>
 		  </div>
 		  <div class="col-xs-3 col-md-2">
-			<h5><span class="label label-info">End time</span> ${timeslotEnd}</h5>	
+			<h5><span class="label label-info">End time</span> ${session.end}</h5>	
 			<c:if test="${sessionEditable}">
 				<a class="btn btn-primary"
 					href="<%= request.getContextPath() %>/editSession?sessionId=${sessionId}">Edit
@@ -77,7 +77,7 @@
 		
 			<div style="float: right;">
 				<a class="btn btn-primary"
-					href="<%= request.getContextPath() %>/addLink?sessionId=<%= request.getParameter("sessionId")%>&title=${sessionTitle}">Add
+					href="<%= request.getContextPath() %>/addLink?sessionId=<%= request.getParameter("sessionId")%>&title=${session.title}">Add
 					Link</a>
 			</div>
 
