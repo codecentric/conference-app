@@ -12,7 +12,7 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String getFeedback(Map<String, Object> modelMap) {
-	return "home";
+        return "home";
     }
 
 }

@@ -7,27 +7,27 @@ public class FeedbackFormData {
     private String feedbackContent;
 
     public String getFeedbackContent() {
-	return feedbackContent;
+        return feedbackContent;
     }
 
     public void setFeedbackContent(String feedbackContent) {
-	this.feedbackContent = feedbackContent;
+        this.feedbackContent = feedbackContent;
     }
 
     public String getName() {
-	return name;
+        return name;
     }
 
     public void setName(String name) {
-	this.name = name;
+        this.name = name;
     }
 
     public String getId() {
-	return id;
+        return id;
     }
 
     public void setId(String id) {
-	this.id = id;
+        this.id = id;
     }
 
 }

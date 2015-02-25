@@ -49,42 +49,32 @@ public class SearchSessionsControllerTest {
 
     @Before
     public void setup() {
-	MockitoAnnotations.initMocks(this);
-	mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
+        MockitoAnnotations.initMocks(this);
+        mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
     }
 
     @Test
     public void testSetupForm() throws Exception {
-	mockMvc.perform(get("/searchSessions"))
-		.andExpect(status().isOk())
-		.andExpect(model().attributeExists("searchFormData"))
-		.andExpect(model().attributeExists("sessionsList"))
-		.andExpect(model().attribute("sessionsList", is(empty())))
-		.andExpect(view().name("searchSessions"));
+        mockMvc.perform(get("/searchSessions")).andExpect(status().isOk()).andExpect(model().attributeExists("searchFormData")).andExpect(model().attributeExists("sessionsList"))
+                        .andExpect(model().attribute("sessionsList", is(empty()))).andExpect(view().name("searchSessions"));
     }
-    
+
     @Test
     public void testSearchSession() throws Exception {
-	String title = "title";
-	String author = "author";
-	Session session = new Session("date", "startTime", "location", title, author, "description");
-	List<Session> sessions = Arrays.asList(session);
-	when(sessionDao.getAllSessionsByAuthor(author )).thenReturn(sessions);
-	
-	mockMvc.perform(post("/searchSessions").param("name", author))
-		.andExpect(status().isOk())
-		.andExpect(model().attributeExists("sessionsList"))
-		.andExpect(model().attribute("sessionsList", hasSize(1)))
-		.andExpect(view().name(containsString("searchSessions")));
+        String title = "title";
+        String author = "author";
+        Session session = new Session("date", "startTime", "location", title, author, "description");
+        List<Session> sessions = Arrays.asList(session);
+        when(sessionDao.getAllSessionsByAuthor(author)).thenReturn(sessions);
+
+        mockMvc.perform(post("/searchSessions").param("name", author)).andExpect(status().isOk()).andExpect(model().attributeExists("sessionsList"))
+                        .andExpect(model().attribute("sessionsList", hasSize(1))).andExpect(view().name(containsString("searchSessions")));
     }
-    
+
     @Test
     public void testSearchSessionWithInMemoryDBShouldReturnEmptyList() throws Exception {
-	mockMvc.perform(post("/searchSessions").param("name", "author"))
-		.andExpect(status().isOk())
-		.andExpect(model().attributeExists("sessionsList"))
-		.andExpect(model().attribute("sessionsList", hasSize(0)))
-		.andExpect(view().name(containsString("searchSessions")));
+        mockMvc.perform(post("/searchSessions").param("name", "author")).andExpect(status().isOk()).andExpect(model().attributeExists("sessionsList"))
+                        .andExpect(model().attribute("sessionsList", hasSize(0))).andExpect(view().name(containsString("searchSessions")));
     }
-    
+
 }

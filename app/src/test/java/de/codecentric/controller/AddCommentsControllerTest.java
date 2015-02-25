@@ -51,34 +51,26 @@ public class AddCommentsControllerTest {
 
     @Before
     public void setup() {
-	MockitoAnnotations.initMocks(this);
-	mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
+        MockitoAnnotations.initMocks(this);
+        mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
     }
 
     @Test
     public void testSetupForm() throws Exception {
-	String title = "title";
-	String sessionId = "42";
-	Session session = new Session("date", "startTime", "location", title, "author", "description");
-	when(sessionDao.getSessionById(sessionId)).thenReturn(session);
-	
-	mockMvc.perform(get("/addComment").param("sessionId", sessionId))
-		.andExpect(status().isOk())
-		.andExpect(model().attributeExists("commentFormData"))
-		.andExpect(model().attribute("sessionTitle", containsString(title)))
-		.andExpect(view().name("addComment"));
+        String title = "title";
+        String sessionId = "42";
+        Session session = new Session("date", "startTime", "location", title, "author", "description");
+        when(sessionDao.getSessionById(sessionId)).thenReturn(session);
+
+        mockMvc.perform(get("/addComment").param("sessionId", sessionId)).andExpect(status().isOk()).andExpect(model().attributeExists("commentFormData"))
+                        .andExpect(model().attribute("sessionTitle", containsString(title))).andExpect(view().name("addComment"));
     }
-    
+
     @Test
     public void testPostNewFeedback() throws Exception {
-	mockMvc.perform(post("/addComment")
-		.param("sessionId", "42")
-		.param("text", "text")
-		.param("author", "author")
-		.param("sessionTitle","sessionTitle"))
-		.andExpect(status().is3xxRedirection());
-	
-	verify(commentDao, times(1)).saveComment(any(Comment.class));
+        mockMvc.perform(post("/addComment").param("sessionId", "42").param("text", "text").param("author", "author").param("sessionTitle", "sessionTitle")).andExpect(status().is3xxRedirection());
+
+        verify(commentDao, times(1)).saveComment(any(Comment.class));
     }
 
 }

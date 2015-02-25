@@ -26,21 +26,21 @@ public class TwitterWallControllerTest {
 
     @InjectMocks
     TwitterWallController controller;
-    
+
     @Mock
     View mockView;
-    
+
     private MockMvc mockMvc;
 
     @Before
     public void setup() {
-	MockitoAnnotations.initMocks(this);
-	mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
+        MockitoAnnotations.initMocks(this);
+        mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
     }
 
     @Test
     public void testTwitterWallController() throws Exception {
-	mockMvc.perform(get("/twitterWall")).andExpect(status().isOk()).andExpect(view().name("twitterWall"));
+        mockMvc.perform(get("/twitterWall")).andExpect(status().isOk()).andExpect(view().name("twitterWall"));
     }
 
 }

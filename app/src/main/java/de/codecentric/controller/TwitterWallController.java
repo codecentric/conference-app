@@ -12,7 +12,7 @@ public class TwitterWallController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String twitterWall(Map<String, Object> modelMap) {
-	return "twitterWall";
+        return "twitterWall";
     }
 
 }

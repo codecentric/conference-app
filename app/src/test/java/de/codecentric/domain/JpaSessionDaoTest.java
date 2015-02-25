@@ -20,17 +20,17 @@ public class JpaSessionDaoTest {
 
     @Before
     public void setUp() throws Exception {
-	MockitoAnnotations.initMocks(this);
+        MockitoAnnotations.initMocks(this);
 
-	dao = new JpaSessionDao(emMock);
+        dao = new JpaSessionDao(emMock);
     }
 
     @Test
     public void shouldSaveSession() {
-	Session session = new Session("2012/08/29", "10:00", "11:00", "Title", "Speaker", "Description");
-	dao.saveSession(session);
+        Session session = new Session("2012/08/29", "10:00", "11:00", "Title", "Speaker", "Description");
+        dao.saveSession(session);
 
-	verify(emMock).merge(session);
+        verify(emMock).merge(session);
     }
 
 }

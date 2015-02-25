@@ -10,15 +10,15 @@ public class Location {
 
     @JsonCreator
     public Location(@JsonProperty("shortName") String shortName, @JsonProperty("description") String description) {
-	this.shortName = shortName;
-	this.description = description;
+        this.shortName = shortName;
+        this.description = description;
     }
 
     public String getShortName() {
-	return shortName;
+        return shortName;
     }
 
     public String getDescription() {
-	return description;
+        return description;
     }
 }

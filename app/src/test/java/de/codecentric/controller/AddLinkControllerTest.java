@@ -51,33 +51,26 @@ public class AddLinkControllerTest {
 
     @Before
     public void setup() {
-	MockitoAnnotations.initMocks(this);
-	mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
+        MockitoAnnotations.initMocks(this);
+        mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
     }
 
     @Test
     public void testSetupForm() throws Exception {
-	String title = "title";
-	String sessionId = "42";
-	Session session = new Session("date", "startTime", "location", title, "author", "description");
-	when(sessionDao.getSessionById(sessionId)).thenReturn(session);
-	
-	mockMvc.perform(get("/addLink").param("sessionId", sessionId))
-		.andExpect(status().isOk())
-		.andExpect(model().attributeExists("linkFormData"))
-		.andExpect(model().attribute("sessionTitle", containsString(title)))
-		.andExpect(view().name("addLink"));
+        String title = "title";
+        String sessionId = "42";
+        Session session = new Session("date", "startTime", "location", title, "author", "description");
+        when(sessionDao.getSessionById(sessionId)).thenReturn(session);
+
+        mockMvc.perform(get("/addLink").param("sessionId", sessionId)).andExpect(status().isOk()).andExpect(model().attributeExists("linkFormData"))
+                        .andExpect(model().attribute("sessionTitle", containsString(title))).andExpect(view().name("addLink"));
     }
-    
+
     @Test
     public void testPostNewFeedback() throws Exception {
-	mockMvc.perform(post("/addLink")
-		.param("sessionId", "42")
-		.param("comment", "user comment")
-		.param("url", "author"))
-		.andExpect(status().is3xxRedirection());
-	
-	verify(linkDao, times(1)).saveLink(any(Link.class));
+        mockMvc.perform(post("/addLink").param("sessionId", "42").param("comment", "user comment").param("url", "author")).andExpect(status().is3xxRedirection());
+
+        verify(linkDao, times(1)).saveLink(any(Link.class));
     }
 
 }

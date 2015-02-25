@@ -26,21 +26,21 @@ public class VenueMapControllerTest {
 
     @InjectMocks
     VenueMapController controller;
-    
+
     @Mock
     View mockView;
-    
+
     private MockMvc mockMvc;
 
     @Before
     public void setup() {
-	MockitoAnnotations.initMocks(this);
-	mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
+        MockitoAnnotations.initMocks(this);
+        mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
     }
 
     @Test
     public void testVenueMapController() throws Exception {
-	mockMvc.perform(get("/venueMap")).andExpect(status().isOk()).andExpect(view().name("venueMap"));
+        mockMvc.perform(get("/venueMap")).andExpect(status().isOk()).andExpect(view().name("venueMap"));
     }
 
 }

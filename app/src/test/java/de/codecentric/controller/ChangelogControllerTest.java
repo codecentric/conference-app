@@ -26,21 +26,21 @@ public class ChangelogControllerTest {
 
     @InjectMocks
     ChangelogController controller;
-    
+
     @Mock
     View mockView;
-    
+
     private MockMvc mockMvc;
 
     @Before
     public void setup() {
-	MockitoAnnotations.initMocks(this);
-	mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
+        MockitoAnnotations.initMocks(this);
+        mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
     }
 
     @Test
     public void testChangelogController() throws Exception {
-	mockMvc.perform(get("/changelog")).andExpect(status().isOk()).andExpect(view().name("changelog"));
+        mockMvc.perform(get("/changelog")).andExpect(status().isOk()).andExpect(view().name("changelog"));
     }
 
 }

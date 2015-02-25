@@ -33,24 +33,24 @@ public class AddLinkController {
 
     @RequestMapping(method = RequestMethod.GET)
     public void setupForm(ModelMap modelMap, HttpServletRequest request) {
-	String sessionId = request.getParameter("sessionId");
-	Session session = sessionDao.getSessionById(sessionId);
+        String sessionId = request.getParameter("sessionId");
+        Session session = sessionDao.getSessionById(sessionId);
 
-	LinkFormData linkFormData = new LinkFormData();
+        LinkFormData linkFormData = new LinkFormData();
 
-	modelMap.put("linkFormData", linkFormData);
-	modelMap.put("sessionTitle", session.getTitle());
+        modelMap.put("linkFormData", linkFormData);
+        modelMap.put("sessionTitle", session.getTitle());
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView processSubmit(final HttpServletRequest request, ModelMap modelMap, final @ModelAttribute("linkFormData") LinkFormData form, BindingResult result) {
-	Link link = new Link(new Date(), Html.escapeHtml(form.getComment()), Html.escapeHtml(form.getUrl()), form.getSessionId());
-	linkDao.saveLink(link);
-	return new ModelAndView(new RedirectView("comments") {
-	    {
-		this.getAttributesMap().put("sessionId", form.getSessionId());
-	    }
-	});
+        Link link = new Link(new Date(), Html.escapeHtml(form.getComment()), Html.escapeHtml(form.getUrl()), form.getSessionId());
+        linkDao.saveLink(link);
+        return new ModelAndView(new RedirectView("comments") {
+            {
+                this.getAttributesMap().put("sessionId", form.getSessionId());
+            }
+        });
     }
 
 }

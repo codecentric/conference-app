@@ -8,35 +8,35 @@ public class CommentFormData {
     private String title;
 
     public String getTitle() {
-	return title;
+        return title;
     }
 
     public void setTitle(String sessionTitle) {
-	this.title = sessionTitle;
+        this.title = sessionTitle;
     }
 
     public String getAuthor() {
-	return author;
+        return author;
     }
 
     public void setAuthor(String author) {
-	this.author = author;
+        this.author = author;
     }
 
     public String getText() {
-	return text;
+        return text;
     }
 
     public void setText(String text) {
-	this.text = text;
+        this.text = text;
     }
 
     public Long getSessionId() {
-	return sessionId;
+        return sessionId;
     }
 
     public void setSessionId(Long sessionId) {
-	this.sessionId = sessionId;
+        this.sessionId = sessionId;
     }
 
 }

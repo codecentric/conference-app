@@ -50,38 +50,30 @@ public class CurrentSessionsControllerTest {
 
     @Before
     public void setup() {
-	MockitoAnnotations.initMocks(this);
-	mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
+        MockitoAnnotations.initMocks(this);
+        mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
     }
 
     @Test
     public void testSetupForm() throws Exception {
-	mockMvc.perform(get("/currentSessions"))
-		.andExpect(status().isOk())
-		.andExpect(model().attribute("currentSessions", is(empty())))
-		.andExpect(model().attributeExists("sessionDays"))
-		.andExpect(model().attributeExists("sessionMap"))
-		.andExpect(view().name("currentSessions"));
+        mockMvc.perform(get("/currentSessions")).andExpect(status().isOk()).andExpect(model().attribute("currentSessions", is(empty()))).andExpect(model().attributeExists("sessionDays"))
+                        .andExpect(model().attributeExists("sessionMap")).andExpect(view().name("currentSessions"));
     }
-    
+
     @Test
     public void testSetupFormWithCurrentSession() throws Exception {
-	String title = "title";
-	SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
-	String today = dateFormatter.format(new Date());
-	SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm");
-	String startTime = timeFormatter.format(new Date());
-	Session session = new Session(today, startTime, "location", title, "author", "description");
-	List<Session> sessions = Arrays.asList(session);
-	when(sessionDao.getAllSessionsByDateAndType(today, SessionType.openspace, SessionType.session)).thenReturn(sessions);
-	when(sessionDao.getAllSessions()).thenReturn(sessions);
-	
-	mockMvc.perform(get("/currentSessions"))
-		.andExpect(status().isOk())
-		.andExpect(model().attribute("currentSessions", hasSize(1)))
-		.andExpect(model().attributeExists("sessionDays"))
-		.andExpect(model().attributeExists("sessionMap"))
-		.andExpect(view().name("currentSessions"));
+        String title = "title";
+        SimpleDateFormat dateFormatter = new SimpleDateFormat("dd.MM.yyyy");
+        String today = dateFormatter.format(new Date());
+        SimpleDateFormat timeFormatter = new SimpleDateFormat("HH:mm");
+        String startTime = timeFormatter.format(new Date());
+        Session session = new Session(today, startTime, "location", title, "author", "description");
+        List<Session> sessions = Arrays.asList(session);
+        when(sessionDao.getAllSessionsByDateAndType(today, SessionType.openspace, SessionType.session)).thenReturn(sessions);
+        when(sessionDao.getAllSessions()).thenReturn(sessions);
+
+        mockMvc.perform(get("/currentSessions")).andExpect(status().isOk()).andExpect(model().attribute("currentSessions", hasSize(1))).andExpect(model().attributeExists("sessionDays"))
+                        .andExpect(model().attributeExists("sessionMap")).andExpect(view().name("currentSessions"));
     }
-    
+
 }

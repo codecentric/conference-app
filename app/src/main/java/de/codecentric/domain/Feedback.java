@@ -28,35 +28,35 @@ public class Feedback {
     private Date timestamp;
 
     public long getId() {
-	return id;
+        return id;
     }
 
     public void setId(long id) {
-	this.id = id;
+        this.id = id;
     }
 
     public String getUserName() {
-	return userName;
+        return userName;
     }
 
     public void setUserName(String userName) {
-	this.userName = userName;
+        this.userName = userName;
     }
 
     public String getFeedbackComment() {
-	return feedbackComment;
+        return feedbackComment;
     }
 
     public void setFeedbackComment(String feedbackComment) {
-	this.feedbackComment = feedbackComment;
+        this.feedbackComment = feedbackComment;
     }
 
     public Date getTimestamp() {
-	return timestamp;
+        return timestamp;
     }
 
     public void setTimestamp(Date timestamp) {
-	this.timestamp = timestamp;
+        this.timestamp = timestamp;
     }
 
 }

@@ -22,18 +22,18 @@ public class JpaLinkDaoTest {
 
     @Before
     public void setUp() {
-	MockitoAnnotations.initMocks(this);
-	dao = new JpaLinkDao(emMock);
+        MockitoAnnotations.initMocks(this);
+        dao = new JpaLinkDao(emMock);
     }
 
     @Test
     public void shouldSaveLink() {
-	Link link = new Link();
-	link.setComment("comment");
-	link.setDate(new Date());
-	link.setLink("www.google.de");
-	link.setSessionId(1L);
-	dao.saveLink(link);
-	verify(emMock).merge(link);
+        Link link = new Link();
+        link.setComment("comment");
+        link.setDate(new Date());
+        link.setLink("www.google.de");
+        link.setSessionId(1L);
+        dao.saveLink(link);
+        verify(emMock).merge(link);
     }
 }

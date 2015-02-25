@@ -25,39 +25,39 @@ public class StaticSessionsController {
     @RequestMapping(method = RequestMethod.GET)
     public void setupForm(ModelMap modelMap) {
 
-	List<Session> staticSessions = sessionDao.getAllStaticSessions();
-	if (staticSessions.isEmpty()) {
-	    // try to read the session from the xlsSheet
-	    XlsSessionReader xlsReader = new XlsSessionReader();
-	    List<Session> sessionsFromXls = xlsReader.readAllSessions();
-	    for (Session session : sessionsFromXls) {
-		sessionDao.saveSession(session);
-	    }
-	    staticSessions = sessionDao.getAllStaticSessions();
-	}
+        List<Session> staticSessions = sessionDao.getAllStaticSessions();
+        if (staticSessions.isEmpty()) {
+            // try to read the session from the xlsSheet
+            XlsSessionReader xlsReader = new XlsSessionReader();
+            List<Session> sessionsFromXls = xlsReader.readAllSessions();
+            for (Session session : sessionsFromXls) {
+                sessionDao.saveSession(session);
+            }
+            staticSessions = sessionDao.getAllStaticSessions();
+        }
 
-	Map<String, List<Session>> sessionsByDateMap = getStaticSessionMap(staticSessions);
+        Map<String, List<Session>> sessionsByDateMap = getStaticSessionMap(staticSessions);
 
-	modelMap.put("sessionDays", sessionsByDateMap.keySet());
-	modelMap.put("sessionMap", sessionsByDateMap);
-	modelMap.put("currentSessions", sessionDao.getCurrentSessions());
+        modelMap.put("sessionDays", sessionsByDateMap.keySet());
+        modelMap.put("sessionMap", sessionsByDateMap);
+        modelMap.put("currentSessions", sessionDao.getCurrentSessions());
     }
 
     private Map<String, List<Session>> getStaticSessionMap(List<Session> staticSessions) {
-	Map<String, List<Session>> sessionsByDateMap = new TreeMap<String, List<Session>>();
-	for (Session session : staticSessions) {
-	    String key = session.getDate();
-	    List<Session> list;
-	    if (sessionsByDateMap.containsKey(key)) {
-		list = sessionsByDateMap.get(key);
-		list.add(session);
-	    } else {
-		list = new ArrayList<Session>();
-		list.add(session);
-		sessionsByDateMap.put(key, list);
-	    }
-	}
-	return sessionsByDateMap;
+        Map<String, List<Session>> sessionsByDateMap = new TreeMap<String, List<Session>>();
+        for (Session session : staticSessions) {
+            String key = session.getDate();
+            List<Session> list;
+            if (sessionsByDateMap.containsKey(key)) {
+                list = sessionsByDateMap.get(key);
+                list.add(session);
+            } else {
+                list = new ArrayList<Session>();
+                list.add(session);
+                sessionsByDateMap.put(key, list);
+            }
+        }
+        return sessionsByDateMap;
     }
 
 }

@@ -17,25 +17,25 @@ public class LocationDaoTest {
 
     @BeforeClass
     public static void setLocationDao() {
-	dao = new JsonLocationDao(new ObjectMapper(), "locations.json");
+        dao = new JsonLocationDao(new ObjectMapper(), "locations.json");
     }
 
     @Test
     public void shouldReturnLocationCount() {
-	final List<Location> locations = dao.getLocations();
-	assertEquals(3, locations.size());
+        final List<Location> locations = dao.getLocations();
+        assertEquals(3, locations.size());
     }
 
     @Test
     public void invalidLocationShouldReturnNull() {
-	assertNull(dao.getLocation("invalid"));
+        assertNull(dao.getLocation("invalid"));
     }
 
     @Test
     public void validLocationShouldReturnLocation() {
-	Location location = dao.getLocation("Room 1");
-	assertEquals("Room 1", location.getShortName());
-	assertEquals("Room one is located in the basement", location.getDescription());
+        Location location = dao.getLocation("Room 1");
+        assertEquals("Room 1", location.getShortName());
+        assertEquals("Room one is located in the basement", location.getDescription());
     }
 
 }

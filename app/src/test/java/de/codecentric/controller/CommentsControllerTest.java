@@ -46,7 +46,7 @@ public class CommentsControllerTest {
 
     @Mock
     SessionDao sessionDao;
-    
+
     @Mock
     LinkDao linkDao;
 
@@ -57,42 +57,34 @@ public class CommentsControllerTest {
 
     @Before
     public void setup() {
-	MockitoAnnotations.initMocks(this);
-	mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
+        MockitoAnnotations.initMocks(this);
+        mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
     }
 
     @Test
     public void testSetupForm() throws Exception {
-	String title = "title";
-	String sessionId = "42";
-	Long sessionIdLong = Long.valueOf(sessionId);
-	String location = "location";
-	Session session = new Session("date", "startTime", location, title, "author", "description");
-	session.setType(SessionType.session);
-	Comment comment = new Comment(new Date(), "author", "text", sessionIdLong);
-	List<Comment> comments = Arrays.asList(comment);
-	Link link = new Link(new Date(), "comment", "http://testlink", sessionIdLong);
-	List<Link> links = Arrays.asList(link);
-	when(sessionDao.getSessionById(sessionId)).thenReturn(session);
-	when(commentDao.getCommentsBySessionId(sessionIdLong)).thenReturn(comments);
-	when(linkDao.getLinksBySessionId(sessionIdLong)).thenReturn(links);
-	
-	mockMvc.perform(get("/comments").param("sessionId", sessionId))
-		.andExpect(status().isOk())
-		.andExpect(model().attributeExists("comments"))
-		.andExpect(model().attribute("session", session))
-		.andExpect(model().attribute("location", containsString(location)))
-		.andExpect(view().name("comments"));
+        String title = "title";
+        String sessionId = "42";
+        Long sessionIdLong = Long.valueOf(sessionId);
+        String location = "location";
+        Session session = new Session("date", "startTime", location, title, "author", "description");
+        session.setType(SessionType.session);
+        Comment comment = new Comment(new Date(), "author", "text", sessionIdLong);
+        List<Comment> comments = Arrays.asList(comment);
+        Link link = new Link(new Date(), "comment", "http://testlink", sessionIdLong);
+        List<Link> links = Arrays.asList(link);
+        when(sessionDao.getSessionById(sessionId)).thenReturn(session);
+        when(commentDao.getCommentsBySessionId(sessionIdLong)).thenReturn(comments);
+        when(linkDao.getLinksBySessionId(sessionIdLong)).thenReturn(links);
+
+        mockMvc.perform(get("/comments").param("sessionId", sessionId)).andExpect(status().isOk()).andExpect(model().attributeExists("comments")).andExpect(model().attribute("session", session))
+                        .andExpect(model().attribute("location", containsString(location))).andExpect(view().name("comments"));
     }
-    
+
     @Test
     public void testExceptionSetupForm() throws Exception {
-	mockMvc.perform(get("/comments"))
-		.andExpect(status().isOk())
-		.andExpect(model().attribute("comments", containsString("")))
-		.andExpect(model().attribute("sessionTitle", containsString("Nice try :)")))
-		.andExpect(model().attributeExists("sessionDescription"))
-		.andExpect(view().name("comments"));
+        mockMvc.perform(get("/comments")).andExpect(status().isOk()).andExpect(model().attribute("comments", containsString("")))
+                        .andExpect(model().attribute("sessionTitle", containsString("Nice try :)"))).andExpect(model().attributeExists("sessionDescription")).andExpect(view().name("comments"));
     }
-    
+
 }

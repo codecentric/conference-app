@@ -21,14 +21,14 @@ public class JpaCommentDaoTest {
 
     @Before
     public void setUp() {
-	MockitoAnnotations.initMocks(this);
-	dao = new JpaCommentDao(emMock);
+        MockitoAnnotations.initMocks(this);
+        dao = new JpaCommentDao(emMock);
     }
 
     @Test
     public void shouldSaveComment() {
-	Comment comment = new Comment(new Date(), "me", "comment", 1L);
-	dao.saveComment(comment);
-	verify(emMock).merge(comment);
+        Comment comment = new Comment(new Date(), "me", "comment", 1L);
+        dao.saveComment(comment);
+        verify(emMock).merge(comment);
     }
 }

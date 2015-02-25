@@ -15,7 +15,7 @@ import javax.persistence.NamedQuery;
  */
 @Entity(name = "comment")
 @NamedQueries({ @NamedQuery(name = "findCommentForSession", query = "from comment where sessionId=:sessionId order by date desc"),
-	@NamedQuery(name = "findRecentComments", query = "select c.date, c.author, c.text, s.id, s.title from comment c, session s where c.sessionId = s.id order by c.date desc") })
+                @NamedQuery(name = "findRecentComments", query = "select c.date, c.author, c.text, s.id, s.title from comment c, session s where c.sessionId = s.id order by c.date desc") })
 public class Comment {
 
     @Id
@@ -34,97 +34,97 @@ public class Comment {
     }
 
     public Comment(Date date, String author, String text, Long sessionId) {
-	super();
-	this.date = date;
-	this.author = author;
-	this.text = text;
-	this.sessionId = sessionId;
+        super();
+        this.date = date;
+        this.author = author;
+        this.text = text;
+        this.sessionId = sessionId;
     }
 
     public long getId() {
-	return id;
+        return id;
     }
 
     public Date getDate() {
-	return date;
+        return date;
     }
 
     public void setDate(Date date) {
-	this.date = date;
+        this.date = date;
     }
 
     public String getAuthor() {
-	return author;
+        return author;
     }
 
     public String getProcessedAuthor() {
-	return author;
-	// return TwitterLinkCreator.process(author);
+        return author;
+        // return TwitterLinkCreator.process(author);
     }
 
     public void setAuthor(String author) {
-	this.author = author;
+        this.author = author;
     }
 
     public String getText() {
-	return text;
+        return text;
     }
 
     public void setText(String text) {
-	this.text = text;
+        this.text = text;
     }
 
     public Long getSessionId() {
-	return sessionId;
+        return sessionId;
     }
 
     public void setSessionId(Long sessionId) {
-	this.sessionId = sessionId;
+        this.sessionId = sessionId;
     }
 
     @Override
     public int hashCode() {
-	final int prime = 31;
-	int result = 1;
-	result = prime * result + ((text == null) ? 0 : text.hashCode());
-	result = prime * result + ((author == null) ? 0 : author.hashCode());
-	result = prime * result + ((date == null) ? 0 : date.hashCode());
-	return result;
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((text == null) ? 0 : text.hashCode());
+        result = prime * result + ((author == null) ? 0 : author.hashCode());
+        result = prime * result + ((date == null) ? 0 : date.hashCode());
+        return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-	if (this == obj) {
-	    return true;
-	}
-	if (obj == null) {
-	    return false;
-	}
-	if (getClass() != obj.getClass()) {
-	    return false;
-	}
-	Comment other = (Comment) obj;
-	if (text == null) {
-	    if (other.text != null) {
-		return false;
-	    }
-	} else if (!text.equals(other.text)) {
-	    return false;
-	}
-	if (author == null) {
-	    if (other.author != null) {
-		return false;
-	    }
-	} else if (!author.equals(other.author)) {
-	    return false;
-	}
-	if (date == null) {
-	    if (other.date != null) {
-		return false;
-	    }
-	} else if (!date.equals(other.date)) {
-	    return false;
-	}
-	return true;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Comment other = (Comment) obj;
+        if (text == null) {
+            if (other.text != null) {
+                return false;
+            }
+        } else if (!text.equals(other.text)) {
+            return false;
+        }
+        if (author == null) {
+            if (other.author != null) {
+                return false;
+            }
+        } else if (!author.equals(other.author)) {
+            return false;
+        }
+        if (date == null) {
+            if (other.date != null) {
+                return false;
+            }
+        } else if (!date.equals(other.date)) {
+            return false;
+        }
+        return true;
     }
 }

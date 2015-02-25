@@ -16,19 +16,19 @@ public class EditSessionControllerTest {
 
     @Mock
     private SessionDao sessionDao;
-    
+
     private EditSessionController controller;
 
     @Before
     public void setUp() {
-	MockitoAnnotations.initMocks(this);
-	controller = new EditSessionController(sessionDao, new StaticTimeslotDao());
+        MockitoAnnotations.initMocks(this);
+        controller = new EditSessionController(sessionDao, new StaticTimeslotDao());
     }
 
     @Test
     public void shouldGetTimeslotListFromDay() {
-	Map<String, String> timeslots = controller.getTimeslotForDay("Wed");
-	assertEquals(3, timeslots.size());
+        Map<String, String> timeslots = controller.getTimeslotForDay("Wed");
+        assertEquals(3, timeslots.size());
     }
 
 }

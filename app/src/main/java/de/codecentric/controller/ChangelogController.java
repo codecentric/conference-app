@@ -12,7 +12,7 @@ public class ChangelogController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String changelog(Map<String, Object> modelMap) {
-	return "changelog";
+        return "changelog";
     }
 
 }

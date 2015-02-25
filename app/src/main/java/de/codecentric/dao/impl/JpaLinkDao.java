@@ -24,16 +24,16 @@ public class JpaLinkDao implements LinkDao {
 
     // test constructor
     public JpaLinkDao(EntityManager em) {
-	this.em = em;
+        this.em = em;
     }
 
     @SuppressWarnings("unchecked")
     public List<Link> getLinksBySessionId(Long sessionId) {
-	Query query = em.createNamedQuery("findLinksForSession");
-	return query.setParameter("sessionId", sessionId).getResultList();
+        Query query = em.createNamedQuery("findLinksForSession");
+        return query.setParameter("sessionId", sessionId).getResultList();
     }
 
     public void saveLink(Link link) {
-	em.merge(link);
+        em.merge(link);
     }
 }

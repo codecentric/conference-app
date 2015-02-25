@@ -46,29 +46,24 @@ public class FeedbackControllerTest {
 
     @Before
     public void setup() {
-	MockitoAnnotations.initMocks(this);
-	mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
+        MockitoAnnotations.initMocks(this);
+        mockMvc = standaloneSetup(controller).setSingleView(mockView).build();
     }
 
     @Test
     public void testGetFeedbackList() throws Exception {
-	List<Feedback> feedbackList = Arrays.asList(new Feedback());
-	when(feedbackDao.getFeedbackList()).thenReturn(feedbackList);
+        List<Feedback> feedbackList = Arrays.asList(new Feedback());
+        when(feedbackDao.getFeedbackList()).thenReturn(feedbackList);
 
-	mockMvc.perform(get("/feedback"))
-		.andExpect(status().isOk())
-		.andExpect(model().attribute("feedbackList", feedbackList))
-		.andExpect(view().name("feedback"));
+        mockMvc.perform(get("/feedback")).andExpect(status().isOk()).andExpect(model().attribute("feedbackList", feedbackList)).andExpect(view().name("feedback"));
     }
-    
+
     @Test
     public void testPostNewFeedback() throws Exception {
-	FeedbackFormData formData = new FeedbackFormData();
-	
-	mockMvc.perform(post("/feedback").requestAttr("feedbackFormData", formData))
-		.andExpect(status().isOk())
-		.andExpect(model().attributeExists("feedbackFormData"))
-		.andExpect(view().name(containsString("feedback")));
+        FeedbackFormData formData = new FeedbackFormData();
+
+        mockMvc.perform(post("/feedback").requestAttr("feedbackFormData", formData)).andExpect(status().isOk()).andExpect(model().attributeExists("feedbackFormData"))
+                        .andExpect(view().name(containsString("feedback")));
     }
 
 }

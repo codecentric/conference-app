@@ -33,12 +33,12 @@ public class HomeControllerTest {
 
     @Before
     public void setup() {
-	mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
+        mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
     }
 
     @Test
     public void testHomeController() throws Exception {
-	mockMvc.perform(get("/home").session(session).accept(MediaType.TEXT_HTML)).andExpect(status().isOk()).andExpect(view().name("home"));
+        mockMvc.perform(get("/home").session(session).accept(MediaType.TEXT_HTML)).andExpect(status().isOk()).andExpect(view().name("home"));
     }
 
 }

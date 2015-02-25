@@ -14,65 +14,65 @@ public class NameValidatorTests {
 
     @Test
     public void nameValidWhenContainsNumbers() {
-	NameValidatorImpl nameValidator = new NameValidatorImpl();
-	String emptySpeaker = "@243";
+        NameValidatorImpl nameValidator = new NameValidatorImpl();
+        String emptySpeaker = "@243";
 
-	assertTrue(nameValidator.isValid(emptySpeaker));
+        assertTrue(nameValidator.isValid(emptySpeaker));
     }
 
     @Test
     public void nameValidWhenContainsLowerCaseLetters() {
-	NameValidatorImpl nameValidator = new NameValidatorImpl();
-	String emptySpeaker = "@validname";
+        NameValidatorImpl nameValidator = new NameValidatorImpl();
+        String emptySpeaker = "@validname";
 
-	assertTrue(nameValidator.isValid(emptySpeaker));
+        assertTrue(nameValidator.isValid(emptySpeaker));
     }
 
     @Test
     public void nameValidWhenContainsUpperCaseLetters() {
-	NameValidatorImpl nameValidator = new NameValidatorImpl();
-	String emptySpeaker = "@ValidName";
+        NameValidatorImpl nameValidator = new NameValidatorImpl();
+        String emptySpeaker = "@ValidName";
 
-	assertTrue(nameValidator.isValid(emptySpeaker));
+        assertTrue(nameValidator.isValid(emptySpeaker));
     }
 
     @Test
     public void nameValidWhenContainsUnderscore() {
-	NameValidatorImpl nameValidator = new NameValidatorImpl();
-	String emptySpeaker = "@some_name";
+        NameValidatorImpl nameValidator = new NameValidatorImpl();
+        String emptySpeaker = "@some_name";
 
-	assertTrue(nameValidator.isValid(emptySpeaker));
+        assertTrue(nameValidator.isValid(emptySpeaker));
     }
 
     @Test
     public void nameNotValidWhenContainsDash() {
-	NameValidatorImpl nameValidator = new NameValidatorImpl();
-	String emptySpeaker = "@some-name";
+        NameValidatorImpl nameValidator = new NameValidatorImpl();
+        String emptySpeaker = "@some-name";
 
-	assertFalse(nameValidator.isValid(emptySpeaker));
+        assertFalse(nameValidator.isValid(emptySpeaker));
     }
 
     @Test
     public void nameIsNotValidWhenEmpty() {
-	NameValidatorImpl nameValidator = new NameValidatorImpl();
-	String emptySpeaker = "";
+        NameValidatorImpl nameValidator = new NameValidatorImpl();
+        String emptySpeaker = "";
 
-	assertFalse(nameValidator.isValid(emptySpeaker));
+        assertFalse(nameValidator.isValid(emptySpeaker));
     }
 
     @Test
     public void nameIsNotValidWhenNotStartingWithAt() {
-	NameValidatorImpl nameValidator = new NameValidatorImpl();
-	String emptySpeaker = "@";
+        NameValidatorImpl nameValidator = new NameValidatorImpl();
+        String emptySpeaker = "@";
 
-	assertFalse(nameValidator.isValid(emptySpeaker));
+        assertFalse(nameValidator.isValid(emptySpeaker));
     }
 
     @Test
     public void nameIsNotValidWhenContainsSpace() {
-	NameValidatorImpl nameValidator = new NameValidatorImpl();
-	String emptySpeaker = "@some name";
+        NameValidatorImpl nameValidator = new NameValidatorImpl();
+        String emptySpeaker = "@some name";
 
-	assertFalse(nameValidator.isValid(emptySpeaker));
+        assertFalse(nameValidator.isValid(emptySpeaker));
     }
 }

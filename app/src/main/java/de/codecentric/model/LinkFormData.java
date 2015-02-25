@@ -6,29 +6,29 @@ public class LinkFormData {
     private String comment;
 
     public String getComment() {
-	return comment;
+        return comment;
     }
 
     public void setComment(String comment) {
-	this.comment = comment;
+        this.comment = comment;
     }
 
     private String url;
 
     public String getUrl() {
-	return url;
+        return url;
     }
 
     public void setUrl(String url) {
-	this.url = url;
+        this.url = url;
     }
 
     public Long getSessionId() {
-	return sessionId;
+        return sessionId;
     }
 
     public void setSessionId(Long sessionId) {
-	this.sessionId = sessionId;
+        this.sessionId = sessionId;
     }
 
 }

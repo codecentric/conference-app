@@ -12,7 +12,7 @@ public class VenueMapController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String venueMap(Map<String, Object> modelMap) {
-	return "venueMap";
+        return "venueMap";
     }
 
 }

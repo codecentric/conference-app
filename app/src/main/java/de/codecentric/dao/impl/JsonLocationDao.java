@@ -22,44 +22,44 @@ public class JsonLocationDao implements LocationDao {
 
     @Autowired
     private ObjectMapper jsonMapper;
-    
+
     private static List<Location> locations;
-    
+
     @Value("default.file.path.json.location:json/locations.json")
     private String filePath;
-    
+
     public JsonLocationDao() {
     }
 
     public JsonLocationDao(ObjectMapper mapper, String filePath) {
-	this.filePath = filePath;
-	this.jsonMapper = mapper;
+        this.filePath = filePath;
+        this.jsonMapper = mapper;
     }
 
     public List<Location> getLocations() {
-	if (locations == null) {
-	    try {
-		final InputStream jsonStream = this.getClass().getClassLoader().getResourceAsStream(filePath);
-		if (jsonStream != null) {
-		    locations = jsonMapper.readValue(jsonStream, new TypeReference<List<Location>>() {
-		    });
-		}
-	    } catch (JsonParseException e) {
-		LOGGER.error("JsonParseException", e);
-	    } catch (IOException e) {
-		LOGGER.error("IOException", e);
-	    }
-	}
-	return locations;
+        if (locations == null) {
+            try {
+                final InputStream jsonStream = this.getClass().getClassLoader().getResourceAsStream(filePath);
+                if (jsonStream != null) {
+                    locations = jsonMapper.readValue(jsonStream, new TypeReference<List<Location>>() {
+                    });
+                }
+            } catch (JsonParseException e) {
+                LOGGER.error("JsonParseException", e);
+            } catch (IOException e) {
+                LOGGER.error("IOException", e);
+            }
+        }
+        return locations;
     }
 
     public Location getLocation(String shortName) {
-	for (Location location : getLocations()) {
-	    if (shortName.endsWith(location.getShortName())) {
-		return location;
-	    }
-	}
-	return null;
+        for (Location location : getLocations()) {
+            if (shortName.endsWith(location.getShortName())) {
+                return location;
+            }
+        }
+        return null;
     }
 
 }

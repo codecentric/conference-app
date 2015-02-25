@@ -10,7 +10,7 @@ public class ExceptionController {
 
     @ExceptionHandler(Exception.class)
     public String handleException(Exception ex, HttpServletRequest request) {
-	return "404";
+        return "404";
     }
 
 }

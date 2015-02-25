@@ -23,43 +23,43 @@ import de.codecentric.model.SearchFormData;
 public class SearchSessionsController {
 
     private Logger logger = LoggerFactory.getLogger(SearchSessionsController.class.getName());
-    
+
     @Autowired
     private SessionDao sessionDao;
 
     @ModelAttribute("searchFormData")
     public SearchFormData getSearchFormData() {
-	return new SearchFormData();
+        return new SearchFormData();
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public void setupForm(ModelMap modelMap) {
-	modelMap.put("searchFormData", new SearchFormData());
-	modelMap.put("sessionsList", new ArrayList<Session>());
+        modelMap.put("searchFormData", new SearchFormData());
+        modelMap.put("sessionsList", new ArrayList<Session>());
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView searchSessions(ModelMap modelMap, @ModelAttribute("searchFormData") SearchFormData formData) {
-	logger.info("searchSessions by author " + formData.getName());
+        logger.info("searchSessions by author " + formData.getName());
 
-	List<Session> sessions = loadSessionsForAuthorName(formData.getName());
-	modelMap.put("sessionsList", sessions);
-	modelMap.put("searchFormData", formData);
+        List<Session> sessions = loadSessionsForAuthorName(formData.getName());
+        modelMap.put("sessionsList", sessions);
+        modelMap.put("searchFormData", formData);
 
-	ModelAndView modelAndView = new ModelAndView("searchSessions");
-	modelAndView.addObject("sessionsList", sessions);
+        ModelAndView modelAndView = new ModelAndView("searchSessions");
+        modelAndView.addObject("sessionsList", sessions);
 
-	return modelAndView;
+        return modelAndView;
     }
 
     private List<Session> loadSessionsForAuthorName(String name) {
-	List<Session> sessions = sessionDao.getAllSessionsByAuthor(name);
-	for (Session session : sessions) {
-	    // TODO remove after DB cleanup
-	    if (session.getType() == null) {
-		session.setType(SessionType.openspace);
-	    }
-	}
-	return sessions;
+        List<Session> sessions = sessionDao.getAllSessionsByAuthor(name);
+        for (Session session : sessions) {
+            // TODO remove after DB cleanup
+            if (session.getType() == null) {
+                session.setType(SessionType.openspace);
+            }
+        }
+        return sessions;
     }
 }

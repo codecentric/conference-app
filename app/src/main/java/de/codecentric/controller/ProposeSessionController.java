@@ -24,48 +24,48 @@ public class ProposeSessionController {
 
     @Autowired
     private SessionDao sessionDao;
-    
+
     @Autowired
     private TimeslotDao timeslotDao;
-    
+
     @Autowired
     private LocationDao locationDao;
-    
+
     public ProposeSessionController() {
-	super();
+        super();
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView setupForm(ModelMap modelMap, HttpServletRequest request) {
 
-	String day = request.getParameter("day");
-	OpenSpaceFormData data = new OpenSpaceFormData();
-	data.setDate(day);
+        String day = request.getParameter("day");
+        OpenSpaceFormData data = new OpenSpaceFormData();
+        data.setDate(day);
 
-	modelMap.put("sessionDataFormData", data);
-	modelMap.put("day", day);
+        modelMap.put("sessionDataFormData", data);
+        modelMap.put("day", day);
 
-	return new ModelAndView("proposeNewSession", modelMap);
+        return new ModelAndView("proposeNewSession", modelMap);
     }
 
     @RequestMapping(value = "/proposeNewSession", method = RequestMethod.POST)
     public ModelAndView processSubmit(HttpServletRequest request, ModelMap modelMap, @ModelAttribute("sessionDataFormData") OpenSpaceFormData formData, BindingResult result) {
 
-	modelMap.put("sessionDataFormData", formData);
+        modelMap.put("sessionDataFormData", formData);
 
-	if (result.hasErrors()) {
-	    System.out.println("Validation errors ocurred.");
-	    return new ModelAndView("proposeNewSession");
-	}
+        if (result.hasErrors()) {
+            System.out.println("Validation errors ocurred.");
+            return new ModelAndView("proposeNewSession");
+        }
 
-	String start = formData.getStart();
-	String end = formData.getEnd();
-	Session session = new Session(formData.getDate(), start, formData.getLocation(), formData.getTitle(), formData.getSpeaker(), formData.getDescription());
-	session.setEnd(end);
-	session.setType(SessionType.openspaceanywhere);
-	sessionDao.saveSession(session);
+        String start = formData.getStart();
+        String end = formData.getEnd();
+        Session session = new Session(formData.getDate(), start, formData.getLocation(), formData.getTitle(), formData.getSpeaker(), formData.getDescription());
+        session.setEnd(end);
+        session.setType(SessionType.openspaceanywhere);
+        sessionDao.saveSession(session);
 
-	return new ModelAndView("redirect:allSessions");
+        return new ModelAndView("redirect:allSessions");
     }
 
 }

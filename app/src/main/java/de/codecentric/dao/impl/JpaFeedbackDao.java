@@ -20,12 +20,12 @@ public class JpaFeedbackDao implements FeedbackDao {
 
     @Override
     public void save(Feedback feedback) {
-	em.merge(feedback);
+        em.merge(feedback);
     }
 
     @Override
     public List<Feedback> getFeedbackList() {
-	return em.createNamedQuery("findFeedback", Feedback.class).getResultList();
+        return em.createNamedQuery("findFeedback", Feedback.class).getResultList();
     }
 
 }

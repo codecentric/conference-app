@@ -14,36 +14,36 @@ public class TwitterLinkCreatorTest {
     @Before
     public void setup() {
 
-	twitterLink = "http://twitter.com/";
+        twitterLink = "http://twitter.com/";
     }
 
     @Test
     public void shouldProcessSingleTwitterName() {
-	String validTwitterName = "@foobar";
-	String linkWithOneTwitterName = "<a href=\"" + twitterLink + "foobar\">@foobar</a>";
+        String validTwitterName = "@foobar";
+        String linkWithOneTwitterName = "<a href=\"" + twitterLink + "foobar\">@foobar</a>";
 
-	String result = TwitterLinkCreator.process(validTwitterName);
+        String result = TwitterLinkCreator.process(validTwitterName);
 
-	assertEquals(linkWithOneTwitterName, result);
+        assertEquals(linkWithOneTwitterName, result);
     }
 
     @Test
     public void shouldProcessSeveralTwitterNames() {
-	String twoValidTwitterNames = "@foo, @bar";
-	String linkWithTwoTwitterNames = "<a href=\"" + twitterLink + "foo\">@foo</a>, " + "<a href=\"" + twitterLink + "bar\">@bar</a>";
+        String twoValidTwitterNames = "@foo, @bar";
+        String linkWithTwoTwitterNames = "<a href=\"" + twitterLink + "foo\">@foo</a>, " + "<a href=\"" + twitterLink + "bar\">@bar</a>";
 
-	String result = TwitterLinkCreator.process(twoValidTwitterNames);
+        String result = TwitterLinkCreator.process(twoValidTwitterNames);
 
-	assertEquals(linkWithTwoTwitterNames, result);
+        assertEquals(linkWithTwoTwitterNames, result);
     }
 
     @Test
     public void shouldProcessNameWithUnderscore() {
-	String validTwitterNameWithUnderscore = "@foo_bar";
-	String linkWithOneTwitterName = "<a href=\"" + twitterLink + "foo_bar\">@foo_bar</a>";
+        String validTwitterNameWithUnderscore = "@foo_bar";
+        String linkWithOneTwitterName = "<a href=\"" + twitterLink + "foo_bar\">@foo_bar</a>";
 
-	String result = TwitterLinkCreator.process(validTwitterNameWithUnderscore);
+        String result = TwitterLinkCreator.process(validTwitterNameWithUnderscore);
 
-	assertEquals(linkWithOneTwitterName, result);
+        assertEquals(linkWithOneTwitterName, result);
     }
 }

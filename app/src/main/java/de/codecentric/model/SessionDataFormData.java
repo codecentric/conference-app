@@ -10,51 +10,51 @@ public class SessionDataFormData {
     private String location;
 
     public String getDate() {
-	return date;
+        return date;
     }
 
     public void setDate(String date) {
-	this.date = date;
+        this.date = date;
     }
 
     public String getTitle() {
-	return title;
+        return title;
     }
 
     public void setTitle(String title) {
-	this.title = title;
+        this.title = title;
     }
 
     public String getSpeaker() {
-	return speaker;
+        return speaker;
     }
 
     public void setSpeaker(String speaker) {
-	this.speaker = speaker;
+        this.speaker = speaker;
     }
 
     public String getDescription() {
-	return description;
+        return description;
     }
 
     public void setDescription(String description) {
-	this.description = description;
+        this.description = description;
     }
 
     public String getStart() {
-	return start;
+        return start;
     }
 
     public void setStart(String start) {
-	this.start = start;
+        this.start = start;
     }
 
     public String getLocation() {
-	return location;
+        return location;
     }
 
     public void setLocation(String location) {
-	this.location = location;
+        this.location = location;
     }
 
 }

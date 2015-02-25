@@ -11,11 +11,11 @@ public class NameValidatorImpl implements NameValidator {
     @Override
     public boolean isValid(String speaker) {
 
-	if (speaker.isEmpty()) {
-	    return false;
-	}
+        if (speaker.isEmpty()) {
+            return false;
+        }
 
-	return TwitterLinkCreator.TWITTER_NAME_PATTERN.matcher(speaker).matches();
+        return TwitterLinkCreator.TWITTER_NAME_PATTERN.matcher(speaker).matches();
     }
 
 }

@@ -36,33 +36,33 @@ public class AddCommentsController {
 
     @RequestMapping(method = RequestMethod.GET)
     public void setupForm(ModelMap modelMap, HttpServletRequest request) {
-	HttpSession httpSession = request.getSession();
+        HttpSession httpSession = request.getSession();
 
-	String sessionId = request.getParameter("sessionId");
-	Session session = sessionDao.getSessionById(sessionId);
+        String sessionId = request.getParameter("sessionId");
+        Session session = sessionDao.getSessionById(sessionId);
 
-	CommentFormData commentFormData = new CommentFormData();
-	if (httpSession.getAttribute(USERNAME) != null) {
-	    commentFormData.setAuthor((String) httpSession.getAttribute(USERNAME));
-	}
+        CommentFormData commentFormData = new CommentFormData();
+        if (httpSession.getAttribute(USERNAME) != null) {
+            commentFormData.setAuthor((String) httpSession.getAttribute(USERNAME));
+        }
 
-	modelMap.put("commentFormData", commentFormData);
-	modelMap.put("sessionTitle", session.getTitle());
+        modelMap.put("commentFormData", commentFormData);
+        modelMap.put("sessionTitle", session.getTitle());
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView processSubmit(final HttpServletRequest request, ModelMap modelMap, final @ModelAttribute("commentFormData") CommentFormData cmd, BindingResult result) {
 
-	String author = cmd.getAuthor();
-	request.getSession().setAttribute(USERNAME, author);
+        String author = cmd.getAuthor();
+        request.getSession().setAttribute(USERNAME, author);
 
-	Comment comment = new Comment(new Date(), Html.escapeHtml(author), Html.escapeHtml(cmd.getText()), Long.valueOf(cmd.getSessionId()));
-	commentDao.saveComment(comment);
-	return new ModelAndView(new RedirectView("comments") {
-	    {
-		this.getAttributesMap().put("sessionId", cmd.getSessionId());
-	    }
-	});
+        Comment comment = new Comment(new Date(), Html.escapeHtml(author), Html.escapeHtml(cmd.getText()), Long.valueOf(cmd.getSessionId()));
+        commentDao.saveComment(comment);
+        return new ModelAndView(new RedirectView("comments") {
+            {
+                this.getAttributesMap().put("sessionId", cmd.getSessionId());
+            }
+        });
     }
 
 }

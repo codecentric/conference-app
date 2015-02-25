@@ -12,25 +12,25 @@ public class Day {
 
     @JsonCreator
     public Day(@JsonProperty("shortName") String shortName, @JsonProperty("timeslots") List<Timeslot> timeslots) {
-	this.shortName = shortName;
-	this.timeslots = timeslots;
+        this.shortName = shortName;
+        this.timeslots = timeslots;
     }
 
     public String getShortName() {
-	return shortName;
+        return shortName;
     }
 
     public List<Timeslot> getTimeslots() {
-	return timeslots;
+        return timeslots;
     }
 
     public String getShortNameWithoutDots() {
-	return shortName.replace(".", "");
+        return shortName.replace(".", "");
     }
 
     @Override
     public String toString() {
-	return "Day [shortName=" + shortName + ", timeslots=" + timeslots + "]";
+        return "Day [shortName=" + shortName + ", timeslots=" + timeslots + "]";
     }
 
 }

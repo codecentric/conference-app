@@ -13,16 +13,19 @@ public class Time24HoursValidator implements TimeValidator {
     private static final String TIME24HOURS_PATTERN = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
 
     public Time24HoursValidator() {
-	pattern = Pattern.compile(TIME24HOURS_PATTERN);
+        pattern = Pattern.compile(TIME24HOURS_PATTERN);
     }
 
-    /* (non-Javadoc)
-     * @see de.codecentric.validate.impl.TimeValidator#validate(java.lang.String)
+    /*
+     * (non-Javadoc)
+     * 
+     * @see
+     * de.codecentric.validate.impl.TimeValidator#validate(java.lang.String)
      */
     @Override
     public boolean validate(final String time) {
-	matcher = pattern.matcher(time);
-	return matcher.matches();
+        matcher = pattern.matcher(time);
+        return matcher.matches();
     }
 
 }

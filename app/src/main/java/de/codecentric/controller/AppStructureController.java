@@ -12,7 +12,7 @@ public class AppStructureController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String appStructure(Map<String, Object> modelMap) {
-	return "appStructure";
+        return "appStructure";
     }
 
 }

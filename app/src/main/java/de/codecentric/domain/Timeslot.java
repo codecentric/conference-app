@@ -10,25 +10,25 @@ public class Timeslot {
 
     @JsonCreator
     public Timeslot(@JsonProperty("start") String start, @JsonProperty("end") String end) {
-	this(start);
-	this.end = end;
+        this(start);
+        this.end = end;
     }
 
     public Timeslot(String start) {
-	this.start = start;
+        this.start = start;
     }
 
     public String getStart() {
-	return start;
+        return start;
     }
 
     public String getEnd() {
-	return end;
+        return end;
     }
 
     @Override
     public String toString() {
-	String endToConcatenate = end != null ? " - " + end : "";
-	return start + endToConcatenate;
+        String endToConcatenate = end != null ? " - " + end : "";
+        return start + endToConcatenate;
     }
 }

@@ -31,34 +31,34 @@ public class CommentsController {
 
     @RequestMapping(method = RequestMethod.GET)
     public void setupForm(ModelMap modelMap, HttpServletRequest request) {
-	String sessionId = request.getParameter("sessionId");
-	try {
-	    long lSessionId = Long.valueOf(sessionId);
-	    Session session = sessionDao.getSessionById(sessionId);
+        String sessionId = request.getParameter("sessionId");
+        try {
+            long lSessionId = Long.valueOf(sessionId);
+            Session session = sessionDao.getSessionById(sessionId);
 
-	    modelMap.put("sessionId", sessionId);
-	    modelMap.put("comments", commentDao.getCommentsBySessionId(lSessionId));
-	    modelMap.put("session", session);
-	    modelMap.put("links", linkDao.getLinksBySessionId(lSessionId));
-	    modelMap.put("sessionEditable", getSessionIsEditable(session.getType().getLabel()));
+            modelMap.put("sessionId", sessionId);
+            modelMap.put("comments", commentDao.getCommentsBySessionId(lSessionId));
+            modelMap.put("session", session);
+            modelMap.put("links", linkDao.getLinksBySessionId(lSessionId));
+            modelMap.put("sessionEditable", getSessionIsEditable(session.getType().getLabel()));
 
-	    String location = session.getLocation() != null ? session.getLocation() : "Unknown";
-	    String author = session.getAuthor() != null ? session.getAuthor() : "Unknown";
-	    modelMap.put("location", location);
-	    modelMap.put("sessionSpeaker", TwitterLinkCreator.process(author));
+            String location = session.getLocation() != null ? session.getLocation() : "Unknown";
+            String author = session.getAuthor() != null ? session.getAuthor() : "Unknown";
+            modelMap.put("location", location);
+            modelMap.put("sessionSpeaker", TwitterLinkCreator.process(author));
 
-	} catch (Exception e) {
-	    modelMap.put("comments", "");
-	    modelMap.put("sessionTitle", "Nice try :)");
-	    modelMap.put("sessionDescription", "Do you think this is something a normal user would do?");
-	}
+        } catch (Exception e) {
+            modelMap.put("comments", "");
+            modelMap.put("sessionTitle", "Nice try :)");
+            modelMap.put("sessionDescription", "Do you think this is something a normal user would do?");
+        }
     }
 
     private Boolean getSessionIsEditable(String type) {
-	if (type != null && type.equalsIgnoreCase(SESSION_TYPE_SESSION)) {
-	    return Boolean.FALSE;
-	}
-	return Boolean.TRUE;
+        if (type != null && type.equalsIgnoreCase(SESSION_TYPE_SESSION)) {
+            return Boolean.FALSE;
+        }
+        return Boolean.TRUE;
     }
 
 }
