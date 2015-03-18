@@ -1,17 +1,15 @@
+# Open Space Software Development
+
+* Introduction https://www.codecentric.de/2015/03/18/javaland-openspace-software-development/
+
 # Important Links
 
-* Production Link **(offline)**
+* Production Link **http://osswdev.codecentric.de**
 * Continuous Delivery Build Pipeline **(offline)**
 * Amazon EC2 Dashboard **(offline)**
 * Sonar SQM **(offline)**
 * Nexus Artifact Repository **(offline)**
 * Twitter handle #hackerspace & #javaland
-
-## JavaLand 2015
-
-Hackerspace @JavaLand 2015
-
-* http://javaland.eu
 
 # Quickstart
 
@@ -38,4 +36,4 @@ http://localhost:8888
 | ------------------- |:-------------:|
 | Test (offline)      | **(offline)** |
 | Staging (offline)   | **(offline)** | 
-| Production (offline)| **(offline)** |
+| Production | **http://osswdev.codecentric.de** |
