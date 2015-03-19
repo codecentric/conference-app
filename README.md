@@ -37,4 +37,3 @@ http://localhost:8080
 
 ### Open Monitoring App
 http://localhost:8888
-
