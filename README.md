@@ -8,9 +8,9 @@ Twitter handle #osswdev & #javaland
 
 | Environment         | Link          | 
 | ------------------- |:-------------:|
-| Test (offline)      | **(offline)** |
-| Staging (offline)   | **(offline)** | 
 | Production | **http://osswdev.codecentric.de** |
+| Staging (offline)   | **(offline)** | 
+| Test (offline)      | **(offline)** |
 
 Infrastructure Links
 
