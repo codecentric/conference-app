@@ -6,7 +6,7 @@
 	  <div class="container">
 	    <div class="panel panel-default">
 	      <div class="panel-body">
-	        <h2><spring:message code="header.title" text="Hackerspace - JavaLand 2015"/></h2>
+	        <h2><spring:message code="header.title" text="Open Space Software Development @ JavaLand 2015"/></h2>
 	        <spring:message code="home.text" text="Can we as a (un)conference ship a working product 
 		        from the first hour to the last hour and that is usable by real users from the very get-go? 
 		        Are we really that agile? The questions we are asking are: Can we ship working product? 
