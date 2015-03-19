@@ -145,7 +145,7 @@
 	
 	<distributionManagement>
 	    <repository>
-	        <id>release-repository</id>
+	        <id>central</id>
 	        <name>release-repository</name>
 	        <url>http://54.93.92.96:8081/artifactory/libs-release-local</url>
 	    </repository>
