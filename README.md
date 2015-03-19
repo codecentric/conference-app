@@ -4,9 +4,7 @@ Twitter handle #osswdev & #javaland
 
 * Introduction https://www.codecentric.de/2015/03/18/javaland-openspace-software-development/
 
-# Important Links
-
-# Environments 
+## Important Links
 
 | Environment         | Link          | 
 | ------------------- |:-------------:|
@@ -22,7 +20,7 @@ Infrastructure Links
 * Spring Boot Admin Client **http://54.93.206.225:8888/**
 * Amazon EC2 Dashboard **(offline)**
 
-# Quickstart
+## Quickstart
 
 ```
 cd monitoring
@@ -34,9 +32,9 @@ mvn clean install
 java -jar target/conference-app-3.0.0.jar
 ```
 
-## Open WebApp
+### Open WebApp
 http://localhost:8080
 
-## Open Monitoring App
+### Open Monitoring App
 http://localhost:8888
 
