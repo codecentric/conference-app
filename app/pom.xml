@@ -143,11 +143,4 @@
 		</plugins>
 	</build>
 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<url>${NEXUS_URL}/content/repositories/releases</url>
-		</repository>
-	</distributionManagement>
-
 </project>
