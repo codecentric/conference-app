@@ -9,6 +9,16 @@
 	    <h3 class="panel-title"><spring:message code="versionhistory" text="versionhistory" /></h3>
 	  </div>
 	  <div class="panel-body">
+	  		<h3>Friday - 20.03.2015</h3>
+	  		
+	  		<h4><span class="label label-info">Version 3.0.0</span></h4>
+	  		
+	  		<ul>
+				<li>Preparation for JavaLand 2015</li>
+				<li>Migrated App to Spring Boot</li>
+				<li>Added Spring Boot Admin Client support</li>
+			</ul>
+	  
 	    	<h3>Friday - 22.08.2014</h3>
 
 			<h4><span class="label label-info">Version 1.5</span></h4>
