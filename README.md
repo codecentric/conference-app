@@ -14,7 +14,7 @@ Twitter handle #osswdev & #javaland
 
 Infrastructure Links
 
-* Continuous Delivery Build Pipeline **http://54.93.92.96:8080/view/Pipeline/**
+* Continuous Delivery Build Pipeline **http://osswdev.codecentric.de/jenkins/view/Pipeline/**
 * Sonar SQM **http://54.93.92.96:9000/dashboard/index/1**
 * Artifact Repository **http://54.93.92.96:8081/**
 * Spring Boot Admin Client **http://54.93.206.225:8888/**
