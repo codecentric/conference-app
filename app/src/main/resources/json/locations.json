@@ -1,41 +1,36 @@
 [
     {
-        "shortName": "Alpha 1a",
-        "description": "Alpha 1a"
+        "shortName": "Wintergarten",
+        "description": "Wintergarten"
     },
     
     {
-        "shortName": "Alpha 1b",
-        "description": "Alpha 1b"
+        "shortName": "Schauspielhaus",
+        "description": "Schauspielhaus"
     },
     
     {
-        "shortName": "Alpha 2",
-        "description": "Alpha 2"
+        "shortName": "Quantum 1",
+        "description": "Quantum 1"
     },
     
     {
-        "shortName": "Beta",
-        "description": "Beta"
+        "shortName": "Quantum 2",
+        "description": "Quantum 2"
     },
     
     {
-        "shortName": "Epsilon",
-        "description": "Epsilon"
+        "shortName": "Quantum 3",
+        "description": "Quantum 3"
     },
     
     {
-        "shortName": "Window Lounge",
-        "description": "Window Lounge"
+        "shortName": "Quantum 4",
+        "description": "Quantum 4"
     },
     
     {
-        "shortName": "Couch Lounge",
-        "description": "Couch Lounge"
-    },
-    
-    {
-        "shortName": "Lobby",
-        "description": "Lobby"
+        "shortName": "Rotunde",
+        "description": "Rotunde"
     }
 ]
