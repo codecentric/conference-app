@@ -1,8 +1,7 @@
 # Open Space Software Development
 
-Twitter handle #osswdev & #javaland
-
-* Introduction https://www.codecentric.de/2015/03/18/javaland-openspace-software-development/
+* Hashtags: #osswdev & #javaland
+* Introduction: https://www.codecentric.de/2015/03/18/javaland-openspace-software-development/
 
 ## Important Links
 
@@ -12,11 +11,11 @@ Twitter handle #osswdev & #javaland
 | Staging (offline)   | **(offline)** | 
 | Test (offline)      | **(offline)** |
 
-Infrastructure Links
+### Infrastructure Links
 
 * Continuous Delivery Build Pipeline **http://osswdev.codecentric.de/jenkins/view/Pipeline/**
 * SonarQube SQM **http://osswdev.codecentric.de/sonarqube/dashboard/index/1**
-* Artifact Repository **http://54.93.92.96:8081/**
+* Artifact Repository **http://osswdev.codecentric.de/artifactory**
 * Spring Boot Admin Client **http://54.93.206.225:8888/**
 * Amazon EC2 Dashboard **(offline)**
 
