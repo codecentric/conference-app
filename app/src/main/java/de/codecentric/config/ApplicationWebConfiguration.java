@@ -19,7 +19,7 @@ public class ApplicationWebConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         super.addViewControllers(registry);
-        registry.addViewController("/").setViewName("redirect:/home");
+        registry.addViewController("/").setViewName("redirect:/currentSessions");
     }
 
     @Bean
