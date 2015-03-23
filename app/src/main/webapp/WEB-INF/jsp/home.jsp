@@ -9,7 +9,7 @@
 	        <h2>Open Space Software Development @ JavaLand 2015</h2>
 	        <p>Auf Konferenzen wird viel &uuml;ber Methoden und Technologien gesprochen.
 	        Wir m&ouml;chten herausfinden, wie sich Dinge, die wir f&uuml;r richtig und wertvoll halten, in der Praxis
-            anf&uuml;hlen. Daher laden wir euch zum codecentric OpenSpace Development ein â€“ ein sicherer Raum, in dem
+            anf&uuml;hlen. Daher laden wir euch zum codecentric OpenSpace Development ein,€“ ein sicherer Raum, in dem
             unter realit&auml;tsnahen Bedingungen experimentiert und gelernt werden kann.</p>
 	      </div>
 	    </div>
@@ -45,19 +45,18 @@
                     <a href="http://osswdev.codecentric.de/admin">Spring Boot Admin Client</a>.
                 </p>
                 <h2>Developer Quickstart</h2>
-                <p><pre><code>
-                "cd monitoring
-                    mvn clean install
-                    java -jar target/monitoring-1.0.0.jar
+<pre>
+<code>
+cd monitoring
+mvn clean install
+java -jar target/monitoring-1.0.0.jar
 
-                    cd app
-                    mvn clean install
-                    java -jar target/conference-app-3.0.0.jar
-                "
-                </code></pre>
-                </p>
+cd app
+mvn clean install
+java -jar target/conference-app-3.0.0.war
+</code>
+</pre>
                 <p>
-
                     Dann findet sich die WebApp unter <br>
                     <code>http://localhost:8080</code> <br>
                     und die Monitoring Appl unter <br>
