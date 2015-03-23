@@ -40,6 +40,12 @@
 		        Can we ship clean code? Can we run our agile practices to the max?</p>
 	    </div>
 	  </div>
+      <div class="row">
+          <div class="col-md-12">
+              <h4>Links</h4>
+              <p><a href="https://github.com/codecentric/conference-app">GitHub Repository</a></p>
+          </div>
+      </div>
 	</div>
 
 <%@ include file="footer.html"%>
