@@ -56,14 +56,14 @@ mvn clean install
 java -jar target/conference-app-3.0.0.war
 </code>
 </pre>
-                <p>
-                    Dann findet sich die WebApp unter <br>
-                    <code>http://localhost:8080</code> <br>
-                    und die Monitoring Appl unter <br>
-                    <code>http://localhost:8888</code>
-                </p>
+				<h2>Links</h2>
+                <ul>
+                    <li>Dann befindet sich die WebApp unter <a href="http://localhost:8080">http://localhost:8080</a></li>
+                    <li>und die Monitoring Appl unter <a href="http://localhost:8888">http://localhost:8888</a></li>
+                </ul>
             </div>
         </div>
 	</div>
+	<br/><br/>
 
 <%@ include file="footer.html"%>
