@@ -6,11 +6,11 @@
 	  <div class="container">
 	    <div class="panel panel-default">
 	      <div class="panel-body">
-	        <h2><spring:message code="header.title" text="Open Space Software Development @ JavaLand 2015"/></h2>
-	        <spring:message code="home.text" text="Auf Konferenzen wird viel über Methoden und Technologien gesprochen.
+	        <h2>Open Space Software Development @ JavaLand 2015</h2>
+	        <p>Auf Konferenzen wird viel über Methoden und Technologien gesprochen.
 	        Wir möchten herausfinden, wie sich Dinge, die wir für richtig und wertvoll halten, in der Praxis anfühlen.
 	        Daher laden wir euch zum codecentric OpenSpace Development ein – ein sicherer Raum, in dem unter
-	        realitätsnahen Bedingungen experimentiert und gelernt werden kann."/>
+	        realitätsnahen Bedingungen experimentiert und gelernt werden kann.</p>
 	      </div>
 	    </div>
 	  </div>
