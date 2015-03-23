@@ -10,10 +10,13 @@
     <div class="container-fluid">
 
       <!-- Static navbar -->
-      <nav class="navbar navbar-default">
+
+        <nav class="navbar navbar-default">
+
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <!-- aria-expanded="false" aria-controls="navbar" -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -21,10 +24,11 @@
             </button>
             <a class="navbar-brand" href="home">JavaLand 2015</a>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
+
+          <div class="collapse navbar-collapse" id="navbar" >
             <ul class="nav navbar-nav">
               <c:if test="${featureToggleCurrentSessions}">
-              	<li><a href="currentSessions"><spring:message code="current.sessions.title" text="Current Sessions"/></a></li>	
+              	<li><a href="currentSessions"><spring:message code="current.sessions.title" text="Current Sessions"/></a></li>
               </c:if>
               <c:if test="${featureToggleStaticSessions}">	 
 			  	<li><a href="staticSessions"><spring:message code="sessions" text="Sessions"/></a></li>
