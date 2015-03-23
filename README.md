@@ -16,7 +16,7 @@
 * Continuous Delivery Build Pipeline **http://osswdev.codecentric.de/jenkins/view/Pipeline/**
 * SonarQube SQM **http://osswdev.codecentric.de/sonarqube/dashboard/index/1**
 * Artifact Repository **http://osswdev.codecentric.de/artifactory**
-* Spring Boot Admin Client **http://osswdev.codecentric.de/admin**
+* Spring Boot Admin Client **http://osswdev.codecentric.de/adminclient**
 * Amazon EC2 Dashboard **(offline)**
 
 ## Developer Quickstart
