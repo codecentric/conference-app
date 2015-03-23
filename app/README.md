@@ -11,9 +11,9 @@ java -jar target/monitoring*.jar
 # Start conference-app with environment configuration
 cd conference-app
 mvn clean install
-java -jar -Dspring.config.location=config/production.properties target/conference-app*.jar
-java -jar -Dspring.config.location=config/staging.properties target/conference-app*.jar
-java -jar -Dspring.config.location=config/test.properties target/conference-app*.jar
+java -jar -Dspring.config.location=config/production.properties target/conference-app*.war
+java -jar -Dspring.config.location=config/staging.properties target/conference-app*.war
+java -jar -Dspring.config.location=config/test.properties target/conference-app*.war
 ```
 
 For demo reasons we start the app three times with different ports. 
