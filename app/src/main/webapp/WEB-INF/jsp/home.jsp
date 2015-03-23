@@ -8,7 +8,7 @@
 	      <div class="panel-body">
 	        <h2>Open Space Software Development @ JavaLand 2015</h2>
 	        <p>Auf Konferenzen wird viel &uuml;ber Methoden und Technologien gesprochen.
-	        Wir m&ouml;chten herausfinden, wie sich Dinge, die wir für richtig und wertvoll halten, in der Praxis
+	        Wir m&ouml;chten herausfinden, wie sich Dinge, die wir f&uuml;r richtig und wertvoll halten, in der Praxis
             anf&uuml;hlen. Daher laden wir euch zum codecentric OpenSpace Development ein – ein sicherer Raum, in dem
             unter realit&auml;tsnahen Bedingungen experimentiert und gelernt werden kann.</p>
 	      </div>
@@ -36,7 +36,7 @@
                 <p>Das Git-Repository aus GitHub clonen:
                     <a href="https://github.com/codecentric/conference-app">
                         https://github.com/codecentric/conference-app</a></p>
-                <p>Das Artifect Repository findet Ihr unter
+                <p>Das Artifakt Repository findet Ihr unter
                     <a href="http://osswdev.codecentric.de/artifactory">http://osswdev.codecentric.de/artifactory</a></p>
                 <p>Intressant sind sowohl die <a href="http://osswdev.codecentric.de/jenkins/view/Pipeline/">
                     Continuous Delivery Build Pipeline</a> als auch der
