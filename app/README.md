@@ -29,4 +29,3 @@ You can access the conference apps under:
 | Staging     | http://localhost:8081 | 
 | Production  | http://localhost:8082 |
 | Monitoring  | http://localhost:8888 |
-
