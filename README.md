@@ -28,7 +28,7 @@ java -jar target/monitoring-1.0.0.jar
 
 cd app
 mvn clean install
-java -jar target/conference-app-3.0.0.jar
+java -jar target/conference-app-3.0.0.war
 ```
 
 ### Open WebApp
