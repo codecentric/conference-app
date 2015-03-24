@@ -8,8 +8,8 @@
 | Environment         | Link          | 
 | ------------------- |:-------------:|
 | Production | **http://osswdev.codecentric.de** |
-| Staging (offline)   | **(offline)** | 
-| Test (offline)      | **(offline)** |
+| Staging    | **http://52.28.10.112:8080** | 
+| Test       | **http://52.28.14.105:8080** |
 
 ## Infrastructure Links
 
