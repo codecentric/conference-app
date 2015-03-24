@@ -13,7 +13,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import de.codecentric.validate.TimeValidator;
 import de.codecentric.validate.impl.Time24HoursValidator;
 
-@Configuration
+//@Configuration
 public class ApplicationWebConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
