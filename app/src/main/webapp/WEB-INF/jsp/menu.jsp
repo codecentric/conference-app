@@ -4,6 +4,7 @@
 <spring:eval expression="@environment.getProperty('feature.toggle.search.sessions')" var="featureToggleSearchSessions" />
 <spring:eval expression="@environment.getProperty('feature.toggle.venue.map')" var="featureToggleVenueMap" />
 <spring:eval expression="@environment.getProperty('feature.toggle.feedback')" var="featureToggleFeedback" />
+<spring:eval expression="@environment.getProperty('feature.toggle.news')" var="featureToggleNews" />
 <spring:eval expression="@environment.getProperty('feature.toggle.changelog')" var="featureToggleChangelog" />
 <spring:eval expression="@environment.getProperty('feature.toggle.app.structure')" var="featureToggleAppStructure" />
 
@@ -44,6 +45,9 @@
 			  </c:if>
 			  <c:if test="${featureToggleFeedback}">
 			  	<li><a href="feedback"><spring:message code="feedback" text="User Feedback"/></a></li>
+			  </c:if>
+			  <c:if test="${featureToggleNews}">
+			  	<li><a href="news"><spring:message code="news" text="Create News"/></a></li>
 			  </c:if>
             </ul>
             <ul class="nav navbar-nav navbar-right">
