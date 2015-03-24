@@ -13,8 +13,11 @@
 	<div class="panel panel-default">
 	  <div class="panel-heading">
 	    <div class="row-fluid">
-		  <div class="col-xs-6 col-md-12">
+		  <div class="col-xs-6 col-md-6">
 		  	<h5><span class="label label-info">Description</span> ${session.title}</h5>
+		  </div>
+		  <div class="col-xs-6 col-md-6">
+		  	<span class="glyphicon glyphicon-thumbs-up pull-right" aria-hidden="true"></span>
 		  </div>
 		</div>
 		<div class="row-fluid">

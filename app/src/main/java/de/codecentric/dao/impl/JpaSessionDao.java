@@ -10,6 +10,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -103,6 +106,23 @@ public class JpaSessionDao implements SessionDao {
     @Override
     public List<Session> getAllSessionsByAuthor(String author) {
         return em.createNamedQuery("findAllSessionsForAuthor", Session.class).setParameter("author", "%" + author + "%").getResultList();
+    }
+
+    @SuppressWarnings("unchecked")
+	@Override
+    public List<Session> getAllSessionsByAuthorOrTitleOrDescription(String searchTerm){
+    	String searchTermLike = "%" + searchTerm + "%";
+        org.hibernate.Session session = (org.hibernate.Session) em.getDelegate();
+
+        Criteria criteria = session.createCriteria(Session.class) 
+                .add(
+                		Restrictions.or(
+                		    Restrictions.like("author",searchTermLike),
+                		    Restrictions.like("title", searchTermLike),
+                		    Restrictions.like("description" , searchTermLike)
+                		    )
+                	).addOrder(Order.asc("date"));
+        return (List<Session>)criteria.list();
     }
 
 }
