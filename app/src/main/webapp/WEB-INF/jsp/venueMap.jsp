@@ -8,6 +8,8 @@
 <body>
 	<%@ include file="menu.jsp"%>
 
+    <%@ include file="news.jsp"%>
+
 	<div class="container-fluid">
 
 		<div class="panel panel-default">
@@ -26,9 +28,9 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<br/>
-				
+
 				<div class="row">
 					<div class="col-md-4">
 						<ul>

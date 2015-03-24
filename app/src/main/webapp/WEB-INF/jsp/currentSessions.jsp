@@ -7,6 +7,8 @@
 <body>
 <%@ include file="menu.jsp"%>
 
+<%@ include file="news.jsp"%>
+
 <div class="container-fluid">
 
 	<div class="panel panel-default">

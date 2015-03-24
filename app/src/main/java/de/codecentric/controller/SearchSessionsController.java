@@ -3,6 +3,8 @@ package de.codecentric.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.codecentric.dao.NewsDao;
+import de.codecentric.dao.impl.JpaNewsDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,9 @@ public class SearchSessionsController {
     @Autowired
     private SessionDao sessionDao;
 
+    @Autowired
+    private NewsDao newsDao;
+
     @ModelAttribute("searchFormData")
     public SearchFormData getSearchFormData() {
         return new SearchFormData();
@@ -36,6 +41,7 @@ public class SearchSessionsController {
     public void setupForm(ModelMap modelMap) {
         modelMap.put("searchFormData", new SearchFormData());
         modelMap.put("sessionsList", new ArrayList<Session>());
+        modelMap.put("newsList", newsDao.getAllNews());
     }
 
     @RequestMapping(method = RequestMethod.POST)

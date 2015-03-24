@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import de.codecentric.dao.NewsDao;
+import de.codecentric.domain.News;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -22,6 +24,9 @@ public class StaticSessionsController {
     @Autowired
     private SessionDao sessionDao;
 
+    @Autowired
+    private NewsDao newsDao;
+
     @RequestMapping(method = RequestMethod.GET)
     public void setupForm(ModelMap modelMap) {
 
@@ -36,11 +41,25 @@ public class StaticSessionsController {
             staticSessions = sessionDao.getAllStaticSessions();
         }
 
+        List<News> newsList = newsDao.getAllNews();
+        if (newsList.isEmpty()) {
+            /*
+            News n = new News();
+            n.setText("<insert meaningfull news here>");
+            News n2 = new News();
+            n2.setText("<insert meaningfull news here - 2>");
+
+            newsDao.saveNews(n);
+            newsDao.saveNews(n2);
+            */
+        }
+
         Map<String, List<Session>> sessionsByDateMap = getStaticSessionMap(staticSessions);
 
         modelMap.put("sessionDays", sessionsByDateMap.keySet());
         modelMap.put("sessionMap", sessionsByDateMap);
         modelMap.put("currentSessions", sessionDao.getCurrentSessions());
+        modelMap.put("newsList", newsDao.getAllNews());
     }
 
     private Map<String, List<Session>> getStaticSessionMap(List<Session> staticSessions) {

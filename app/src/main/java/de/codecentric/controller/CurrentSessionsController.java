@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import de.codecentric.dao.NewsDao;
 import org.joda.time.DateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,9 @@ public class CurrentSessionsController {
     @Autowired
     private SessionDao sessionDao;
 
+    @Autowired
+    private NewsDao newsDao;
+
     @RequestMapping(method = RequestMethod.GET)
     public void setupForm(ModelMap modelMap) {
 
@@ -38,6 +42,7 @@ public class CurrentSessionsController {
         modelMap.put("currentSessions", filterCurrentSessions(allSessionsByDate));
         modelMap.put("sessionDays", sessionsByDateMap.keySet());
         modelMap.put("sessionMap", sessionsByDateMap);
+        modelMap.put("newsList", newsDao.getAllNews());
     }
 
     private List<Session> filterCurrentSessions(List<Session> allSessionsByDate) {
