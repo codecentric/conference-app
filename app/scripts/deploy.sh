@@ -8,18 +8,17 @@ echo "Deploying Version $VERSION to $ENVIRONMENT"
 APP_HOME=/opt/conference-app
 REPOSITORY=http://54.93.92.96:8081/artifactory/simple/libs-release-local
 
-if [ "$ENVIRONMENT" == "JAVALAND_PROD_A" ]; 
+if[ "$ENVIRONMENT" == "JAVALAND_PROD_A" ]
 then
-  SERVER=54.93.219.237
-elif [ "$ENVIRONMENT" == "JAVALAND_STAGING" ]; 
+  SERVER="54.93.219.237"
+elif[ "$ENVIRONMENT" == "JAVALAND_STAGING" ]
 then
-  SERVER=52.28.10.112
-elif [ "$ENVIRONMENT" == "JAVALAND_TEST" ];
+  SERVER="52.28.10.112"
+elif[ "$ENVIRONMENT" == "JAVALAND_TEST" ]
 then
-  SERVER=52.28.14.105
+  SERVER="52.28.14.105"
 else
   echo "Stopping Deployment, please provide valide ENVIRONMENT variable"
-  exit 1
 fi
  
 echo "Stopping Java Process on $SERVER"
