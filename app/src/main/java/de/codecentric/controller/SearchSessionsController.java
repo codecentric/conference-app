@@ -40,9 +40,9 @@ public class SearchSessionsController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView searchSessions(ModelMap modelMap, @ModelAttribute("searchFormData") SearchFormData formData) {
-        logger.info("searchSessions by author " + formData.getName());
+        logger.info("searchSessions by search term " + formData.getName());
 
-        List<Session> sessions = loadSessionsForAuthorName(formData.getName());
+        List<Session> sessions = loadSessionsForSearchTerm(formData.getName());
         modelMap.put("sessionsList", sessions);
         modelMap.put("searchFormData", formData);
 
@@ -52,8 +52,8 @@ public class SearchSessionsController {
         return modelAndView;
     }
 
-    private List<Session> loadSessionsForAuthorName(String name) {
-        List<Session> sessions = sessionDao.getAllSessionsByAuthor(name);
+    private List<Session> loadSessionsForSearchTerm(String term) {
+        List<Session> sessions = sessionDao.getAllSessionsByAuthorOrTitleOrDescription(term);
         for (Session session : sessions) {
             // TODO remove after DB cleanup
             if (session.getType() == null) {

@@ -60,12 +60,14 @@ public class SearchSessionsControllerTest {
     }
 
     @Test
-    public void testSearchSession() throws Exception {
+    public void testSearchSessionByAuthor() throws Exception {
         String title = "title";
         String author = "author";
         Session session = new Session("date", "startTime", "location", title, author, "description");
+       // Session session2 = new Session("date", "startTime", "location", title, author, "description");
         List<Session> sessions = Arrays.asList(session);
-        when(sessionDao.getAllSessionsByAuthor(author)).thenReturn(sessions);
+
+        when(sessionDao.getAllSessionsByAuthorOrTitleOrDescription(author)).thenReturn(sessions);
 
         mockMvc.perform(post("/searchSessions").param("name", author)).andExpect(status().isOk()).andExpect(model().attributeExists("sessionsList"))
                         .andExpect(model().attribute("sessionsList", hasSize(1))).andExpect(view().name(containsString("searchSessions")));

@@ -33,4 +33,6 @@ public interface SessionDao {
 
     List<Session> getAllSessionsByDateAndType(String date, SessionType... type);
 
+    List<Session> getAllSessionsByAuthorOrTitleOrDescription(String searchTerm);
+
 }
