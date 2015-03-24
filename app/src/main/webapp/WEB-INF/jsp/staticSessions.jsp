@@ -21,13 +21,34 @@
 				<li><a href="#date${status.index}" data-toggle="tab"> ${day} </a></li>
 			</c:forEach>
 		</ul>
-		
+
 		<div class="tab-content">
 		 	<div class="tab-pane active" id="current_sessions">
 		 		<div class="row-fluid">
 		 			<c:choose>
 		 				<c:when test="${!currentSessions.isEmpty()}">
-							<table class="table table-striped">
+                            <table class="table table-striped visible-xs-block">
+                                <%@ include file="currentSessions_tableheader_small.html"%>
+                                <tbody>
+                                <c:forEach items="${currentSessions}" var="session">
+                                    <c:url value="comments" var="url" scope="page">
+                                        <c:param name="sessionId" value="${session.getId()}" />
+                                    </c:url>
+                                    <tr class="sessions" data-link="${url}">
+                                        <td>${session.date}<br>${session.start} - ${session.end}</td>
+                                        <td>${session.title}</td>
+                                        <td>${session.author}</td>
+                                        <td>${session.location}</td>
+                                        <td><a class="btn btn-primary" href='comments?sessionId=${session.id}'>
+                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                                </tbody>
+                            </table>
+
+							<table class="table table-striped hidden-xs">
 								<%@ include file="schedule_tableheader.html"%>
 								<tbody>
 									<c:forEach items="${currentSessions}" var="session">
@@ -54,30 +75,51 @@
 					</c:choose>
 				</div>
 		 	</div>
-		 	
+
 			 <c:forEach items="${sessionMap}" var="entry" varStatus="status">
 			 	<div class="tab-pane" id="date${status.index}">
 
 					<div class="row-fuid">
-						<table class="table table-striped">
-							<%@ include file="schedule_tableheader.html"%>
+						<table class="table table-striped visible-xs-block">
+							<%@ include file="currentSessions_tableheader_small.html"%>
 							<tbody>
 								<c:forEach items="${entry.value}" var="session">
 			                        <c:url value="comments" var="url" scope="page">
 			                            <c:param name="sessionId" value="${session.id}" />
 			                        </c:url>
 									<tr class="sessions" data-link="${url}">
-										<td>${session.date}</td>
-										<td>${session.start}</td>
-										<td>${session.end}</td>
+                                        <td>${session.date}<br>${session.start} - ${session.end}</td>
 										<td>${session.title}</td>
 										<td>${session.author}</td>
 										<td>${session.location}</td>
-										<td><a class="btn btn-primary" href='comments?sessionId=${session.id}'>Comment</a></td>
+                                        <td><a class="btn btn-primary" href='comments?sessionId=${session.id}'>
+                                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                            </a>
+                                        </td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
+
+                        <table class="table table-striped hidden-xs">
+                            <%@ include file="schedule_tableheader.html"%>
+                            <tbody>
+                            <c:forEach items="${entry.value}" var="session">
+                                <c:url value="comments" var="url" scope="page">
+                                    <c:param name="sessionId" value="${session.id}" />
+                                </c:url>
+                                <tr class="sessions" data-link="${url}">
+                                    <td>${session.date}</td>
+                                    <td>${session.start}</td>
+                                    <td>${session.end}</td>
+                                    <td>${session.title}</td>
+                                    <td>${session.author}</td>
+                                    <td>${session.location}</td>
+                                    <td><a class="btn btn-primary" href='comments?sessionId=${session.id}'>Comment</a></td>
+                                </tr>
+                            </c:forEach>
+                            </tbody>
+                        </table>
 					</div>
 			 	</div>
 			</c:forEach>
