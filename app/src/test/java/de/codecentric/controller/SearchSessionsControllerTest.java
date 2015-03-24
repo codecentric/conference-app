@@ -13,8 +13,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
+import de.codecentric.dao.NewsDao;
+import de.codecentric.domain.News;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,6 +46,9 @@ public class SearchSessionsControllerTest {
     SessionDao sessionDao;
 
     @Mock
+    NewsDao newsDao;
+
+    @Mock
     View mockView;
 
     private MockMvc mockMvc;
@@ -68,6 +74,7 @@ public class SearchSessionsControllerTest {
         List<Session> sessions = Arrays.asList(session);
 
         when(sessionDao.getAllSessionsByAuthorOrTitleOrDescription(author)).thenReturn(sessions);
+        when(newsDao.getAllNews()).thenReturn(Collections.<News>emptyList());
 
         mockMvc.perform(post("/searchSessions").param("name", author)).andExpect(status().isOk()).andExpect(model().attributeExists("sessionsList"))
                         .andExpect(model().attribute("sessionsList", hasSize(1))).andExpect(view().name(containsString("searchSessions")));

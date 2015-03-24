@@ -12,9 +12,12 @@ import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standal
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import de.codecentric.dao.NewsDao;
+import de.codecentric.domain.News;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -44,6 +47,9 @@ public class CurrentSessionsControllerTest {
     SessionDao sessionDao;
 
     @Mock
+    NewsDao newsDao;
+
+    @Mock
     View mockView;
 
     private MockMvc mockMvc;
@@ -71,6 +77,7 @@ public class CurrentSessionsControllerTest {
         List<Session> sessions = Arrays.asList(session);
         when(sessionDao.getAllSessionsByDateAndType(today, SessionType.openspace, SessionType.session)).thenReturn(sessions);
         when(sessionDao.getAllSessions()).thenReturn(sessions);
+        when(newsDao.getAllNews()).thenReturn(Collections.<News>emptyList());
 
         mockMvc.perform(get("/currentSessions")).andExpect(status().isOk()).andExpect(model().attribute("currentSessions", hasSize(1))).andExpect(model().attributeExists("sessionDays"))
                         .andExpect(model().attributeExists("sessionMap")).andExpect(view().name("currentSessions"));
