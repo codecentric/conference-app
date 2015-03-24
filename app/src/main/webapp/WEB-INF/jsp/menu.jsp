@@ -13,7 +13,7 @@
 
         <nav class="navbar navbar-default">
 
-        <div class="container-fluid">
+        <div>
           <div class="navbar-header">
             <!-- aria-expanded="false" aria-controls="navbar" -->
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" >
@@ -30,7 +30,7 @@
               <c:if test="${featureToggleCurrentSessions}">
               	<li><a href="currentSessions"><spring:message code="current.sessions.title" text="Current Sessions"/></a></li>
               </c:if>
-              <c:if test="${featureToggleStaticSessions}">	 
+              <c:if test="${featureToggleStaticSessions}">
 			  	<li><a href="staticSessions"><spring:message code="sessions" text="Sessions"/></a></li>
 			  </c:if>
 			  <c:if test="${featureToggleTwitterWall}">
@@ -59,11 +59,3 @@
       </nav>
 
     </div> <!-- /container -->
-    
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
