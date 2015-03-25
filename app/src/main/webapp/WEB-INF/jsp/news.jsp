@@ -6,7 +6,7 @@
             <h4>News</h4>
             <ul>
                 <c:forEach items="${newsList}" var="news">
-                    <li><c:out value="${news.text}" /></li>
+                    <span class="bg-info"><c:out value="${news.text}" /></span><br/>
                 </c:forEach>
             </ul>
         </div>
