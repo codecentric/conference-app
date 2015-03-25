@@ -4,6 +4,7 @@
 <spring:eval expression="@environment.getProperty('feature.toggle.search.sessions')" var="featureToggleSearchSessions" />
 <spring:eval expression="@environment.getProperty('feature.toggle.venue.map')" var="featureToggleVenueMap" />
 <spring:eval expression="@environment.getProperty('feature.toggle.feedback')" var="featureToggleFeedback" />
+<spring:eval expression="@environment.getProperty('feature.toggle.news')" var="featureToggleNews" />
 <spring:eval expression="@environment.getProperty('feature.toggle.changelog')" var="featureToggleChangelog" />
 <spring:eval expression="@environment.getProperty('feature.toggle.app.structure')" var="featureToggleAppStructure" />
 
