@@ -19,7 +19,7 @@ public class StartingPageTest extends AbstractPageTest {
 	@Test
 	public void openStartingPage() {
 		open(pageLink);
-		WebElement title = driver.findElement(By.id("title"));
+		WebElement title = driver.findElement(By.className("panel-title"));
 		assertTrue(title.isDisplayed());
 
 		WebElement currentSessions = driver.findElement(By.id("current_sessions"));
