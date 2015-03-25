@@ -87,7 +87,7 @@
 								</table>
 
                                 <table class="table table-striped hidden-xs">
-                                    <%@ include file="schedule_tableheader.html"%>
+                                  <!--   <%@ include file="schedule_tableheader.html"%> -->
                                     <tbody>
                                     <c:forEach items="${openspaceAnywhereSessions}" var="session">
                                         <c:url value="comments" var="url" scope="page">

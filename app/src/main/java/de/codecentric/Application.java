@@ -9,11 +9,13 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
 import de.codecentric.config.ApplicationWebConfiguration;
+import de.codecentric.config.SocialConfig;
+import de.codecentric.config.WebSecurityConfig;
 
 @EnableAutoConfiguration
 @SpringBootApplication
-@ComponentScan
-@Import(ApplicationWebConfiguration.class)
+@ComponentScan//(basePackages = "de.codecentric")
+@Import({ApplicationWebConfiguration.class, SocialConfig.class, WebSecurityConfig.class} )
 public class Application extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

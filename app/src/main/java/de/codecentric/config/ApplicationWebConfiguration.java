@@ -6,6 +6,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
@@ -13,7 +14,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import de.codecentric.validate.TimeValidator;
 import de.codecentric.validate.impl.Time24HoursValidator;
 
-//@Configuration
+@Configuration
 public class ApplicationWebConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
@@ -39,4 +40,5 @@ public class ApplicationWebConfiguration extends WebMvcConfigurerAdapter {
         return slr;
     }
 
+  
 }
