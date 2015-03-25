@@ -36,7 +36,7 @@ public class SocialConfig implements SocialConfigurer {
         connectionFactoryConfigurer.addConnectionFactory(new TwitterConnectionFactory(
                // environment.getProperty("twitter.consumerKey"),
                // environment.getProperty("twitter.consumerSecret")
-        		"dzgc1oMkRlQFuqsmdhtZNASJz", "8ogSFQPB5YvKQSefCPW2CVakosquvSdWTABE3D6baGmpRF1FUu"
+        		"pWTDdLyQLSjs5RALiOxo8Qbl8", "pNSIv08o2vK6piUYAEm9o9eBtrvpfioCx6XKWH9pXMZ2BloUJp"
         		));
     }
 
