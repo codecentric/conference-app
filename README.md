@@ -11,6 +11,7 @@
 | Staging    | **http://52.28.10.112:8080** | 
 | Test       | **http://52.28.14.105:8080** |
 
+
 ## Infrastructure Links
 
 * Continuous Delivery Build Pipeline **http://osswdev.codecentric.de/jenkins/view/Pipeline/**
