@@ -46,9 +46,6 @@
 			  <c:if test="${featureToggleFeedback}">
 			  	<li><a href="feedback"><spring:message code="feedback" text="User Feedback"/></a></li>
 			  </c:if>
-			  <c:if test="${featureToggleNews}">
-			  	<li><a href="news"><spring:message code="news" text="Create News"/></a></li>
-			  </c:if>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <c:if test="${featureToggleChangelog}">

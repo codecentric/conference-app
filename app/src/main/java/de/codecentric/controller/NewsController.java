@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/news")
+@RequestMapping("/admin/news")
 public class NewsController {
 
     @Autowired
@@ -41,6 +41,6 @@ public class NewsController {
 
         newsDao.saveNews(news);
 
-        return new ModelAndView("redirect:currentSessions");
+        return new ModelAndView("redirect:/currentSessions");
     }
 }
