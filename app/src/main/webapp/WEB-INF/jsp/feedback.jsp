@@ -49,8 +49,8 @@
 					<c:forEach items="${feedbackList}" var="feedback">
 					    <span class="glyphicon glyphicon-envelope"></span>
 					    <blockquote>
-						    <p>${feedback.feedbackComment}</p>
-						    <small>${feedback.userName} - ${feedback.timestamp}</small>
+						    <p class="feedback-comment"><c:out value="${feedback.feedbackComment}" /></p>
+                            <small class="username-and-timestamp"><c:out value="${feedback.userName}" /> - ${feedback.timestamp}</small>
 					    </blockquote>
 					</c:forEach>
 					</table>
