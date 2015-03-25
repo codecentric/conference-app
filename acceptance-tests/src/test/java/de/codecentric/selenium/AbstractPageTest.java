@@ -13,24 +13,24 @@ public abstract class AbstractPageTest {
     private String baseUrl;
 
     protected WebDriver driver;
-    protected String PAGE_TITLE = "Hackerspace - JavaLand 2015";
+    protected String PAGE_TITLE = "Open Space Software Development @ JavaLand 2015";
 
     @Before
     public void setUp() {
-	driver = new FirefoxDriver();
-	baseUrl = System.getProperty(SYSTEM_PROPERTY);
-	if (StringUtils.isEmpty(baseUrl)) {
-	    baseUrl = serverUrl;
-	}
+        driver = new FirefoxDriver();
+        baseUrl = System.getProperty(SYSTEM_PROPERTY);
+        if (StringUtils.isEmpty(baseUrl)) {
+            baseUrl = serverUrl;
+        }
     }
 
     @After
     public void tearDownWebDriver() {
-	driver.close();
+        driver.close();
     }
 
     protected void open(String url) {
-	driver.navigate().to(baseUrl + url);
+        driver.navigate().to(baseUrl + url);
     }
 
 }
