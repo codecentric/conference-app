@@ -19,7 +19,7 @@ public class ConferenceScheduledSessionsPageTest extends AbstractPageTest {
 	@Test
 	public void openCurrentSessionsPage() {
 		open(pageLink);
-		WebElement title = driver.findElement(By.id("title"));
+		WebElement title = driver.findElement(By.className("panel-title"));
 		assertTrue(title.isDisplayed());
 	}
 

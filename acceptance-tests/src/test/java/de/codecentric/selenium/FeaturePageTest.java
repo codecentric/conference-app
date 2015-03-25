@@ -19,7 +19,7 @@ public class FeaturePageTest extends AbstractPageTest {
     @Test
     public void openFeaturePage() {
 	open(pageLink);
-	WebElement title = driver.findElement(By.id("title"));
+	WebElement title = driver.findElement(By.className("panel-title"));
 	assertTrue(title.isDisplayed());
     }
 

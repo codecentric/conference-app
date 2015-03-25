@@ -11,13 +11,20 @@
 # Variables
 
 JENKINS_URL=http://osswdev.codecentric.de/jenkins
+TOKEN=SecurityToken
+VERSION=$1
+
+if [[ "$#" == "0" ]];
+then
+  echo "Please provide the VERSION you want to deploy, i.e. 3.0.0-80"
+  exit 1
+fi
 
 JUNIT_JOB=commit
 STATIC_CODE_ANALYSIS_JOB=sonar-analysis
 ACCEPTANCE_TEST_JOB=sonar-analysis
 PROVISIONING_JOB=deploy-staging
 
-TOKEN=
 
 ##########################################
 # Utility methods
@@ -47,12 +54,10 @@ check() {
 
 while :
 do 
-    # speak ava "Waiting for user input"
-    
     read -n 1 key
     if [[ $key = "s" ]]
     then
-      echo "Starting deployment"
+      echo "Starting deployment of version $VERSION"
       speak ava "Running last deployment check now"
       
       check $JUNIT_JOB "Unit Tests"
@@ -71,7 +76,7 @@ do
       NOW=$(date +"%H %M ")
       speak ava "It is $NOW"
       speak ava "A new version of the software will now be deployed to the server"
-      curl -X POST "$JENKINS_URL/job/deploy-prod/buildWithParameters?token=$TOKEN"
+      curl -X POST "$JENKINS_URL/job/deploy-prod/buildWithParameters?token=$TOKEN&VERSION=$VERSION"
       
     fi
 
