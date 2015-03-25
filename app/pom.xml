@@ -14,14 +14,14 @@
 		<start-class>de.codecentric.Application</start-class>
 		<java.version>1.7</java.version>
 	</properties>
-	
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.2.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	
+
 	<scm>
 		<connection>scm:git:git@github.com:codecentric/conference-app.git</connection>
 		<url>https://github.com/codecentric/conference-app</url>
@@ -39,7 +39,7 @@
 			<artifactId>jackson-jaxrs</artifactId>
 			<version>1.9.9</version>
 		</dependency>
-		
+
 		<!-- Other -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -85,7 +85,7 @@
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -100,7 +100,7 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- Spring Boot -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -115,7 +115,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- Spring Boot Admin -->
 		<dependency>
 		    <groupId>de.codecentric</groupId>
@@ -131,7 +131,7 @@
 			<artifactId>scala-library</artifactId>
 			<version>2.10.4</version>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>
@@ -141,8 +141,14 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
 	</build>
-	
+
 	<distributionManagement>
 	    <repository>
 	        <id>central</id>
