@@ -17,7 +17,7 @@
 * SonarQube SQM **http://osswdev.codecentric.de/sonarqube/dashboard/index/1**
 * Artifact Repository **http://osswdev.codecentric.de/artifactory**
 * Spring Boot Admin Client **http://osswdev.codecentric.de/adminclient**
-* Amazon EC2 Dashboard **(offline)**
+* Amazon EC2 Dashboard **http://osswdev.codecentric.de/jenkins/view/Deployment%20Dashboard/**
 
 ## Developer Quickstart
 
