@@ -1,5 +1,12 @@
 ## Quickstart
 
+Prerequisites:
+
+```
+# MySQL in einem Docker Container starten
+docker run --name javalandDB -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=app -p 3306:3306 -d mysql
+```
+
 For running the app incl. the Spring Boot Admin client use the following commands.
 
 ```
