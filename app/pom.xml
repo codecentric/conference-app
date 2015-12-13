@@ -163,7 +163,7 @@
 	    <repository>
 	        <id>central</id>
 	        <name>release-repository</name>
-	        <url>http://54.93.92.96:8081/artifactory/libs-release-local</url>
+	        <url>${REPOSITORY_URL}</url>
 	    </repository>
 	</distributionManagement>
 
