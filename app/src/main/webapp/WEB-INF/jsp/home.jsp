@@ -6,10 +6,10 @@
 	  <div class="container">
 	    <div class="panel panel-default">
 	      <div class="panel-body">
-	        <h2>Open Space Software Development @ JavaLand 2015</h2>
+	        <h2>Open Space Software Development @ WDR 2016</h2>
 	        <p>Auf Konferenzen wird viel &uuml;ber Methoden und Technologien gesprochen.
 	        Wir m&ouml;chten herausfinden, wie sich Dinge, die wir f&uuml;r richtig und wertvoll halten, in der Praxis
-            anf&uuml;hlen. Daher laden wir euch zum codecentric OpenSpace Development ein,€“ ein sicherer Raum, in dem
+            anf&uuml;hlen. Daher laden wir euch zum codecentric OpenSpace Development ein,â‚¬â€œ ein sicherer Raum, in dem
             unter realit&auml;tsnahen Bedingungen experimentiert und gelernt werden kann.</p>
 	      </div>
 	    </div>
